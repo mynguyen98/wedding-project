@@ -13,7 +13,7 @@ const TimeLocation = () => {
         <div className='flex justify-center'>
           <img src={calander} alt='calander image' />
         </div>
-        <h2 className='pt-5 second-text-pink pb-3'>Đón khách lúc 17:30</h2>
+        <h2 className='pt-5 second-text-pink pb-3'>Đón khách lúc 17:00</h2>
         <div className='flex justify-center items-center pb-3'>
           <MapIcon />
           <h2 className='pl-2 m-0 pb-2' style={{ color: 'black' }}>
