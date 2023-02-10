@@ -7,7 +7,7 @@ const Invitation = () => {
   return (
     <section
       style={{ backgroundImage: `url(${invitationBg})` }}
-      className='bg-center bg-no-repeat bg-cover'
+      className='bg-center bg-no-repeat bg-cover section-mb'
       id='invitation'
     >
       <div className='text-center pb-28 pt-28 pr-20 pl-20'>

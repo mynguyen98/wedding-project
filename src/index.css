@@ -36,13 +36,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Playfair Display', serif;
   color: rgba(88, 88, 88, 1);
+  background-color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.app {
+}
+.section-mb {
+  /* max-width: 560px;
+  margin: auto; */
+}
 .lateef {
   font-family: 'Lateef', serif;
 }

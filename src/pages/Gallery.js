@@ -4,7 +4,7 @@ import { galleryImage } from '../utils/gallery-data'
 import CarouselGallery from '../components/CarouselGallery'
 const Gallery = ({ setModalContent, setIsOpen, setIndex }) => {
   return (
-    <div className='py-10 px-3' id='gallery'>
+    <div className='py-10 px-3 section-mb' id='gallery'>
       <TitleSection title='ALBUM' />
       <div>
         <div

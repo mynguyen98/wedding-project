@@ -6,7 +6,7 @@ import MapIcon from '../components/icons/MapIcon'
 import mapIcon from '../assets/home-image/map-icon.png'
 const TimeLocation = () => {
   return (
-    <div className='pt-10 pb-10 bg-main-bg' id='time-location'>
+    <div className='pt-10 pb-10 bg-main-bg section-mb' id='time-location'>
       <div className=' text-center '>
         <TitleSection title='THỜI GIAN & ĐỊA ĐIỂM' />
         <TitleDescribe title='Tháng 2/2023' />

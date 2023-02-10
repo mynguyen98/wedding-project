@@ -3,7 +3,7 @@ import homeMain from '../assets/home-image/home-main.png'
 import menuNav from '../assets/home-image/menu-nav.svg'
 const Hero = ({ setIsNavOpen }) => {
   return (
-    <div className='text-center pt-20 pb-20 relative' id='hero'>
+    <div className='text-center pt-20 pb-20 relative section-mb' id='hero'>
       <button className='button-nav fixed' onClick={() => setIsNavOpen(true)}>
         <img src={menuNav} alt='' />
       </button>

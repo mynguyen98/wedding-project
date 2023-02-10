@@ -25,7 +25,7 @@ function App() {
   }, [isOpen])
 
   return (
-    <div>
+    <div className='app'>
       <Sidebar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       <Modal
         isOpen={isOpen}
