@@ -2,6 +2,7 @@ import React from 'react'
 import footerIconBottom from '../assets/home-image/footer-icon-bottom.svg'
 import footerIconTop from '../assets/home-image/footer-icon-top.svg'
 import backgroundFooter from '../assets/home-image/background-footer.png'
+import footerLogo from '../assets/home-image/footer-logo.jpg'
 const Footer = () => {
   return (
     <div
@@ -23,6 +24,9 @@ const Footer = () => {
           tôi có sự hiện diện và chúc phúc của bạn!
         </p>
         <h2 className='text-9xl italic text-white qoute-footer-bottom '>"</h2>
+      </div>
+      <div className='footer-logo w-20 h-20 bottom-6 flex items-center justify-center'>
+        <img src={footerLogo} alt='' />
       </div>
       <div className='footer-icon-bottom'>
         <img src={footerIconBottom} alt='' />

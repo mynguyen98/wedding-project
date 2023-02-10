@@ -239,7 +239,16 @@ p {
   bottom: 0rem;
   right: 2rem;
 }
-
+.footer-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.footer-logo img {
+  object-fit: cover;
+}
 /* MODAL COMPONENT */
 .modal {
   /* width: 100vw;
