@@ -16,34 +16,34 @@ const CarouselGallery = ({ index }) => {
         className='casourel'
       >
         <div className=''>
-          <img src={galleryImage[0].imageUrl} />
+          <img src={galleryImage[0].imageUrl} alt='image-gallery' />
         </div>
         <div>
-          <img src={galleryImage[1].imageUrl} />
+          <img src={galleryImage[1].imageUrl} alt='image-gallery' />
         </div>
         <div>
-          <img src={galleryImage[2].imageUrl} />
+          <img src={galleryImage[2].imageUrl} alt='image-gallery' />
         </div>
         <div>
-          <img src={galleryImage[3].imageUrl} />
+          <img src={galleryImage[3].imageUrl} alt='image-gallery' />
         </div>
         <div>
-          <img src={galleryImage[4].imageUrl} />
+          <img src={galleryImage[4].imageUrl} alt='image-gallery' />
         </div>
         <div>
-          <img src={galleryImage[5].imageUrl} />
+          <img src={galleryImage[5].imageUrl} alt='image-gallery' />
         </div>
         <div>
-          <img src={galleryImage[6].imageUrl} />
+          <img src={galleryImage[6].imageUrl} alt='image-gallery' />
         </div>
         <div>
-          <img src={galleryImage[7].imageUrl} />
+          <img src={galleryImage[7].imageUrl} alt='image-gallery' />
         </div>
         <div>
-          <img src={galleryImage[8].imageUrl} />
+          <img src={galleryImage[8].imageUrl} alt='image-gallery' />
         </div>
         <div>
-          <img src={galleryImage[9].imageUrl} />
+          <img src={galleryImage[9].imageUrl} alt='image-gallery' />
         </div>
       </Carousel>
     </div>

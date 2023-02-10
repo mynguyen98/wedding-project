@@ -3,7 +3,6 @@ import TitleSection from '../components/TitleSection'
 import TitleDescribe from '../components/TitleDescribe'
 import phoneMain from '../assets/home-image/phone-main.svg'
 import phoneSecond from '../assets/home-image/phone-second.svg'
-import ModalContentCongrat from '../components/ModalContentCongrat'
 const Congrats = ({ setModalContent, setIsOpen }) => {
   return (
     <div className='py-10' id='congrat'>
