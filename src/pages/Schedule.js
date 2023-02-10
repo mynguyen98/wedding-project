@@ -34,7 +34,7 @@ const Schedule = () => {
               </div>
             </div>
             <div className='w-28'>
-              <h3>17:30</h3>
+              <h3>17:00</h3>
               <h2>Đón khách</h2>
             </div>
           </div>
