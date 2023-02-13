@@ -14,7 +14,7 @@ const Congrats = ({ setModalContent, setIsOpen }) => {
             <a href='tel:+84985145293' className='href-call text-center pb-3'>
               <div className='phone-container'>
                 <img src={phoneMain} alt='phone chu rể' className='href-icon' />
-                0985 145 293
+                0833 291 969
               </div>
             </a>
             {/* <button
@@ -38,7 +38,7 @@ const Congrats = ({ setModalContent, setIsOpen }) => {
                   alt='phone chu rể'
                   className='href-icon'
                 />
-                0985 145 285
+                0917 692 888
               </div>
             </a>
             {/* <button className='btn-congrat-main bg-second px-3 py-1'>

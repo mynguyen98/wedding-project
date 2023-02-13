@@ -49,7 +49,7 @@ const Schedule = () => {
               </div>
             </div>
             <div className='w-28'>
-              <h3>18:30</h3>
+              <h3>17:30</h3>
               <h2>Làm lễ</h2>
             </div>
           </div>
@@ -68,7 +68,7 @@ const Schedule = () => {
               </div>
             </div>
             <div className='w-28'>
-              <h3>19:00</h3>
+              <h3>18:00</h3>
               <h2>Tiệc tối</h2>
             </div>
           </div>
@@ -87,7 +87,7 @@ const Schedule = () => {
               </div>
             </div>
             <div className='w-28'>
-              <h3>19:30</h3>
+              <h3>19:00</h3>
               <h2>Âm nhạc</h2>
             </div>
           </div>

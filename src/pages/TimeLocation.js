@@ -17,7 +17,7 @@ const TimeLocation = () => {
         <div className='flex justify-center items-center pb-3'>
           <MapIcon />
           <h2 className='pl-2 m-0 pb-2' style={{ color: 'black' }}>
-            Sảnh A, Khách sạn Petro{' '}
+            Tầng 2, Khách sạn Petro{' '}
           </h2>
         </div>
         <p className='pb-2'>Số 458 Lý Bôn, P. Đề Thám, TP. Thái Bình</p>
