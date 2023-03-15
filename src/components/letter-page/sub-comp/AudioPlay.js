@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useRef } from 'react'
-import beautifulInWhite from '../assets/audio/beautiful-in-white.mp3'
+import beautifulInWhite from '../../../assets/audio/beautiful-in-white.mp3'
 import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai'
-import VolumnOpen from './icons/VolumnOpen'
-import VolumnMute from './icons/VolumeMute'
+import VolumnOpen from '../../icons/VolumnOpen'
+import VolumnMute from '../../icons/VolumeMute'
 import {
   toggleAudioPlay,
   setIsAudioPlay,
   setAudioElement,
-} from '../features/music-vid-reducer'
+} from '../../../features/music-vid-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 const AudioPlay = () => {
   const dispatch = useDispatch()

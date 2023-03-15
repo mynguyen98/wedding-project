@@ -1,7 +1,7 @@
 import React from 'react'
-import homeMain from '../assets/home-image/home-main.png'
-import menuNav from '../assets/home-image/menu-nav.svg'
-import AudioPlay from '../components/AudioPlay'
+import homeMain from '../../assets/home-image/home-main.png'
+import menuNav from '../../assets/home-image/menu-nav.svg'
+import AudioPlay from './sub-comp/AudioPlay'
 const Hero = ({ setIsNavOpen }) => {
   return (
     <div

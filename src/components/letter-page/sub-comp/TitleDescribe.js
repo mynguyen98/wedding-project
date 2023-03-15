@@ -1,5 +1,5 @@
 import React from 'react'
-import TitleDescribeIcon from './icons/TitleDescribeIcon'
+import TitleDescribeIcon from '../../icons/TitleDescribeIcon'
 const TitleDescribe = ({ title }) => {
   return (
     <div>

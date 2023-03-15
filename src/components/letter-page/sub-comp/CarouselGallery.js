@@ -1,7 +1,7 @@
 import React from 'react'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
-import { galleryImage } from '../utils/gallery-data'
+import { galleryImage } from '../../../utils/gallery-data'
 const CarouselGallery = ({ index }) => {
   return (
     <div className='carousel-gallery-container layout-mw'>

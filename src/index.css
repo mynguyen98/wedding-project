@@ -36,7 +36,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Playfair Display', serif;
   color: rgba(88, 88, 88, 1);
-  background-color: black;
+  /* background-color: black; */
   max-width: 560px;
 }
 
@@ -159,7 +159,7 @@ p {
 }
 
 /* layout restructor */
-.app-layout {
+.letter-layout {
   background-color: black;
   /* position: relative; */
 }

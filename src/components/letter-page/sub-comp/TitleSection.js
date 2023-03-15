@@ -1,6 +1,6 @@
 import React from 'react'
-import InvitationRight from './icons/InvitationRight'
-import InvitationLeft from './icons/InvitationLeft'
+import InvitationRight from '../../icons/InvitationRight'
+import InvitationLeft from '../../icons/InvitationLeft'
 const TitleSection = ({ title }) => {
   return (
     <div className='flex justify-center pb-5'>
