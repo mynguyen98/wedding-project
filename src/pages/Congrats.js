@@ -5,7 +5,7 @@ import phoneMain from '../assets/home-image/phone-main.svg'
 import phoneSecond from '../assets/home-image/phone-second.svg'
 const Congrats = ({ setModalContent, setIsOpen }) => {
   return (
-    <div className='py-10 section-mb' id='congrat'>
+    <div className='py-10 section-mb layout-mw' id='congrat'>
       <TitleSection title='CHÚC PHÚC' />
       <div className='flex justify-center'>
         <div className='text-center px-8'>

@@ -2,24 +2,20 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App'
-import Snowfall from 'react-snowfall'
-
+import { store } from './store'
+import { Provider } from 'react-redux'
+// import snowImg from './assets/home-image/snow.png'
 import reportWebVitals from './reportWebVitals'
-
+// const snowImg = document.createElement('img')
+// snowImg.src = './assets/home-image/snow.png'
+// const images = [snowImg]
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.StrictMode>
-    <Snowfall
-      color='#E29C67'
-      snowflakeCount={40}
-      style={{
-        position: 'fixed',
-        width: '100vw',
-        height: '100vh',
-      }}
-    />
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
 )
 
 // If you want to start measuring performance in your app, pass a function

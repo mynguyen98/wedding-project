@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel'
 import { galleryImage } from '../utils/gallery-data'
 const CarouselGallery = ({ index }) => {
   return (
-    <div className='carousel-gallery-container'>
+    <div className='carousel-gallery-container layout-mw'>
       <Carousel
         showArrows={true}
         infiniteLoop={true}

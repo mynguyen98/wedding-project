@@ -1,12 +1,14 @@
 import React from 'react'
 import homeMain from '../assets/home-image/home-main.png'
 import menuNav from '../assets/home-image/menu-nav.svg'
+import AudioPlay from '../components/AudioPlay'
 const Hero = ({ setIsNavOpen }) => {
   return (
-    <div className='text-center pt-20 pb-20 relative section-mb' id='hero'>
-      <button className='button-nav fixed' onClick={() => setIsNavOpen(true)}>
-        <img src={menuNav} alt='' />
-      </button>
+    <div
+      className='text-center pt-20 pb-20 relative section-mb layout-mw'
+      id='hero'
+    >
+      {/* <AudioPlay /> */}
       <h2 className='text-main'>Thân mời tới dự bữa tiệc</h2>
       <h1>Việt Anh & Phương Anh</h1>
       <div className='flex justify-center pt-3'>

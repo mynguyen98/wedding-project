@@ -1,5 +1,6 @@
 import React from 'react'
-import invitationBg from '../assets/home-image/invitation-bg.png'
+import invitationBg from '../assets/home-image/invitation-bg.jpg'
+// import invitationBg
 import InvitationRight from '../components/icons/InvitationRight'
 import InvitationLeft from '../components/icons/InvitationLeft'
 import TitleSection from '../components/TitleSection'
@@ -7,13 +8,13 @@ const Invitation = () => {
   return (
     <section
       style={{ backgroundImage: `url(${invitationBg})` }}
-      className='bg-center bg-no-repeat bg-cover section-mb'
+      className='bg-center bg-no-repeat bg-cover section-mb layout-mw'
       id='invitation'
     >
       <div className='text-center pb-28 pt-28 pr-20 pl-20'>
         <TitleSection title='LỜI MỜI' />
         <p>
-          <span>Thân mời,</span>
+          <span>Trân trọng kính mời,</span>
           <br />
           đến dự buổi tiệc chung vui cùng gia đình chúng tôi tại
         </p>

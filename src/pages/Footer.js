@@ -6,7 +6,7 @@ import footerLogo from '../assets/home-image/footer-logo.jpg'
 const Footer = () => {
   return (
     <div
-      className=' section-mb footer-container w-12 bg-center bg-cover min-h-screen min-w-full bg-no-repeat '
+      className='layout-mw section-mb footer-container w-12 bg-center bg-cover min-h-screen min-w-full bg-no-repeat '
       style={{ backgroundImage: `url(${backgroundFooter})` }}
     >
       <div className='footer-icon-top  min-w-full'>

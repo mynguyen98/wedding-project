@@ -9,7 +9,10 @@ import scheduleBgLeft from '../assets/home-image/schedule-bg-left.svg'
 import scheduleBgRight from '../assets/home-image/schedule-bg-right.svg'
 const Schedule = () => {
   return (
-    <div className='py-10 schedule-container section-mb' id='schedule'>
+    <div
+      className='py-10 schedule-container section-mb layout-mw'
+      id='schedule'
+    >
       <TitleSection title='CHƯƠNG TRÌNH' />
       <div className='flex justify-center'>
         <div className='schedule-bg-lr schedule-bg-l'>
