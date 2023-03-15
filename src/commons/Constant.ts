@@ -28,3 +28,7 @@ export enum Events {
     SUCCESS = 1,
     FAILS = 2,
   }
+
+  export const Alias = {
+    letterPage: '/letterPage'
+};
