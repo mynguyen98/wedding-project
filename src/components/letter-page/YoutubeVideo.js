@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import TitleSection from '../components/TitleSection'
+import TitleSection from './sub-comp/TitleSection'
 import YouTube from 'react-youtube'
 import { useDispatch, useSelector } from 'react-redux'
-import { setIsAudioPlay } from '../features/music-vid-reducer'
+import { setIsAudioPlay } from '../../features/music-vid-reducer'
 
 const YoutubeVideo = () => {
   const dispatch = useDispatch()

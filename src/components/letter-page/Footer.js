@@ -1,8 +1,8 @@
 import React from 'react'
-import footerIconBottom from '../assets/home-image/footer-icon-bottom.svg'
-import footerIconTop from '../assets/home-image/footer-icon-top.svg'
-import backgroundFooter from '../assets/home-image/background-footer.png'
-import footerLogo from '../assets/home-image/footer-logo.jpg'
+import footerIconBottom from '../../assets/home-image/footer-icon-bottom.svg'
+import footerIconTop from '../../assets/home-image/footer-icon-top.svg'
+import backgroundFooter from '../../assets/home-image/background-footer.png'
+import footerLogo from '../../assets/home-image/footer-logo.jpg'
 const Footer = () => {
   return (
     <div

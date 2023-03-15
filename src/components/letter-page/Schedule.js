@@ -1,12 +1,12 @@
 import React from 'react'
-import TitleSection from '../components/TitleSection'
-import ring from '../assets/home-image/ring.svg'
-import cup from '../assets/home-image/cup.svg'
-import dish from '../assets/home-image/dish.svg'
-import music from '../assets/home-image/music.svg'
-import TitleDescribeIcon from '../components/icons/TitleDescribeIcon'
-import scheduleBgLeft from '../assets/home-image/schedule-bg-left.svg'
-import scheduleBgRight from '../assets/home-image/schedule-bg-right.svg'
+import TitleSection from './sub-comp/TitleSection'
+import ring from '../../assets/home-image/ring.svg'
+import cup from '../../assets/home-image/cup.svg'
+import dish from '../../assets/home-image/dish.svg'
+import music from '../../assets/home-image/music.svg'
+import TitleDescribeIcon from '../icons/TitleDescribeIcon'
+import scheduleBgLeft from '../../assets/home-image/schedule-bg-left.svg'
+import scheduleBgRight from '../../assets/home-image/schedule-bg-right.svg'
 const Schedule = () => {
   return (
     <div

@@ -1,8 +1,8 @@
 import React from 'react'
-import TitleSection from '../components/TitleSection'
-import TitleDescribe from '../components/TitleDescribe'
-import phoneMain from '../assets/home-image/phone-main.svg'
-import phoneSecond from '../assets/home-image/phone-second.svg'
+import TitleSection from './sub-comp/TitleSection'
+import TitleDescribe from './sub-comp/TitleDescribe'
+import phoneMain from '../../assets/home-image/phone-main.svg'
+import phoneSecond from '../../assets/home-image/phone-second.svg'
 const Congrats = ({ setModalContent, setIsOpen }) => {
   return (
     <div className='py-10 section-mb layout-mw' id='congrat'>

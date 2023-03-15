@@ -1,5 +1,5 @@
 import React from 'react'
-import closeIcon from '../assets/home-image/close-icon.svg'
+import closeIcon from '../../../assets/home-image/close-icon.svg'
 const Modal = ({ isOpen, setIsOpen, modalContent, index, numberImage }) => {
   return (
     <div className={`modal ${isOpen ? 'active' : ''} layout-mw`}>

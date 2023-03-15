@@ -1,5 +1,5 @@
 import React from 'react'
-import { navData } from '../utils/nav-data'
+import { navData } from '../../../utils/nav-data'
 const Sidebar = ({ isNavOpen, setIsNavOpen }) => {
   return (
     <div>

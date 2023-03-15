@@ -1,9 +1,9 @@
 import React from 'react'
-import TitleSection from '../components/TitleSection'
-import TitleDescribe from '../components/TitleDescribe'
-import calander from '../assets/home-image/calander.svg'
-import MapIcon from '../components/icons/MapIcon'
-import mapIcon from '../assets/home-image/map-icon.png'
+import TitleSection from './sub-comp/TitleSection'
+import TitleDescribe from './sub-comp/TitleDescribe'
+import calander from '../../assets/home-image/calander.svg'
+import MapIcon from '../icons/MapIcon'
+import mapIcon from '../../assets/home-image/map-icon.png'
 const TimeLocation = () => {
   const address = `378 Minh Khai, Hai Bà Trưng, Hà Nội`
   const src = `https://maps.google.com/maps?&q="+${address}"&output=embed`

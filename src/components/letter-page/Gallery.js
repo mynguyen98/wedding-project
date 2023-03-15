@@ -1,7 +1,7 @@
 import React from 'react'
-import TitleSection from '../components/TitleSection'
-import { galleryImage } from '../utils/gallery-data'
-import CarouselGallery from '../components/CarouselGallery'
+import TitleSection from './sub-comp/TitleSection'
+import { galleryImage } from '../../utils/gallery-data'
+import CarouselGallery from './sub-comp/CarouselGallery'
 const Gallery = ({ setModalContent, setIsOpen, setIndex }) => {
   return (
     <div className='py-10 px-3 section-mb layout-mw' id='gallery'>

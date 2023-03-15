@@ -1,9 +1,9 @@
 import React from 'react'
-import invitationBg from '../assets/home-image/invitation-bg.jpg'
+import invitationBg from '../../assets/home-image/invitation-bg.jpg'
 // import invitationBg
-import InvitationRight from '../components/icons/InvitationRight'
-import InvitationLeft from '../components/icons/InvitationLeft'
-import TitleSection from '../components/TitleSection'
+import InvitationRight from '../icons/InvitationRight'
+import InvitationLeft from '../icons/InvitationLeft'
+import TitleSection from './sub-comp/TitleSection'
 const Invitation = () => {
   return (
     <section
