@@ -50,87 +50,87 @@ export const galleryImage = [
     imageUrl: img9,
   },
 ]
-export const galleryImageCarousel = [
-  {
-    id: 0,
-    image: main,
-  },
-  {
-    id: 1,
-    image: img1,
-  },
-  {
-    id: 2,
-    image: img2,
-  },
-  {
-    id: 3,
-    image: img3,
-  },
-  {
-    id: 4,
-    image: img4,
-  },
-  {
-    id: 5,
-    image: img5,
-  },
-  {
-    id: 6,
-    image: img6,
-  },
-  {
-    id: 7,
-    image: img7,
-  },
-  {
-    id: 8,
-    image: img8,
-  },
-  {
-    id: 9,
-    image: img9,
-  },
-]
-export const galleryImageCarousel3 = [
-  {
-    id: 0,
-    src: main,
-  },
-  {
-    id: 1,
-    src: img1,
-  },
-  {
-    id: 2,
-    src: img2,
-  },
-  {
-    id: 3,
-    src: img3,
-  },
-  {
-    id: 4,
-    src: img4,
-  },
-  {
-    id: 5,
-    src: img5,
-  },
-  {
-    id: 6,
-    src: img6,
-  },
-  {
-    id: 7,
-    src: img7,
-  },
-  {
-    id: 8,
-    src: img8,
-  },
-  {
-    id: 9,
-    src: img9,
-  },
-]
+// export const galleryImageCarousel = [
+//   {
+//     id: 0,
+//     image: main,
+//   },
+//   {
+//     id: 1,
+//     image: img1,
+//   },
+//   {
+//     id: 2,
+//     image: img2,
+//   },
+//   {
+//     id: 3,
+//     image: img3,
+//   },
+//   {
+//     id: 4,
+//     image: img4,
+//   },
+//   {
+//     id: 5,
+//     image: img5,
+//   },
+//   {
+//     id: 6,
+//     image: img6,
+//   },
+//   {
+//     id: 7,
+//     image: img7,
+//   },
+//   {
+//     id: 8,
+//     image: img8,
+//   },
+//   {
+//     id: 9,
+//     image: img9,
+//   },
+// ]
+// export const galleryImageCarousel3 = [
+//   {
+//     id: 0,
+//     src: main,
+//   },
+//   {
+//     id: 1,
+//     src: img1,
+//   },
+//   {
+//     id: 2,
+//     src: img2,
+//   },
+//   {
+//     id: 3,
+//     src: img3,
+//   },
+//   {
+//     id: 4,
+//     src: img4,
+//   },
+//   {
+//     id: 5,
+//     src: img5,
+//   },
+//   {
+//     id: 6,
+//     src: img6,
+//   },
+//   {
+//     id: 7,
+//     src: img7,
+//   },
+//   {
+//     id: 8,
+//     src: img8,
+//   },
+//   {
+//     id: 9,
+//     src: img9,
+//   },
+// ]

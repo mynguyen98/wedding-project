@@ -1,5 +1,4 @@
 import React from 'react'
-import '../App.css'
 import Hero from '../components/letter-page/Hero'
 import { useEffect, useState } from 'react'
 import Invitation from '../components/letter-page/Invitation'

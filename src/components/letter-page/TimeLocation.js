@@ -4,6 +4,8 @@ import TitleDescribe from './sub-comp/TitleDescribe'
 import calander from '../../assets/home-image/calander.svg'
 import MapIcon from '../icons/MapIcon'
 import mapIcon from '../../assets/home-image/map-icon.png'
+import background from '../../assets/home-image/time-schedule-bg.png'
+import Calendar from './sub-comp/Calendar'
 const TimeLocation = () => {
   const address = `378 Minh Khai, Hai Bà Trưng, Hà Nội`
   const src = `https://maps.google.com/maps?&q="+${address}"&output=embed`
@@ -11,9 +13,29 @@ const TimeLocation = () => {
     <div
       className='pt-10 pb-10 bg-main-bg section-mb layout-mw'
       id='time-location'
+      style={{ backgroundImage: `url(${background})` }}
     >
       <div className=' text-center '>
         <TitleSection title='THỜI GIAN & ĐỊA ĐIỂM' />
+        <div className='pb-2'>
+          <h2 className='text-second'>Dạm ngõ</h2>
+          <p className='px-28 text-base'>
+            Lễ dạm ngõ sẽ diễn tại 378 Minh Khai, vào lúc 12h 00ph, 04/02/2023
+          </p>
+        </div>
+        <div className='pb-2'>
+          <h2 className='text-second'>Ăn hỏi</h2>
+          <p className='px-28 text-base'>
+            Lễ ăn hỏi sẽ diễn tại 378 Minh Khai, vào lúc 10h 00ph, 11/02/2023
+          </p>
+        </div>
+        <div className='pb-2'>
+          <h2 className='text-second'>Lê cưới sẽ diễn ra vào lúc</h2>
+          <p className='px-28 text-base'>
+            Lễ ăn hỏi sẽ diễn tại 378 Minh Khai, vào lúc 10h 00ph, 11/02/2023
+          </p>
+        </div>
+        <Calendar />
         <TitleDescribe title='Tháng 2/2023' />
         <div className='flex justify-center'>
           <img src={calander} alt='calander image' />

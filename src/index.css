@@ -17,6 +17,13 @@ Global Styles
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
 */
+
+:root {
+  /* --main-color: #91ada3;
+  --text-second: #f38723; */
+  --border-section-1: 2px solid rgba(243, 135, 35, 0.1);
+}
+
 *,
 ::after,
 ::before {
@@ -131,7 +138,7 @@ p {
 .second-text-pink {
   font-size: 1.25rem;
   font-weight: 400;
-  color: #f38723;
+  color: var(--text-second);
 }
 
 .icon-container {
@@ -157,7 +164,9 @@ p {
   top: 50%;
   transform: translate(50%, -50%);
 }
-
+.border-section-1 {
+  border-bottom: var(--border-section-1);
+}
 /* layout restructor */
 .letter-layout {
   background-color: black;
@@ -176,7 +185,7 @@ p {
 
 /* SCHEDULE */
 .schedule-container {
-  border-bottom: 1px solid #91ada3;
+  border-bottom: 1px solid var(--main-color);
 }
 .schedule-detail-img {
   margin-left: auto;
@@ -195,7 +204,83 @@ p {
   min-height: 100%;
   min-width: 100%;
 }
+.calendar {
+  width: 350px;
+  margin: 24px auto 0;
+  /* box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, 0.1); */
+  border-radius: 6px;
+}
 
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 6px 6px 0 0;
+  font-size: 20px;
+  font-weight: 400;
+  /* background-color: #1abc9c; */
+  /* color: black; */
+}
+
+.nav {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  border-radius: 99px;
+  outline: 0;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.datetime {
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.week-container,
+.day-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.week-cell,
+.day-cell {
+  flex: 0 0 calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+.day-cell {
+  opacity: 0.4;
+}
+.day-cel--faded {
+  opacity: 0.4;
+}
+.day-cel--today {
+  border-radius: 99px;
+  background-color: #1abc9c;
+  color: #fff;
+}
+.day-cell--in-month {
+  opacity: 1;
+  color: #1abc9c;
+}
+.active {
+  background-color: red;
+}
+/* .day-cell {
+  &--faded {
+    opacity: .4;
+  }
+
+  &--today {
+    border-radius: 99px;
+    background-color: #1abc9c;
+    color: #fff;
+  }
+} */
 /*  CONGRATULATION SECTION */
 .href-call {
   display: flex;
@@ -461,5 +546,5 @@ p {
 .icon-music {
   width: 3rem;
   height: 3rem;
-  color: #91ada3;
+  color: var(--main-color);
 }
