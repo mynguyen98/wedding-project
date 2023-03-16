@@ -1,13 +1,18 @@
-.redButton {
-    background-color: var(--red-color-1)
+.container {
+    border-radius: 5px;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .pinkButton {
     background-color: var(--pink-color-1)
 }
 
-.blueButton {
-    background-color: var(--color-green)
+.whiteButton {
+    border: 1px solid var(--white-color);
+    background: transparent;
 }
 
 .grayButton {
@@ -16,10 +21,6 @@
 
 .white {
     color: var(--white-color);
-}
-
-.red {
-    color: var(--red-color-1);
 }
 
 .black {
@@ -31,16 +32,14 @@
 }
 
 .text {
-    font-family: var(--bs-body-font-family-SanFranciscoText-Medium);
+    font-family: var(--quick-sand-font-family);
     text-align: center;
     font-size: 15px;
     display: block;
 }
 
-.container {
-    border-radius: 5px;
-    border: unset;
-    padding: 10px 0;
+.padding {
+    padding-left: 5px;
 }
 
 .buttonHover {
