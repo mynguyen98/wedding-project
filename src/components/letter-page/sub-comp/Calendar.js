@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import dayjs from 'dayjs'
 import range from 'lodash-es/range'
 import 'dayjs/locale/es' // load on demand
+import TitleDescribe from './TitleDescribe'
 // import Tit
 // import '../../../style.scss'
 
@@ -10,7 +11,7 @@ const weekDays = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7']
 const todayObj = dayjs()
 
 const Calendar = () => {
-  const dayObj = dayjs('2023-02-18')
+  const dayObj = dayjs('2023-04-05')
   const thisYear = dayObj.year()
   const thisMonth = dayObj.month() // (January as 0, December as 11)
   const daysInMonth = dayObj.daysInMonth()
@@ -22,10 +23,13 @@ const Calendar = () => {
   const weekDayOfLast = dayObjOfLast.day()
 
   return (
-    <div className='calendar'>
-      <div className='header'>
+    <div className='calendar text-xl'>
+      <div className='header '>
         <div className='datetime text-text'>
-          Tháng {dayObj.locale('vi').format('M/YYYY')}
+          <TitleDescribe
+            title={`Tháng ${dayObj.locale('vi').format('M/YYYY')}`}
+          />
+          {/* Tháng {dayObj.locale('vi').format('M/YYYY')} */}
         </div>
       </div>
       <div className='week-container'>
@@ -35,9 +39,9 @@ const Calendar = () => {
           </div>
         ))}
       </div>
-      <div className='day-container'>
+      <div className='day-container '>
         {range(weekDayOf1).map((i) => (
-          <div className='day-cell day-cell--faded' key={i}>
+          <div className='day-cell day-cell--faded ' key={i}>
             {dayObjOf1.subtract(weekDayOf1 - i, 'day').date()}
           </div>
         ))}

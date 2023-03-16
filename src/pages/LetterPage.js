@@ -32,40 +32,42 @@ const LetterPage = () => {
     }
   }, [isOpen])
   return (
-    <div className='app letter-layout'>
-      <Snowfall
-        color='#E29C67'
-        snowflakeCount={40}
-        style={{
-          position: 'fixed',
-          width: '100vw',
-          height: '100vh',
-          zIndex: 11,
-        }}
-        images={images}
-        radius={[2, 15]}
-      />
-      <NavButton setIsNavOpen={setIsNavOpen} />
-      <Sidebar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
-      <Modal
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        modalContent={modalContent}
-        index={index}
-        numberImage={numberImage}
-      />
-      <Hero setIsNavOpen={setIsNavOpen} />
-      <Invitation />
-      <Gallery
-        setModalContent={setModalContent}
-        setIsOpen={setIsOpen}
-        setIndex={setIndex}
-      />
-      <YoutubeVideo />
-      <TimeLocation />
-      <Schedule />
-      <Congrats setModalContent={setModalContent} setIsOpen={setIsOpen} />
-      <Footer />
+    <div className='letter-wrapper'>
+      <div className=' letter-layout'>
+        <Snowfall
+          color='#E29C67'
+          snowflakeCount={40}
+          style={{
+            position: 'fixed',
+            width: '100vw',
+            height: '100vh',
+            zIndex: 11,
+          }}
+          images={images}
+          radius={[2, 15]}
+        />
+        <NavButton setIsNavOpen={setIsNavOpen} />
+        <Sidebar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+        <Modal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          modalContent={modalContent}
+          index={index}
+          numberImage={numberImage}
+        />
+        <Hero setIsNavOpen={setIsNavOpen} />
+        <Invitation />
+        <Gallery
+          setModalContent={setModalContent}
+          setIsOpen={setIsOpen}
+          setIndex={setIndex}
+        />
+        <YoutubeVideo />
+        <TimeLocation />
+        <Schedule />
+        <Congrats setModalContent={setModalContent} setIsOpen={setIsOpen} />
+        <Footer />
+      </div>
     </div>
   )
 }

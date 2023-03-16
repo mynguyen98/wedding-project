@@ -6,6 +6,7 @@ import MapIcon from '../icons/MapIcon'
 import mapIcon from '../../assets/home-image/map-icon.png'
 import background from '../../assets/home-image/time-schedule-bg.png'
 import Calendar from './sub-comp/Calendar'
+import CountDown from './sub-comp/Countdown'
 const TimeLocation = () => {
   const address = `378 Minh Khai, Hai Bà Trưng, Hà Nội`
   const src = `https://maps.google.com/maps?&q="+${address}"&output=embed`
@@ -19,28 +20,32 @@ const TimeLocation = () => {
         <TitleSection title='THỜI GIAN & ĐỊA ĐIỂM' />
         <div className='pb-2'>
           <h2 className='text-second'>Dạm ngõ</h2>
-          <p className='px-28 text-base'>
+          <p className='max-w-xs text-base margin-auto'>
             Lễ dạm ngõ sẽ diễn tại 378 Minh Khai, vào lúc 12h 00ph, 04/02/2023
           </p>
         </div>
-        <div className='pb-2'>
+        <div className=' pb-2'>
           <h2 className='text-second'>Ăn hỏi</h2>
-          <p className='px-28 text-base'>
+          <p className='max-w-xs text-base margin-auto'>
             Lễ ăn hỏi sẽ diễn tại 378 Minh Khai, vào lúc 10h 00ph, 11/02/2023
           </p>
         </div>
-        <div className='pb-2'>
+        <div className='pb-2 border-section-1'>
           <h2 className='text-second'>Lê cưới sẽ diễn ra vào lúc</h2>
-          <p className='px-28 text-base'>
+          <p className='max-w-xs text-base margin-auto'>
             Lễ ăn hỏi sẽ diễn tại 378 Minh Khai, vào lúc 10h 00ph, 11/02/2023
           </p>
         </div>
         <Calendar />
-        <TitleDescribe title='Tháng 2/2023' />
-        <div className='flex justify-center'>
+        {/* <TitleDescribe title='Tháng 2/2023' /> */}
+        {/* <div className='flex justify-center'>
           <img src={calander} alt='calander image' />
-        </div>
-        <h2 className='pt-5 second-text-pink pb-3'>Đón khách lúc 17:00</h2>
+        </div> */}
+        <h2 className='pt-6 second-text-pink pb-3 max-w-xs margin-auto'>
+          Đám cưới của Việt Anh và Phương Anh sẽ diễn ra sau
+        </h2>
+        <CountDown />
+        <h2 className='pb-6 border-section-1'>Ngày</h2>
         <div className='flex justify-center items-center pb-5'>
           <MapIcon />
           <h2 className='pl-2 m-0 pb-0 ' style={{ color: 'black' }}>
