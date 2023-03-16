@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import TitleSection from './sub-comp/TitleSection'
 import YouTube from 'react-youtube'
 import { useDispatch, useSelector } from 'react-redux'
-import { setIsAudioPlay } from '../../features/music-vid-reducer'
+import { setIsAudioPlay } from '../../features/letter-page/music-vid-reducer'
 import LazyLoad from 'react-lazy-load'
 
 const YoutubeVideo = () => {

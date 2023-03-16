@@ -9,7 +9,7 @@ import {
   toggleAudioPlay,
   setIsAudioPlay,
   setAudioElement,
-} from '../../../features/music-vid-reducer'
+} from '../../../features/letter-page/music-vid-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 const AudioPlay = () => {
   const dispatch = useDispatch()

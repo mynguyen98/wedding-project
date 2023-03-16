@@ -1,51 +1,29 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import TitleSection from './sub-comp/TitleSection'
 import TitleDescribe from './sub-comp/TitleDescribe'
 import phoneMain from '../../assets/home-image/phone-main.svg'
 import phoneSecond from '../../assets/home-image/phone-second.svg'
+import InforPhone from './sub-comp/InforPhone'
+import Popup from '../modal/Popup'
 const Congrats = ({ setModalContent, setIsOpen }) => {
+  const modalRef = useRef()
+  const handleShowModal = () => {
+    modalRef.current.showModal()
+  }
   return (
     <div className='py-10 section-mb layout-mw' id='congrat'>
       <TitleSection title='CHÚC PHÚC' />
       <div className='flex justify-center'>
-        <div className='text-center px-8'>
-          <h2>Việt Anh</h2>
-          <div>
-            <a href='tel:+84985145293' className='href-call text-center pb-3'>
-              <div className='phone-container'>
-                <img src={phoneMain} alt='phone chu rể' className='href-icon' />
-                0833 291 969
-              </div>
-            </a>
-            {/* <button
-              className='btn-congrat-main bg-main px-3 py-1'
-              onClick={() => {
-                setIsOpen(true)
-                setModalContent(ModalContentCongrat)
-              }}
-            >
-              Chúc phúc chú rể
-            </button> */}
-          </div>
-        </div>
-        <div className='text-center px-8'>
-          <h2>Phương Anh</h2>
-          <div>
-            <a href='tel:+84985145293' className='href-call text-center pb-3'>
-              <div className='phone-container'>
-                <img
-                  src={phoneSecond}
-                  alt='phone chu rể'
-                  className='href-icon'
-                />
-                0917 692 888
-              </div>
-            </a>
-            {/* <button className='btn-congrat-main bg-second px-3 py-1'>
-              Chúc phúc cô dâu
-            </button> */}
-          </div>
-        </div>
+        <InforPhone
+          title='Chú rể'
+          name='Việt Anh'
+          phoneNumber='0985 145 293'
+          phoneColor='main'
+          onClick={() => handleShowModal()}
+        />
+        <button onClick={() => handleShowModal()}>click</button>
+        <Popup ref={modalRef} />
+        <InforPhone title='Chú rể' name='Việt Anh' phoneNumber='0985 145 293' />
       </div>
       <div className='pt-8'>
         <TitleDescribe title='Đại diện gia đình' />

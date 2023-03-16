@@ -20,6 +20,7 @@ Global Styles
 
 :root {
   /* root letter page */
+  --border-section-main: 1px solid rgba(145, 173, 163, 0.5);
   --border-section-1: 2px solid rgba(243, 135, 35, 0.1);
   /* root home page */
 }
@@ -141,6 +142,9 @@ p {
 }
 .border-section-1 {
   border-bottom: var(--border-section-1);
+}
+.border-section-main {
+  border-bottom: var(--border-section-main);
 }
 .margin-auto {
   margin: auto;
@@ -359,6 +363,7 @@ p {
   visibility: visible;
   transform: all 2s linear;
   opacity: 1;
+  top: 0;
 }
 .modal-container {
   position: fixed;
@@ -374,18 +379,18 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+
   width: 100vw;
   position: relative;
 }
 .modal-content {
   width: 100%;
-  height: 100vh;
   background-color: white;
   z-index: 5;
   /* border-radius: 16px; */
   position: relative;
   margin: auto;
+  top: 0;
 }
 .close-modal-icon {
   position: absolute;
