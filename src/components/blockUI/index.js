@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import styles from './blockUI.module.css'
 import { BUTTON_STYLES } from '../../commons/Constant.ts';
 import { Button } from '../button';
@@ -14,13 +14,13 @@ function BlockUI({
     img,
     styleImg,
     title,
-    description,
-    label
+    label,
+    children
 }) {
 
     const _onPress = useCallback(() => {
-        onPress?.(tag || label);
-    }, [label, onPress, tag]);
+        onPress?.(label);
+    }, [label, onPress]);
 
     const getContainerStyle = useMemo(() => {
 
@@ -61,7 +61,7 @@ function BlockUI({
                                 {title}
                             </h2>
                             <div className={styles.blockUIContent}>
-                                {description}
+                                {children}
                             </div>
                             {
                                 isbutton && <Button
@@ -80,7 +80,6 @@ function BlockUI({
                     }
                 </div>
             </div>
-
         </div>
     );
 }
