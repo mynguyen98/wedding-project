@@ -1,3 +1,4 @@
+
 import './App.css'
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -10,8 +11,10 @@ function App() {
     <div className='app '>
       <BrowserRouter>
         <Routes>
+
           <Route path='/' element={<HomePage />} />
           <Route path={Alias.letterPage} element={<LetterPage />} />
+
         </Routes>
       </BrowserRouter>
     </div>
