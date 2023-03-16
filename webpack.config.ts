@@ -1,6 +1,6 @@
 import path from 'path'
 import { Configuration } from 'webpack'
-import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const config: Configuration = {
   entry: '@/index.js',
   module: {
@@ -55,9 +55,9 @@ const config: Configuration = {
   resolve: {
     plugins: [new TsconfigPathsPlugin()],
     extensions: ['.tsx', '.ts', '.js'],
-    // alias: {
-    //   '@': path.resolve(__dirname, './src'),
-    // },
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
 }
 

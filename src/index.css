@@ -63,7 +63,9 @@ code {
 .wind-song {
   font-family: 'WindSong', cursive;
 }
-
+.quick-sand {
+  font-family: 'Quicksand', sans-serif;
+}
 ul {
   list-style-type: none;
 }
