@@ -50,10 +50,6 @@ const Invitation = () => {
             Sự hiện diện của quý khách là niềm vinh hạnh cho gia đình chúng tôi!
           </p>
         </div>
-        {/* <h2 className='pt-4 second-text-pink'>Khách sạn Petro</h2>
-        <p>Số 458 Lý Bôn, P. Đề Thám, TP. Thái Bình</p>
-        <h2 className='pt-4 second-text-pink'>Thứ bảy, ngày 18.02.2023</h2>
-        <p>Sự hiện diện quý khách là niềm vinh hạnh cho gia đình chúng tôi!</p> */}
       </div>
     </section>
   )

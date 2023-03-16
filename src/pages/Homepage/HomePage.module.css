@@ -1,0 +1,34 @@
+.homepage_box {
+    background: linear-gradient(to bottom,
+            rgb(173 77 95 / 22%), rgb(185 130 130 / 15%)), url('../../assets/home-image/Bg_Banner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.header_top {
+    border-bottom: 1px solid #fff;
+    padding: 20px 0;
+}
+
+.header_top_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.homepage_box_logo {}
+.homepage_box_navbar{}
+
+.navbar{
+    display: flex;
+}
+.navbar_nav{
+    display: flex;
+    justify-content: flex-end;
+}
+.nav_item{
+    padding: 0 20px;
+}
+.nav_link{
+
+}
