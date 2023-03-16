@@ -13,6 +13,13 @@ const Languages = {
     },
     errorMsg: {
         noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',
+    },
+    menu: {
+        services: 'Dịch vụ',
+        customerCare: 'Chăm sóc khách hàng',
+        myPage: 'Trang của tôi',
+        login: 'Đăng nhập',
+        register: 'Đăng kí'
     }
 };
 

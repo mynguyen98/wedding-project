@@ -1,0 +1,60 @@
+.redButton {
+    background-color: var(--red-color-1)
+}
+
+.pinkButton {
+    background-color: var(--pink-color-1)
+}
+
+.blueButton {
+    background-color: var(--color-green)
+}
+
+.grayButton {
+    background-color: var(--gray-color-1)
+}
+
+.white {
+    color: var(--white-color);
+}
+
+.red {
+    color: var(--red-color-1);
+}
+
+.black {
+    color: var(--black-color);
+}
+
+.light_gray {
+    color: var();
+}
+
+.text {
+    font-family: var(--bs-body-font-family-SanFranciscoText-Medium);
+    text-align: center;
+    font-size: 15px;
+    display: block;
+}
+
+.container {
+    border-radius: 5px;
+    border: unset;
+    padding: 10px 0;
+}
+
+.buttonHover {
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.buttonHover:hover {
+    box-shadow: 0 0 10px 0 var(--pink-color-1);
+    background: var(--white-color);
+}
+
+.buttonHover:hover span {
+    color: var(--red-color-1);
+}
