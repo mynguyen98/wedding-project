@@ -22,14 +22,14 @@ export const Button = ({
     let containerStyle = styles.pinkButton
 
     switch (buttonStyle) {
-      case BUTTON_STYLES.RED:
-        containerStyle = styles.redButton
-        break
       case BUTTON_STYLES.PINK:
         containerStyle = styles.pinkButton
         break
-      case BUTTON_STYLES.GRAY:
-        containerStyle = styles.grayButton
+
+      case BUTTON_STYLES.WHITE:
+        containerStyle = styles.whiteButton
+        break
+
       default:
         containerStyle = styles.grayButton
         break
@@ -42,17 +42,14 @@ export const Button = ({
     let color
 
     switch (buttonStyle) {
-      case BUTTON_STYLES.RED:
+      case BUTTON_STYLES.PINK:
         color = styles.white
         break
-      case BUTTON_STYLES.PINK:
-        color = styles.red
-        break
       case BUTTON_STYLES.WHITE:
-        color = styles.black
+        color = styles.white
         break
       default:
-        color = styles.light_gray
+        color = styles.black
         break
     }
     return textColor || color
@@ -61,7 +58,7 @@ export const Button = ({
   const getTextStyle = useMemo(() => {
     const color = getTextColor
 
-    return `${styles.text} ${color}`
+    return `${styles.text} ${styles.padding} ${color}`
   }, [getTextColor])
 
   return (
