@@ -2,11 +2,11 @@ import React from 'react'
 import phoneMain from '../../../assets/home-image/phone-main.svg'
 import phoneSecond from '../../../assets/home-image/phone-second.svg'
 
-const InforPhone = ({ title, name, phoneNumber, phoneColor }) => {
+const InforPhone = ({ title, name, phoneNumber, phoneColor, nameSizeLg }) => {
   return (
-    <div className='text-center px-8'>
+    <div className='text-center '>
       <p>{title}</p>
-      <h2>{name}</h2>
+      <h2 className={`${nameSizeLg ? 'text-2xl' : 'text-base'}`}>{name}</h2>
       <div>
         <a href='tel:+84985145293' className='href-call text-center pb-3'>
           <div className='phone-container'>

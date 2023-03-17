@@ -22,15 +22,18 @@ Global Styles
   /* root letter page */
   --border-section-main: 1px solid rgba(145, 173, 163, 0.5);
   --border-section-1: 2px solid rgba(243, 135, 35, 0.1);
+  --orrange-color: rgba(243, 135, 35, 1);
+  --letter-main-color: rgba(145, 173, 163, 1);
+
   /* root home page */
-  --pink-color-1: #EA4C89;
+  --pink-color-1: #ea4c89;
   --black-color: #000;
   --white-color: #fff;
   --quick-sand-font-family: 'Quicksand', sans-serif;
   --lateef-font-family: 'Lateef', serif;
   --wind-song-font-family: 'WindSong', cursive;
   --font-size: 60px;
-  --font-size-default: 16px
+  --font-size-default: 16px;
 }
 
 *,
@@ -359,11 +362,11 @@ p {
 }
 /* MODAL COMPONENT */
 .modal {
-  /* width: 100vw;
-  height: 100vh;
-  visibility: hidden;
-  opacity: 0.5; */
   position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 5;
   visibility: hidden;
   width: 100vh;
@@ -389,17 +392,23 @@ p {
   align-items: center;
   justify-content: center;
 
-  width: 100vw;
+  /* width: 100vw; */
   position: relative;
+  height: 100vh;
 }
 .modal-content {
-  width: 100%;
+  width: 80%;
+
   background-color: white;
   z-index: 5;
-  /* border-radius: 16px; */
   position: relative;
   margin: auto;
-  top: 0;
+  transform: all 2s linear;
+}
+.modal-mw {
+  max-width: 560px;
+  /* position: relative; */
+  margin: auto !important;
 }
 .close-modal-icon {
   position: absolute;
@@ -407,8 +416,11 @@ p {
   right: 0.25rem;
   z-index: 10;
   width: 2.4rem;
+  cursor: pointer;
 }
-
+.close-modal-icon svg {
+  filter: brightness(0);
+}
 .index-image {
   position: absolute;
   top: 4px;

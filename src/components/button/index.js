@@ -13,6 +13,7 @@ export const Button = ({
   tag,
   buttonStyle,
   width,
+  rounded,
 }) => {
   const _onPress = useCallback(() => {
     onPress?.(tag || label)
@@ -29,7 +30,18 @@ export const Button = ({
       case BUTTON_STYLES.WHITE:
         containerStyle = styles.whiteButton
         break
-
+      case BUTTON_STYLES.ORANGE:
+        containerStyle = styles.orangeButton
+        break
+      case BUTTON_STYLES.LIGHT_BLUE:
+        containerStyle = styles.lightBlueButton
+        break
+      case BUTTON_STYLES.BORDER_LIGHT_BLUE:
+        containerStyle = styles.borderLightBlueButton
+        break
+      case BUTTON_STYLES.BORDER_PINK:
+        containerStyle = styles.borderPink
+        break
       default:
         containerStyle = styles.grayButton
         break
@@ -48,6 +60,9 @@ export const Button = ({
       case BUTTON_STYLES.WHITE:
         color = styles.white
         break
+      case BUTTON_STYLES.BORDER_PINK:
+        color = styles.textPink
+        break
       default:
         color = styles.black
         break
@@ -64,7 +79,7 @@ export const Button = ({
   return (
     <button
       disabled={isLoading || disabled}
-      className={getContainerStyle}
+      className={`${getContainerStyle} ${rounded ? styles.borderFull : ''}`}
       style={{ width: width + '%' }}
       onClick={_onPress}
     >

@@ -1,59 +1,80 @@
 .container {
-    border-radius: 5px;
-    padding: 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  border-radius: 5px;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .pinkButton {
-    background-color: var(--pink-color-1)
+  background-color: var(--pink-color-1);
 }
 
 .whiteButton {
-    border: 1px solid var(--white-color);
-    background: transparent;
+  border: 1px solid var(--white-color);
+  background: transparent;
 }
 
 .grayButton {
-    background-color: var(--gray-color-1)
+  background-color: var(--gray-color-1);
 }
 
 .white {
-    color: var(--white-color);
+  color: var(--white-color);
 }
 
 .black {
-    color: var(--black-color);
+  color: var(--black-color);
 }
 
 .light_gray {
-    color: var();
+  color: var();
 }
 
 .text {
-    font-family: var(--quick-sand-font-family);
-    text-align: center;
-    font-size: 15px;
-    display: block;
+  font-family: var(--quick-sand-font-family);
+  text-align: center;
+  font-size: 15px;
+  display: block;
 }
 
 .padding {
-    padding-left: 5px;
+  padding-left: 5px;
 }
 
 .buttonHover {
-    overflow: hidden;
-    position: relative;
-    -webkit-transition: all .15s ease-in-out;
-    transition: all .15s ease-in-out;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 
 .buttonHover:hover {
-    box-shadow: 0 0 10px 0 var(--pink-color-1);
-    background: var(--white-color);
+  box-shadow: 0 0 10px 0 var(--pink-color-1);
+  background: var(--white-color);
 }
 
 .buttonHover:hover span {
-    color: var(--red-color-1);
+  color: var(--red-color-1);
+}
+.borderPink {
+  border: 1px solid var(--pink-color-1);
+}
+.textPink {
+  color: var(--pink-color-1);
+}
+.orangeButton {
+  background-color: var(--orrange-color);
+}
+.lightBlueButton {
+  background-color: var(--letter-main-color);
+}
+.borderLightBlueButton {
+  border: 1px solid var(--letter-main-color);
+}
+.borderLightBlueButton span {
+  color: var(--letter-main-color);
+}
+.borderFull {
+  border-radius: 32px;
 }
