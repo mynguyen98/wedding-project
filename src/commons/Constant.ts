@@ -34,9 +34,12 @@ export const Alias = {
 };
 
 export enum BUTTON_STYLES {
-  RED = 'RED',
   PINK = 'PINK',
-  GRAY = 'GRAY',
-  BLUE = 'BLUE',
   WHITE = 'WHITE'
+}
+
+export enum BACKGROUND_STYLES {
+  PINK = 'PINK',
+  WHITE = 'WHITE',
+  YELLOWS = 'YELLOWS'
 }

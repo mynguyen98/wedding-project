@@ -23,6 +23,14 @@ Global Styles
   --border-section-main: 1px solid rgba(145, 173, 163, 0.5);
   --border-section-1: 2px solid rgba(243, 135, 35, 0.1);
   /* root home page */
+  --pink-color-1: #EA4C89;
+  --black-color: #000;
+  --white-color: #fff;
+  --quick-sand-font-family: 'Quicksand', sans-serif;
+  --lateef-font-family: 'Lateef', serif;
+  --wind-song-font-family: 'WindSong', cursive;
+  --font-size: 60px;
+  --font-size-default: 16px
 }
 
 *,
@@ -44,6 +52,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Playfair Display', serif;
   color: rgba(88, 88, 88, 1);
+  font-size: var(--font-size-default);
 }
 
 code {

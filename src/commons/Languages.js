@@ -11,6 +11,10 @@ const Languages = {
         or: 'Hoặc',
         continue: 'Tiếp tục',
     },
+    buttonText:{
+        createTC: 'Tạo thiệp cưới',
+        anyMore: 'Tìm hiểu thêm'
+    },
     errorMsg: {
         noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',
     },
@@ -20,6 +24,9 @@ const Languages = {
         myPage: 'Trang của tôi',
         login: 'Đăng nhập',
         register: 'Đăng kí'
+    },
+    text: {
+        textBanner: 'Chia sẻ khoảnh khắc đặc biệt trong cuộc sống!'
     }
 };
 

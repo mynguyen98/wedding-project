@@ -18,17 +18,43 @@
 
 .homepage_box_logo {}
 .homepage_box_navbar{}
-
+.styleImageLogo{
+    width: 100%;
+    max-width: 190px;
+}
 .navbar{
     display: flex;
 }
 .navbar_nav{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 .nav_item{
     padding: 0 20px;
 }
 .nav_link{
-
+    font-family: var( --quick-sand-font-family);
+    color: var(--white-color);
+}
+.headerTextCenter{
+    text-align: center;
+    display: grid;
+    padding: 150px 0;
+    grid-template-columns: none;
+    grid-gap: 40px 40px;
+}
+.textStyleFormat{
+    color: var(--white-color);
+    font-size: 60px;
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+.buttonBottom_box{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    max-width: 350px;
+    justify-content: space-between;
 }
