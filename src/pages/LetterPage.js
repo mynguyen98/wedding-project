@@ -14,6 +14,7 @@ import YoutubeVideo from '../components/letter-page/YoutubeVideo'
 import Snowfall from 'react-snowfall'
 import snowImage from '../assets/home-image/snow.png'
 import NavButton from '../components/letter-page/sub-comp/NavButton'
+import Message from '@/components/letter-page/Message'
 const LetterPage = () => {
   const snowImg = document.createElement('img')
   snowImg.src = snowImage
@@ -66,6 +67,7 @@ const LetterPage = () => {
         <TimeLocation />
         <Schedule />
         <Congrats setModalContent={setModalContent} setIsOpen={setIsOpen} />
+        <Message />
         <Footer />
       </div>
     </div>

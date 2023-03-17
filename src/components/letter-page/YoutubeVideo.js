@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react'
 import TitleSection from './sub-comp/TitleSection'
 import YouTube from 'react-youtube'
 import { useDispatch, useSelector } from 'react-redux'
-import { setIsAudioPlay } from '../../features/music-vid-reducer'
+import { setIsAudioPlay } from '../../features/letter-page/music-vid-reducer'
+import LazyLoad from 'react-lazy-load'
 
 const YoutubeVideo = () => {
   const dispatch = useDispatch()
@@ -25,12 +26,14 @@ const YoutubeVideo = () => {
     <div className='py-10 px-3 section-mb layout-mw'>
       <TitleSection title='VIDEO' />
       <div className='pt-5  pb-3'>
-        <YouTube
-          videoId='GhQxrCrVSyw'
-          opts={{ width: '100%', height: '325' }}
-          onPlay={onPlay}
-          onPause={onPause}
-        />
+        <LazyLoad height={325} offset={300}>
+          <YouTube
+            videoId='GhQxrCrVSyw'
+            opts={{ width: '100%', height: '325' }}
+            onPlay={onPlay}
+            onPause={onPause}
+          />
+        </LazyLoad>
       </div>
     </div>
   )

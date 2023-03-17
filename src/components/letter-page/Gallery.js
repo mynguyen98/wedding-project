@@ -9,11 +9,11 @@ const Gallery = ({ setModalContent, setIsOpen, setIndex }) => {
       <div>
         <div
           className='gallery-image mb-3'
-          onClick={() => {
-            setIsOpen(true)
-            setModalContent(<CarouselGallery index={0} setIndex={setIndex} />)
-            setIndex(0)
-          }}
+          // onClick={() => {
+          //   setIsOpen(true)
+          //   setModalContent(<CarouselGallery index={0} setIndex={setIndex} />)
+          //   setIndex(0)
+          // }}
         >
           <img src={galleryImage[0].imageUrl} alt='image gallery' />
         </div>
@@ -24,11 +24,11 @@ const Gallery = ({ setModalContent, setIsOpen, setIndex }) => {
               <li
                 key={index}
                 className='gallery-img'
-                onClick={() => {
-                  setIsOpen(true)
-                  setModalContent(<CarouselGallery index={index} />)
-                  setIndex(index)
-                }}
+                // onClick={() => {
+                //   setIsOpen(true)
+                //   setModalContent(<CarouselGallery index={index} />)
+                //   setIndex(index)
+                // }}
               >
                 <div>
                   <img src={image.imageUrl} alt='image gallery' />

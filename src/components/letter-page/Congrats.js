@@ -1,70 +1,98 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import TitleSection from './sub-comp/TitleSection'
 import TitleDescribe from './sub-comp/TitleDescribe'
 import phoneMain from '../../assets/home-image/phone-main.svg'
 import phoneSecond from '../../assets/home-image/phone-second.svg'
+import InforPhone from './sub-comp/InforPhone'
+import Popup from '../modal/Popup'
+import Languages from '@/commons/Languages'
+import BankInfo from './sub-comp/BankInfo'
+import { Button } from '../button'
+import { BUTTON_STYLES } from '@/commons/Constant.ts'
 const Congrats = ({ setModalContent, setIsOpen }) => {
+  const modalRef = useRef()
+  const handleShowModal = () => {
+    modalRef.current.showModal()
+  }
   return (
-    <div className='py-10 section-mb layout-mw' id='congrat'>
+    <div
+      className='py-10 section-mb layout-mw border-section-main'
+      id='congrat'
+    >
       <TitleSection title='CHÚC PHÚC' />
-      <div className='flex justify-center'>
-        <div className='text-center px-8'>
-          <h2>Việt Anh</h2>
-          <div>
-            <a href='tel:+84985145293' className='href-call text-center pb-3'>
-              <div className='phone-container'>
-                <img src={phoneMain} alt='phone chu rể' className='href-icon' />
-                0833 291 969
-              </div>
-            </a>
-            {/* <button
-              className='btn-congrat-main bg-main px-3 py-1'
-              onClick={() => {
-                setIsOpen(true)
-                setModalContent(ModalContentCongrat)
-              }}
-            >
-              Chúc phúc chú rể
-            </button> */}
-          </div>
-        </div>
-        <div className='text-center px-8'>
-          <h2>Phương Anh</h2>
-          <div>
-            <a href='tel:+84985145293' className='href-call text-center pb-3'>
-              <div className='phone-container'>
-                <img
-                  src={phoneSecond}
-                  alt='phone chu rể'
-                  className='href-icon'
-                />
-                0917 692 888
-              </div>
-            </a>
-            {/* <button className='btn-congrat-main bg-second px-3 py-1'>
-              Chúc phúc cô dâu
-            </button> */}
-          </div>
-        </div>
+      <div className='flex justify-around'>
+        <InforPhone
+          title='Chú rể'
+          name='Việt Anh'
+          phoneNumber='0985 145 293'
+          phoneColor='main'
+          nameSizeLg={true}
+        />
+        <InforPhone
+          title='Chú rể'
+          name='Phương Anh'
+          phoneNumber='0985 145 293'
+          nameSizeLg={true}
+        />
       </div>
-      <div className='pt-8'>
-        <TitleDescribe title='Đại diện gia đình' />
-        <div className='flex justify-center'>
-          <div className='text-center px-8'>
-            <h2 className='text-main'>Nhà trai</h2>
-            <p>Nguyễn Duy Đông</p>
-            <p>Trần Thị Tuyết</p>
-          </div>
-          <div className='text-center px-8'>
-            <h2 className='text-second'>Nhà Gái</h2>
-            <p>Thạch Quốc Trường</p>
-            <p>Nguyễn Thị Thuỷ</p>
-          </div>
-        </div>
+      <div className='flex justify-around'>
+        <InforPhone
+          title='Bố'
+          name='Ông. Nguyễn Duy Đông'
+          phoneNumber='0985 145 293'
+          phoneColor='main'
+        />
+        <InforPhone
+          title='Bố'
+          name='Ông. Nguyễn Cảnh Mỹ'
+          phoneNumber='0985 145 293'
+        />
       </div>
-      <h3 className='pt-4 text-center'>Rất hân hạnh được đón tiếp!</h3>
+      <div className='flex justify-around'>
+        <InforPhone
+          title='Mẹ'
+          name='Bà. Trần Thị Tuyết'
+          phoneNumber='0985 145 293'
+          phoneColor='main'
+        />
+        <InforPhone
+          title='Mẹ'
+          name='Bà. Nguyễn Thị Thủy'
+          phoneNumber='0985 145 293'
+        />
+      </div>
+      <div className='flex justify-around items-center py-4'>
+        <Button
+          buttonStyle={BUTTON_STYLES.LIGHT_BLUE}
+          label='Gửi chúc phúc'
+          rounded={true}
+          onPress={() => {
+            console.log('show modal')
+            handleShowModal()
+          }}
+        />
+        <Button
+          buttonStyle={BUTTON_STYLES.ORANGE}
+          label='Gửi chúc phúc'
+          rounded={true}
+        />
+      </div>
+
+      <h3 className='pt-4 text-center '>Rất hân hạnh được đón tiếp!</h3>
+      <Popup
+        ref={modalRef}
+        btnCancelText={Languages.common.cancel}
+        btnSubmitText={Languages.common.delete}
+        content={<BankInfo />}
+      />
     </div>
   )
 }
 
 export default Congrats
+// <button onClick={() => handleShowModal()}>click</button>
+// <Popup
+//   ref={modalRef}
+//   btnCancelText={Languages.common.cancel}
+//   btnSubmitText={Languages.common.delete}
+// />

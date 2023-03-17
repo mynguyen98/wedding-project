@@ -1,4 +1,5 @@
 const Languages = {
+
     common: {
         cancel: 'Hủy',
         OK: 'Chọn',
@@ -46,4 +47,5 @@ const Languages = {
     }
 };
 
-export default Languages;
+
+export default Languages

@@ -30,12 +30,16 @@ export enum Convert {
 }
 
 export const Alias = {
-  letterPage: '/letterPage'
-};
+  letterPage: '/letterPage',
+}
 
 export enum BUTTON_STYLES {
   PINK = 'PINK',
-  WHITE = 'WHITE'
+  WHITE = 'WHITE',
+  ORRANGE = 'ORRANGE',
+  LIGHT_BLUE = 'LIGHT_BLUE',
+  BORDER_LIGHT_BLUE = 'BORDER_LIGHT_BLUE',
+  BORDER_PINK = 'BORDER_PINK',
 }
 
 export enum BACKGROUND_STYLES {
@@ -44,3 +48,4 @@ export enum BACKGROUND_STYLES {
   YELLOWS = 'YELLOWS',
   GREEN = 'GREEN'
 }
+

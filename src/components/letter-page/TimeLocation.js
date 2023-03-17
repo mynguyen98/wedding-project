@@ -7,6 +7,7 @@ import mapIcon from '../../assets/home-image/map-icon.png'
 import background from '../../assets/home-image/time-schedule-bg.png'
 import Calendar from './sub-comp/Calendar'
 import CountDown from './sub-comp/Countdown'
+import LazyLoad from 'react-lazy-load'
 const TimeLocation = () => {
   const address = `378 Minh Khai, Hai Bà Trưng, Hà Nội`
   const src = `https://maps.google.com/maps?&q="+${address}"&output=embed`
@@ -46,24 +47,30 @@ const TimeLocation = () => {
         </h2>
         <CountDown />
         <h2 className='pb-6 border-section-1'>Ngày</h2>
-        <div className='flex justify-center items-center pb-5'>
+        <h2 className='text-second'>Địa chỉ</h2>
+        <p className='margin-auto pb-6 border-section-1 max-w-xs'>
+          Khách sạn Petro Thái Bình Số 458 Lý Bôn, P. Đề Thám, TP. Thái Bình
+        </p>
+        {/* <div className='flex justify-center items-center pb-5'>
           <MapIcon />
           <h2 className='pl-2 m-0 pb-0 ' style={{ color: 'black' }}>
             Tầng 2, Khách sạn Petro{' '}
           </h2>
         </div>
-        <p className='pb-2'>Số 458 Lý Bôn, P. Đề Thám, TP. Thái Bình</p>
+        <p className='pb-2'>Số 458 Lý Bôn, P. Đề Thám, TP. Thái Bình</p> */}
       </div>
       <div>
-        <iframe
-          src={src}
-          width='100%'
-          height='350'
-          style={{ border: '0' }}
-          allowFullScreen=''
-          loading='lazy'
-          referrerPolicy='no-referrer-when-downgrade'
-        ></iframe>
+        <LazyLoad height={325} offset={200}>
+          <iframe
+            src={src}
+            width='100%'
+            height='350'
+            style={{ border: '0' }}
+            allowFullScreen=''
+            loading='lazy'
+            referrerPolicy='no-referrer-when-downgrade'
+          ></iframe>
+        </LazyLoad>
       </div>
       <div className='flex justify-center pt-6'>
         <button className='btn-map'>

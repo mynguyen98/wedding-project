@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import musicVid from './features/music-vid-reducer'
+import musicVid from './features/letter-page/music-vid-reducer'
 export const store = configureStore({
   reducer: {
     musicVid: musicVid,

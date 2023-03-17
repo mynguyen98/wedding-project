@@ -20,9 +20,13 @@ Global Styles
 
 :root {
   /* root letter page */
+  --border-section-main: 1px solid rgba(145, 173, 163, 0.5);
   --border-section-1: 2px solid rgba(243, 135, 35, 0.1);
+  --orrange-color: rgba(243, 135, 35, 1);
+  --letter-main-color: rgba(145, 173, 163, 1);
+
   /* root home page */
-  --pink-color-1: #EA4C89;
+  --pink-color-1: #ea4c89;
   --black-color: #000;
   --white-color: #fff;
   --gray-color: #C1C1C1;
@@ -35,10 +39,13 @@ Global Styles
   --wind-song-font-family: 'WindSong', cursive;
   --font-size: 60px;
   --font-size-default: 16px;
+
+
   --red-color-mess-err: #ff0000;
   --bg-yellows-color: #fde9d7;
   --green-opacity-bg: #f1ede1;
   --bg-bold-green: #09102a
+
 }
 
 *,
@@ -180,6 +187,10 @@ p {
   border-bottom: var(--border-section-1);
 }
 
+.border-section-main {
+  border-bottom: var(--border-section-main);
+}
+
 .margin-auto {
   margin: auto;
 }
@@ -304,7 +315,7 @@ p {
   color: #748a82;
 }
 
-.active {
+.active-date {
   background-color: rgba(243, 135, 35, 1);
   color: white;
   border-radius: 50%;
@@ -414,11 +425,11 @@ p {
 
 /* MODAL COMPONENT */
 .modal {
-  /* width: 100vw;
-  height: 100vh;
-  visibility: hidden;
-  opacity: 0.5; */
   position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 5;
   visibility: hidden;
   width: 100vh;
@@ -428,6 +439,7 @@ p {
   visibility: visible;
   transform: all 2s linear;
   opacity: 1;
+  top: 0;
 }
 
 .modal-container {
@@ -445,19 +457,25 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
+
+  /* width: 100vw; */
   position: relative;
+  height: 100vh;
 }
 
 .modal-content {
-  width: 100%;
-  height: 100vh;
+  width: 80%;
+
   background-color: white;
   z-index: 5;
-  /* border-radius: 16px; */
   position: relative;
   margin: auto;
+  transform: all 2s linear;
+}
+.modal-mw {
+  max-width: 560px;
+  /* position: relative; */
+  margin: auto !important;
 }
 
 .close-modal-icon {
@@ -466,8 +484,11 @@ p {
   right: 0.25rem;
   z-index: 10;
   width: 2.4rem;
+  cursor: pointer;
 }
-
+.close-modal-icon svg {
+  filter: brightness(0);
+}
 .index-image {
   position: absolute;
   top: 4px;

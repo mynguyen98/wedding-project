@@ -54,7 +54,7 @@ const Calendar = () => {
               thisYear === todayObj.year()
                 ? ' day-cell--today'
                 : ''
-            } ${i + 1 === date ? 'active' : ''}`}
+            } ${i + 1 === date ? 'active-date' : ''}`}
             key={i}
           >
             {i + 1}
