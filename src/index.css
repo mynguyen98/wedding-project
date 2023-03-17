@@ -660,13 +660,35 @@ p {
 .slide-track .slide-item {
   flex-grow: 1;
   flex-shrink: 0;
-  max-width: 25%;
+  max-width: 23.5%;
   width: 100%;
   margin-bottom: 20px;
 }
 
-.slide-track .slide-item .box-image{
+.slide-track .slide-item .box-image {
   background: var(--white-color);
+}
+
+.slide-track .slide-item .box-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.slide-track .slide-item .title span {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--pink-color-1);
+  font-family: var(--quick-sand-font-family);
+}
+.slide-track .slide-item .title{
+  margin: 10px 0;
+}
+.slide-track .slide-item .title h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--text-color-head);
 }
 
 .bottom-button-click {
