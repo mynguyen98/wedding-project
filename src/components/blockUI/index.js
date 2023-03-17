@@ -1,9 +1,10 @@
 import React, { useCallback, useMemo } from 'react';
 import styles from './blockUI.module.css'
-import { BUTTON_STYLES } from '../../commons/Constant.ts';
 import { Button } from '../button';
+import { BACKGROUND_STYLES } from '@/commons/Constant.ts';
 
 function BlockUI({
+    containerCustormStyle,
     backgroundColor,
     isLeft,
     isright,
@@ -15,6 +16,8 @@ function BlockUI({
     styleImg,
     title,
     label,
+    styleBoxText,
+    isLowerCase,
     children
 }) {
 
@@ -28,35 +31,35 @@ function BlockUI({
 
         switch (backgroundColor) {
 
-            case BUTTON_STYLES.YELLOWS:
-                containerStyle = styles.yellowsButton;
+            case BACKGROUND_STYLES.YELLOWS:
+                containerStyle = styles.yellowsBg;
                 break;
 
-            case BUTTON_STYLES.WHITE:
-                containerStyle = styles.whiteButton;
+            case BACKGROUND_STYLES.GREEN:
+                containerStyle = styles.greenBg;
                 break;
 
             default:
-                containerStyle = styles.greenButton;
+                containerStyle = styles.whiteBg;
                 break;
         }
 
-        return `${styles.container} ${containerStyle}`;
-    }, [buttonStyle]);
+        return `${styles.container} ${containerStyle} ${containerCustormStyle}`;
+    }, [backgroundColor]);
 
     return (
         <div className={getContainerStyle}>
 
             <div className='container mx-auto'>
 
-                <div className='grid grid-cols-2 gap-4'>
+                <div className='md:grid md:grid-cols-2 md:gap-4'>
                     {
                         isLeft && <div className={styles.blockUIimage}>
                             <img src={img} className={styleImg} alt={title} />
                         </div>
                     }
-                    <div>
-                        <div className={styles.blockUIText}>
+                    <div className={styles.blockUIText}>
+                        <div className={`${styles.wrapper_content} ${ styleBoxText ? styleBoxText : ''}`}>
                             <h2 className={styles.blockUIhead}>
                                 {title}
                             </h2>
@@ -69,8 +72,10 @@ function BlockUI({
                                     buttonStyle={buttonStyle}
                                     width={width}
                                     onPress={_onPress}
+                                    isLowerCase={isLowerCase}
                                 />
                             }
+                            <div />
                         </div>
                     </div>
                     {

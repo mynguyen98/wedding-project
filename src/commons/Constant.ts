@@ -41,5 +41,6 @@ export enum BUTTON_STYLES {
 export enum BACKGROUND_STYLES {
   PINK = 'PINK',
   WHITE = 'WHITE',
-  YELLOWS = 'YELLOWS'
+  YELLOWS = 'YELLOWS',
+  GREEN = 'GREEN'
 }
