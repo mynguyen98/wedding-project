@@ -1,14 +1,15 @@
 import React from 'react'
-import MenuBar from '../../components/navbar'
-import Iclogo from '../../assets/home-image/IcLogo.svg'
+import MenuBar from '@/components/navbar'
+import Iclogo from '@/assets/home-image/IcLogo.svg'
 import styles from './HomePage.module.css';
 import { Link } from 'react-router-dom';
-import Languages from '../../commons/Languages';
-import { Button } from '../../components/button';
+import Languages from '@/commons/Languages';
+import { Button } from '@/components/button';
 
-import BlockUI from '../../components/blockUI';
+import BlockUI from '@/components/blockUI';
 
-import { BUTTON_STYLES } from '../../commons/Constant';
+import { BUTTON_STYLES } from '@/commons/Constant.ts';
+
 
 const Homepage = () => {
 
