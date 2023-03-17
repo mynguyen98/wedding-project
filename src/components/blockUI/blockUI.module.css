@@ -1,0 +1,43 @@
+.container{
+    padding: 40px 0;
+}
+.blockUIimage{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blockUIimage img{
+    flex: 1 1;
+    max-width: 600px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.blockUIText{
+    display: flex;
+    align-items: center;
+}
+.wrapper_content{
+    flex: 2 1;
+}
+.blockUIhead{
+    font-size: 45px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    color: var(--text-color-head);
+    letter-spacing: 0;
+}
+.blockUIContent{
+    color: var(--text-color-darkmode);
+    font-size: 19px;
+    font-family: var(--quick-sand-font-family);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.yellowsBg{
+    background-color: var(--bg-yellows-color)
+}
+.greenBg{
+    background-color: var(--green-opacity-bg);
+}

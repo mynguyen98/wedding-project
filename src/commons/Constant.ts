@@ -46,4 +46,6 @@ export enum BACKGROUND_STYLES {
   PINK = 'PINK',
   WHITE = 'WHITE',
   YELLOWS = 'YELLOWS',
+  GREEN = 'GREEN'
 }
+

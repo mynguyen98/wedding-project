@@ -10,6 +10,7 @@ export const Button = ({
   textColor,
   isLowerCase,
   leftIcon,
+  rightIcon,
   tag,
   buttonStyle,
   width,
@@ -87,6 +88,7 @@ export const Button = ({
       <span className={getTextStyle}>
         {isLowerCase ? label : `${label} `.toUpperCase()}
       </span>
+      {rightIcon}
     </button>
   )
 }
