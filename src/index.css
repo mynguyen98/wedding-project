@@ -24,28 +24,29 @@ Global Styles
   --border-section-1: 2px solid rgba(243, 135, 35, 0.1);
   --orrange-color: rgba(243, 135, 35, 1);
   --letter-main-color: rgba(145, 173, 163, 1);
+  --gray-item-color: 1px solid #c6c6c6;
 
   /* root home page */
   --pink-color-1: #ea4c89;
   --black-color: #000;
   --white-color: #fff;
-  --gray-color: #C1C1C1;
-  --gray-color-2: #E2E8F0;
-  --gray-color-3: #94A3B8;
-  --text-color-head: #0F172A;
+  --gray-color: #c1c1c1;
+  --gray-color-2: #e2e8f0;
+  --gray-color-3: #94a3b8;
+  --text-color-head: #0f172a;
   --text-color-darkmode: #131825;
-  --quick-sand-font-family: 'Quicksand', sans-serif;
-  --lateef-font-family: 'Lateef', serif;
-  --wind-song-font-family: 'WindSong', cursive;
+  --quick-sand-font-family: "Quicksand", sans-serif;
+  --lateef-font-family: "Lateef", serif;
+  --wind-song-font-family: "WindSong", cursive;
   --font-size: 60px;
   --font-size-default: 16px;
   --red-color-mess-err: #ff0000;
   --bg-yellows-color: #fde9d7;
   --green-opacity-bg: #f1ede1;
   --bg-bold-green: #09102a;
-  --gray-input-color: #7C7C7C;
-  --gray-Dark-Dark-Mode-50: #5F626B;
-  --primary-Blue-color-400: #3460DC
+  --gray-input-color: #7c7c7c;
+  --gray-Dark-Dark-Mode-50: #5f626b;
+  --primary-Blue-color-400: #3460dc;
 }
 
 *,
@@ -62,12 +63,12 @@ html {
 
 body {
   margin: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: rgba(88, 88, 88, 1);
   font-size: var(--font-size-default);
 }
@@ -84,13 +85,13 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.app {}
+.app {
+}
 
 .section-mb {
   /* max-width: 560px;
@@ -98,15 +99,15 @@ code {
 }
 
 .lateef {
-  font-family: 'Lateef', serif;
+  font-family: "Lateef", serif;
 }
 
 .wind-song {
-  font-family: 'WindSong', cursive;
+  font-family: "WindSong", cursive;
 }
 
 .quick-sand {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 ul {
@@ -207,7 +208,12 @@ p {
 .margin-auto {
   margin: auto;
 }
-
+.border-gray-item-color {
+  border: var(--gray-item-color);
+}
+.bg-white {
+  background-color: white;
+}
 /* layout restructor */
 .letter-wrapper {
   background-color: black;
@@ -443,14 +449,15 @@ p {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 5;
+  z-index: 12;
   visibility: hidden;
-  width: 100vh;
+  width: 90vw;
+  animation: opacity 0.3s linear;
 }
 
 .modal.active {
   visibility: visible;
-  transform: all 2s linear;
+  transform: all 0.3s linear;
   opacity: 1;
   top: 0;
 }
@@ -477,15 +484,16 @@ p {
 }
 
 .modal-content {
-  width: 80%;
-
+  /* width: 350px; */
   background-color: white;
   z-index: 5;
   position: relative;
   margin: auto;
   transform: all 2s linear;
 }
-
+.modal-sm {
+  width: 350px;
+}
 .modal-mw {
   max-width: 560px;
   /* position: relative; */
@@ -768,7 +776,6 @@ p {
   line-height: 2;
 }
 
-
 .footer .component_ShowInf_Company .infomationDetails .contact_phone {
   display: flex;
   align-items: center;
@@ -856,7 +863,7 @@ p {
 }
 
 .otherLoginSocial .titleOrther::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -892,8 +899,12 @@ p {
 }
 
 .bg_form {
-  background: linear-gradient(to bottom,
-      rgb(173 77 95 / 22%), rgb(185 130 130 / 15%)), url('/src/assets/home-image/Bg_Banner.png');
+  background: linear-gradient(
+      to bottom,
+      rgb(173 77 95 / 22%),
+      rgb(185 130 130 / 15%)
+    ),
+    url("/src/assets/home-image/Bg_Banner.png");
   background-size: cover;
   background-position: center;
   padding: 100px 15px;
@@ -959,7 +970,6 @@ p {
   line-height: 150%;
   text-align: center;
   color: var(--black-color);
-
 }
 
 @media (min-width: 640px) {
@@ -993,18 +1003,19 @@ table .formatnotColor {
   font-size: 17px;
 }
 
-table .payment{
+table .payment {
   color: var(--red-color-mess-err);
 }
 
-table .complete{
+table .complete {
   color: var(--primary-Blue-color-400);
 }
 
-table .autodelete, table .onlydateplus{
+table .autodelete,
+table .onlydateplus {
   font-family: var(--quick-sand-font-family);
 }
-table .date{
+table .date {
   font-style: normal;
   font-weight: 600;
   font-family: var(--quick-sand-font-family);
