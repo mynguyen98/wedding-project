@@ -26,11 +26,11 @@ const Mypage = () => {
 
 
     return (
-        <div classNameName='mypage'>
+        <div className='mypage'>
             <Header background={'var(--white-color)'} colorText={'var(--text-color-darkmode)'} borderColor={'var(--gray-color-2)'} />
-            <div classNameName='wrapper_box_create'>
-                <div classNameName='container mx-auto'>
-                    <div classNameName='btn_box_create'>
+            <div className='wrapper_box_create'>
+                <div className='container mx-auto'>
+                    <div className='btn_box_create'>
                         <img src={Icpolygon} title='polygon' />
                         <h2>
                             {Languages.text.createaWeddingYourOwn}
