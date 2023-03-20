@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 15px;
 
 }
 .defaultButton{
@@ -17,6 +18,16 @@
 .whiteButton {
   border: 1px solid var(--white-color);
   background: transparent;
+}
+
+.darkmodeButton {
+  border: 1px solid var(--gray-Dark-Dark-Mode-50);
+  background: var(--gray-Dark-Dark-Mode-50);
+}
+
+.blueButton {
+  border: 1px solid var(--primary-Blue-color-400);
+  background: var(--primary-Blue-color-400);
 }
 
 .grayButton {
@@ -91,5 +102,5 @@
   border-radius: 32px;
 }
 .autocenter{
-  margin: auto;
+  margin: 15px auto;
 }

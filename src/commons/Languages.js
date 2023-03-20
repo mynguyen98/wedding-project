@@ -41,6 +41,7 @@ const Languages = {
         dowloadClient: 'Tải danh sách khách',
         checkGuest: 'Kiểm tra khách mời',
         delete: 'Xoá thiệp',
+        edit: 'Chỉnh sửa'
     },
     errorMsg: {
         noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',
@@ -72,7 +73,6 @@ const Languages = {
         seeTC:'Xem thiệp ',
         status: 'Trạng thái',
         date: 'Ngày cưới',
-        edit: 'Chỉnh sửa',
         manager: 'Quản lý',
         free: 'Miễn phí',
         autoDelete: '(Tự động xoá sau 24 ngày)',

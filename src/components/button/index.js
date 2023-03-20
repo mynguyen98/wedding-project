@@ -52,6 +52,14 @@ export const Button = ({
         containerStyle = styles.borderPink
         break
 
+      case BUTTON_STYLES.DARKMODE:
+        containerStyle = styles.darkmodeButton
+        break
+
+      case BUTTON_STYLES.BLUE:
+        containerStyle = styles.blueButton
+        break
+
       default:
         containerStyle = styles.defaultButton
         break

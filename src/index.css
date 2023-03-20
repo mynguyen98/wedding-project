@@ -44,6 +44,8 @@ Global Styles
   --green-opacity-bg: #f1ede1;
   --bg-bold-green: #09102a;
   --gray-input-color: #7C7C7C;
+  --gray-Dark-Dark-Mode-50: #5F626B;
+  --primary-Blue-color-400: #3460DC
 }
 
 *,
@@ -982,4 +984,30 @@ th {
   font-size: 18px;
   color: var(--black-color);
   text-transform: uppercase;
+}
+
+table .formatnotColor {
+  font-style: normal;
+  font-weight: 600;
+  font-family: var(--quick-sand-font-family);
+  font-size: 17px;
+}
+
+table .payment{
+  color: var(--red-color-mess-err);
+}
+
+table .complete{
+  color: var(--primary-Blue-color-400);
+}
+
+table .autodelete, table .onlydateplus{
+  font-family: var(--quick-sand-font-family);
+}
+table .date{
+  font-style: normal;
+  font-weight: 600;
+  font-family: var(--quick-sand-font-family);
+  font-size: 18px;
+  color: var(--black-color);
 }
