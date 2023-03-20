@@ -31,6 +31,10 @@ export enum Convert {
 
 export const Alias = {
   letterPage: '/letterPage',
+  login: '/login',
+  register: '/dang-ky',
+  pwdRecovery: '/khoi-phuc-mat-khau',
+  mypage: '/trang-cua-toi'
 }
 
 export enum BUTTON_STYLES {

@@ -13,17 +13,21 @@ export const Button = ({
   rightIcon,
   tag,
   buttonStyle,
+  textStyle,
   width,
   rounded,
+  autocenter
 }) => {
   const _onPress = useCallback(() => {
     onPress?.(tag || label)
   }, [label, onPress, tag])
 
   const getContainerStyle = useMemo(() => {
+
     let containerStyle = styles.pinkButton
 
     switch (buttonStyle) {
+
       case BUTTON_STYLES.PINK:
         containerStyle = styles.pinkButton
         break
@@ -31,20 +35,25 @@ export const Button = ({
       case BUTTON_STYLES.WHITE:
         containerStyle = styles.whiteButton
         break
-      case BUTTON_STYLES.ORANGE:
+
+      case BUTTON_STYLES.ORRANGE:
         containerStyle = styles.orangeButton
         break
+
       case BUTTON_STYLES.LIGHT_BLUE:
         containerStyle = styles.lightBlueButton
         break
+
       case BUTTON_STYLES.BORDER_LIGHT_BLUE:
         containerStyle = styles.borderLightBlueButton
         break
+
       case BUTTON_STYLES.BORDER_PINK:
         containerStyle = styles.borderPink
         break
+
       default:
-        containerStyle = styles.grayButton
+        containerStyle = styles.defaultButton
         break
     }
 
@@ -54,7 +63,7 @@ export const Button = ({
   const getTextColor = useMemo(() => {
     let color
 
-    switch (buttonStyle) {
+    switch (textStyle) {
       case BUTTON_STYLES.PINK:
         color = styles.white
         break
@@ -69,7 +78,7 @@ export const Button = ({
         break
     }
     return textColor || color
-  }, [buttonStyle, textColor])
+  }, [textStyle, textColor])
 
   const getTextStyle = useMemo(() => {
     const color = getTextColor
@@ -80,7 +89,7 @@ export const Button = ({
   return (
     <button
       disabled={isLoading || disabled}
-      className={`${getContainerStyle} ${rounded ? styles.borderFull : ''}`}
+      className={`${getContainerStyle}  ${rounded ? styles.borderFull : ''} ${autocenter && styles.autocenter}`}
       style={{ width: width + '%' }}
       onClick={_onPress}
     >

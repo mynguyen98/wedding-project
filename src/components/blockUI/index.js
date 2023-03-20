@@ -18,6 +18,7 @@ function BlockUI({
     label,
     styleBoxText,
     isLowerCase,
+    textStyleButton,
     children
 }) {
 
@@ -73,6 +74,7 @@ function BlockUI({
                                     width={width}
                                     onPress={_onPress}
                                     isLowerCase={isLowerCase}
+                                    textStyle={textStyleButton}
                                 />
                             }
                             <div />

@@ -48,6 +48,7 @@ function ChooseTypeBlock() {
                         label={Languages.buttonText.seeAll}
                         buttonStyle={BUTTON_STYLES.PINK}
                         isLowerCase
+                        textStyle={BUTTON_STYLES.PINK}
                     />
                 </div>
             </div>

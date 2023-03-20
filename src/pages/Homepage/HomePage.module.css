@@ -43,6 +43,9 @@
     font-family: var(--quick-sand-font-family);
     color: var(--white-color);
 }
+.nav_link:hover{
+    color: var(--pink-color-1) !important;
+}
 
 .headerTextCenter {
     text-align: center;

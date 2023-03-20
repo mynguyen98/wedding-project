@@ -5,12 +5,17 @@ import styles from '../pages/Homepage/HomePage.module.css'
 import { Button } from './button';
 import { BUTTON_STYLES } from '../commons/Constant.ts';
 import { FaUserAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { Alias } from '@/commons/Constant.ts';
 
-function MenuBar() {
+function MenuBar({colorText}) {
 
+  const navigate = useNavigate();
 
   const navigateLogin = () => {
-    console.log(1212)
+
+    navigate(Alias.login);
+
   }
 
 
@@ -23,13 +28,13 @@ function MenuBar() {
       <div className='navbar_collapse' id="navbarSupportedContent">
         <ul className={styles.navbar_nav}>
           <li className={styles.nav_item}>
-            <Link className={styles.nav_link} to="#">{Languages.menu.services} </Link>
+            <Link className={styles.nav_link} to="#" style={{color: colorText}}>{Languages.menu.services} </Link>
           </li>
           <li className={styles.nav_item}>
-            <Link className={styles.nav_link} to="#">{Languages.menu.customerCare}</Link>
+            <Link className={styles.nav_link} to="#" style={{color: colorText}}>{Languages.menu.customerCare}</Link>
           </li>
           <li className={styles.nav_item}>
-            <Link className={styles.nav_link} to="#">{Languages.menu.myPage}</Link>
+            <Link className={styles.nav_link} to={Alias.mypage} style={{color: colorText}}>{Languages.menu.myPage}</Link>
           </li>
           <li className={styles.nav_item}>
             <Button
@@ -37,7 +42,7 @@ function MenuBar() {
               onPress={navigateLogin}
               buttonStyle={BUTTON_STYLES.PINK}
               width={100}
-              getTextStyle={BUTTON_STYLES.WHITE}
+              textStyle={BUTTON_STYLES.PINK}
               leftIcon={<FaUserAlt style={{color: BUTTON_STYLES.WHITE}} />}
               isLowerCase
             />
