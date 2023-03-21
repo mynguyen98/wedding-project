@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LetterPage from './pages/LetterPage'
 import HomePage from './pages/Homepage/Homepage'

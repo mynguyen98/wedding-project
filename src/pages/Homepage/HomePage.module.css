@@ -191,9 +191,9 @@
         -moz-box-shadow: 0 2px 11px 1px rgba(168,168,168,0.54);
         box-shadow: 0 2px 11px 1px rgba(168,168,168,0.54);
         visibility: hidden;
-        -webkit-transition: all .35s ease;
-        -o-transition: all .35s ease;
-        transition: all .35s ease;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
         -webkit-transform: translateX(-280px);
         -ms-transform: translateX(-280px);
         -o-transform: translateX(-280px);
@@ -214,6 +214,9 @@
         -ms-transform: translateX(0);
         -o-transform: translateX(0);
         transform: translateX(0);
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
     }
     .styleImageLogoMB{
         display: block;
