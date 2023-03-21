@@ -127,7 +127,7 @@ const Mypage = () => {
                                             buttonStyle={BUTTON_STYLES.BLUE}
                                             textStyle={BUTTON_STYLES.PINK}
                                             autocenter
-                                            width={60} 
+                                            width={75} 
                                             isLowerCase
                                         />
 

@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import RecoveryPwd from './pages/RecoveryPwd'
 import Mypage from './pages/MyPage'
+import Notfound from './pages/Notfound'
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
           <Route path={Alias.register} element={<Register />} />
           <Route path={Alias.pwdRecovery} element={<RecoveryPwd />} />
           <Route path={Alias.mypage} element={<Mypage />} />
+          <Route path="*" element={<Notfound />} />
         </Routes>
       </BrowserRouter>
     </div>

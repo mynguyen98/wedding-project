@@ -1,14 +1,17 @@
 import Languages from '../commons/Languages';
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../pages/Homepage/HomePage.module.css'
 import { Button } from './button';
 import { BUTTON_STYLES } from '../commons/Constant.ts';
-import { FaUserAlt } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { FaOutdent, FaTimes, FaUserAlt } from "react-icons/fa";
+import { useNavigate, NavLink } from "react-router-dom";
 import { Alias } from '@/commons/Constant.ts';
+import IcLogoBlack from '@/assets/home-image/IcLogoBlack.svg'
 
-function MenuBar({colorText}) {
+function MenuBar({ colorText }) {
+
+  const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -18,24 +21,63 @@ function MenuBar({colorText}) {
 
   }
 
+  const _onOpenMenu = useCallback(() => {
+    setOpen(!open)
+  }, [open])
+
+  const isactive = useCallback(({ isPending, isActive }) => {
+    return isPending ? styles.pending : isActive ? styles.active : ""
+  }, [])
+
+
 
   return (
     <nav className={styles.navbar}>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
+
+      <button onClick={_onOpenMenu} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        {
+          !open ? <FaOutdent style={{ color: colorText }} /> : <FaTimes style={{ color: colorText }} />
+        }
+
       </button>
 
       <div className='navbar_collapse' id="navbarSupportedContent">
-        <ul className={styles.navbar_nav}>
+        <ul className={`${styles.navbar_nav} ${open ? styles.open : ''}`}>
+          <Link to='/' >
+            <img className={styles.styleImageLogoMB} src={IcLogoBlack} />
+          </Link>
           <li className={styles.nav_item}>
-            <Link className={styles.nav_link} to="#" style={{color: colorText}}>{Languages.menu.services} </Link>
+            <NavLink
+              to="*"
+              className={isactive && `${styles.nav_link}`}
+              style={{ color: colorText }}
+            >
+              {Languages.menu.services}
+            </NavLink>
           </li>
           <li className={styles.nav_item}>
-            <Link className={styles.nav_link} to="#" style={{color: colorText}}>{Languages.menu.customerCare}</Link>
+
+            <NavLink
+              to="*"
+              className={isactive && `${styles.nav_link}`}
+              style={{ color: colorText }}
+            >
+              {Languages.menu.customerCare}
+            </NavLink>
+
           </li>
           <li className={styles.nav_item}>
-            <Link className={styles.nav_link} to={Alias.mypage} style={{color: colorText}}>{Languages.menu.myPage}</Link>
+            <NavLink
+              to={Alias.mypage}
+              className={isactive && `${styles.nav_link}`}
+              style={{ color: colorText }}
+            >
+              {Languages.menu.myPage}
+            </NavLink>
           </li>
+
+
+
           <li className={styles.nav_item}>
             <Button
               label={Languages.menu.login}
@@ -43,7 +85,7 @@ function MenuBar({colorText}) {
               buttonStyle={BUTTON_STYLES.PINK}
               width={100}
               textStyle={BUTTON_STYLES.PINK}
-              leftIcon={<FaUserAlt style={{color: BUTTON_STYLES.WHITE}} />}
+              leftIcon={<FaUserAlt style={{ color: BUTTON_STYLES.WHITE }} />}
               isLowerCase
             />
           </li>

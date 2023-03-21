@@ -21,36 +21,36 @@ const validateEmail = (email) => {
 };
 const validateSpecialCharacters = (username) => {
     const reg = /^[a-zA-Z- ]+$/;
-    return reg.test(removeAscent(username)); 
+    return reg.test(removeAscent(username));
 };
 
 const validateSpecialCharactersTaxId = (value) => {
     const reg = /^[a-zA-Z-\-0-9- ]+$/;
-    return reg.test(value); 
+    return reg.test(value);
 };
 
 const uppercaseCharacters = (value) => {
     const reg = /^([^A-Z]*)$/;
     return reg.test(value);
-}; 
+};
 
 const lowerCharacters = (value) => {
     const reg = /^([^a-z]*)+$/;
     return reg.test(value);
-}; 
+};
 
 const specialCharacters = (value) => {
     const reg = /^([^@$!%*?&#^]*)+$/;
     return reg.test(value);
-}; 
+};
 
 const min8Characters = (value) => {
     const reg = /^[A-Za-z\d@$!%*?&#^]{8,}$/;
     return reg.test(removeAscent(value));
 };
 
-function removeAscent (str ) {
-    if (str === null || str === undefined ) return str;
+function removeAscent(str) {
+    if (str === null || str === undefined) return str;
     str = str.toLowerCase();
     str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, 'a');
     str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, 'e');
@@ -65,7 +65,7 @@ const validatePhone = (username) => {
     const reg = /((09|03|07|08|05)+([0-9]{8})\b)/g;
     return reg.test(username);
 };
-function userNameValidate (userName) {
+function userNameValidate(userName) {
     let errMsg = '';
     if (userName.length < 8) {
         errMsg = Languages.errorMsg.userNameLength;
@@ -76,24 +76,24 @@ function userNameValidate (userName) {
     }
     return errMsg;
 }
-function userNameValidateSignUp (userName) {
+function userNameValidateSignUp(userName) {
     let errMsg = '';
-    if(Validate.isStringEmpty(userName)){
+    if (Validate.isStringEmpty(userName)) {
         errMsg = Languages.errorMsg.userNameRequired;
     } else if (userName.length < 8) {
         errMsg = Languages.errorMsg.userNameLength;
-    } 
+    }
     return errMsg;
 }
 
-function emailValidate (email) {
+function emailValidate(email) {
     let errMsg = '';
     if (!validateEmail(email)) {
         errMsg = Languages.errorMsg.emailRegex;
-    } 
+    }
     return errMsg;
 }
-function cardValidate (card) {
+function cardValidate(card) {
     let errMsg = '';
     if (Validate.isStringEmpty(card)) {
         errMsg = Languages.errorMsg.cardNull;
@@ -105,8 +105,8 @@ function cardValidate (card) {
     return errMsg;
 }
 
-function passValidate (pwd) {
-    
+function passValidate(pwd) {
+
     let errMsg = '';
 
     if (Validate.isStringEmpty(pwd)) {
@@ -119,7 +119,7 @@ function passValidate (pwd) {
     }
     return errMsg;
 }
-function passConFirmValidate (pwd, conFirmPwd) {
+function passConFirmValidate(pwd, conFirmPwd) {
     let errMsg = '';
     if (Validate.isStringEmpty(conFirmPwd)) {
         errMsg = Languages.errorMsg.pwdNull;
@@ -128,19 +128,30 @@ function passConFirmValidate (pwd, conFirmPwd) {
     }
     return errMsg;
 }
-function passConFirmPhone (phone) {
+function passConFirmPhone(phone) {
     let errMsg = '';
-    if (Validate.isStringEmpty(phone)) {
-        errMsg = Languages.errorMsg.phoneIsEmpty;
-    } else if (!validatePhone(phone)) {
-        errMsg = Languages.errorMsg.phoneRegex;
-    } else if (phone.length < 10 || phone.length > 10) {
-        errMsg = Languages.errorMsg.phoneCount;
+
+    if (Validate.stringIsNumberOnly(phone)) {
+
+        if (Validate.isStringEmpty(phone)) {
+            errMsg = Languages.errorMsg.phoneIsEmpty;
+        } else if (!validatePhone(phone)) {
+            errMsg = Languages.errorMsg.phoneRegex;
+        } else if (phone.length < 10 || phone.length > 10) {
+            errMsg = Languages.errorMsg.phoneCount;
+        }
     }
+    else {
+
+        if (!validateEmail(phone)) {
+            errMsg = Languages.errorMsg.emailRegex;
+        }
+    }
+
     return errMsg;
 }
 
-function inputNameEmpty (value, errEmpty, errCharacters) {
+function inputNameEmpty(value, errEmpty, errCharacters) {
     let errMsg = '';
     if (Validate.isStringEmpty(value)) {
         errMsg = errEmpty;
@@ -150,7 +161,7 @@ function inputNameEmpty (value, errEmpty, errCharacters) {
     return errMsg;
 }
 
-function inputValidate (
+function inputValidate(
     value,
     errEmpty,
     errSyntax,
@@ -166,7 +177,7 @@ function inputValidate (
     }
     return errMsg;
 }
-function taxCodeValidate (value, errEmpty, errSyntax, errCharacters) {
+function taxCodeValidate(value, errEmpty, errSyntax, errCharacters) {
     let errMsg = '';
     if (value.length < 10) {
         errMsg = errSyntax;
@@ -175,7 +186,7 @@ function taxCodeValidate (value, errEmpty, errSyntax, errCharacters) {
     }
     return errMsg;
 }
-function birthdayValidator (value) {
+function birthdayValidator(value) {
     let errMsg = '';
     const regexVar = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/; // add anchors; use literal
     const regexVarTest = regexVar.test(value); // pass the string, not the Date
@@ -188,7 +199,7 @@ function birthdayValidator (value) {
     if (Validate.isStringEmpty(value)) {
         errMsg = Languages.errorMsg.birthdayEmpty;
     } else if (!regexVarTest) {
-    // Test this before the other tests
+        // Test this before the other tests
         errMsg = Languages.errorMsg.birthdayNotNumber;
     } else if (userBirthDate > cutOff19) {
         errMsg = Languages.errorMsg.birthdayAge18;
@@ -200,17 +211,17 @@ function birthdayValidator (value) {
     return errMsg;
 }
 
-function checkOldPwd (oldPass) {
+function checkOldPwd(oldPass) {
     let err = '';
     if (Validate.isEmpty(oldPass)) {
         err = Languages.errorMsg.errMsgEmpty;
     } else if (oldPass.length < 8) {
         err = Languages.errorMsg.errMsgLength;
-    } 
+    }
     return err;
 }
 
-function checkNewPwd (newPass) {
+function checkNewPwd(newPass) {
     let err = '';
     if (Validate.isEmpty(newPass)) {
         err = Languages.errorMsg.errMsgEmpty;
@@ -224,7 +235,7 @@ function checkNewPwd (newPass) {
     return err;
 }
 
-function checkCurrentPwd (newPass, currentNewPwdChecked) {
+function checkCurrentPwd(newPass, currentNewPwdChecked) {
     let err = '';
     if (Validate.isEmpty(currentNewPwdChecked)) {
         err = Languages.errorMsg.errMsgEmpty;

@@ -41,3 +41,21 @@
 .greenBg{
     background-color: var(--green-opacity-bg);
 }
+
+@media (max-width: 768px) {
+
+    .blockUIimage img {
+        max-width: 300px;
+    }
+    .blockUIText{
+        padding: 0 15px;
+    }
+    .blockUIhead{
+        font-size: 22px;
+    }
+    .blockUIContent{
+        font-size: 16px;
+        text-align: justify;
+    }
+
+}
