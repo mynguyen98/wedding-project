@@ -16,7 +16,7 @@ const Response = () => {
         Để thuận tiện cho việc sắp xếp chỗ ngồi, vui lòng phản hồi giúp vợ chồng
         mình nhé!
       </p>
-      <div className="flex justify-center gap-10">
+      <div className="flex justify-center gap-10 pb-10">
         <div className="text-center bg-main rounded-lg border-gray-item-color">
           <div className="py-4 px-6">
             <img
@@ -40,7 +40,12 @@ const Response = () => {
           </div>
         </div>
       </div>
-      <ImageUpload icon={<ImgUploadIcon />} />
+      <ImageUpload
+        icon={<ImgUploadIcon />}
+        maxW="300px"
+        height="200px"
+        desc="thêm ảnh ở đây"
+      />
     </div>
   );
 };

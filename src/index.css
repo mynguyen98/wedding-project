@@ -25,7 +25,7 @@ Global Styles
   --orrange-color: rgba(243, 135, 35, 1);
   --letter-main-color: rgba(145, 173, 163, 1);
   --gray-item-color: 1px solid #c6c6c6;
-
+  --border-img-dash: 2px dashed #828282;
   /* root home page */
   --pink-color-1: #ea4c89;
   --black-color: #000;
@@ -90,7 +90,8 @@ code {
     monospace;
 }
 
-.app {}
+.app {
+}
 
 .section-mb {
   /* max-width: 560px;
@@ -215,7 +216,9 @@ p {
 .bg-white {
   background-color: white;
 }
-
+.border-img-dash {
+  border: var(--border-img-dash);
+}
 /* layout restructor */
 .letter-wrapper {
   background-color: black;
@@ -903,9 +906,11 @@ p {
 }
 
 .bg_form {
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       rgb(173 77 95 / 22%),
-      rgb(185 130 130 / 15%)),
+      rgb(185 130 130 / 15%)
+    ),
     url("/src/assets/home-image/Bg_Banner.png");
   background-size: cover;
   background-position: center;
@@ -1049,18 +1054,24 @@ table .date {
   flex-direction: column;
 }
 
-
 .Notfound .number {
   background: #fff;
   position: relative;
   font: 900 30vmin "Consolas";
   letter-spacing: 5vmin;
-  text-shadow: 2px -1px 0 #000, 4px -2px 0 #0a0a0a, 6px -3px 0 #0f0f0f, 8px -4px 0 #141414, 10px -5px 0 #1a1a1a, 12px -6px 0 #1f1f1f, 14px -7px 0 #242424, 16px -8px 0 #292929;
+  text-shadow: 2px -1px 0 #000, 4px -2px 0 #0a0a0a, 6px -3px 0 #0f0f0f,
+    8px -4px 0 #141414, 10px -5px 0 #1a1a1a, 12px -6px 0 #1f1f1f,
+    14px -7px 0 #242424, 16px -8px 0 #292929;
 }
 
 .Notfound .number::before {
   background-color: #673ab7;
-  background-image: radial-gradient(closest-side at 50% 50%, #ffc107 100%, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e91e63 100%, rgba(0, 0, 0, 0));
+  background-image: radial-gradient(
+      closest-side at 50% 50%,
+      #ffc107 100%,
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(closest-side at 50% 50%, #e91e63 100%, rgba(0, 0, 0, 0));
   background-repeat: repeat-x;
   background-size: 40vmin 40vmin;
   background-position: -100vmin 20vmin, 100vmin -25vmin;
@@ -1089,7 +1100,6 @@ table .date {
   transition: all 1s ease-in-out;
 }
 
-
 @-webkit-keyframes moving {
   to {
     background-position: 100vmin 20vmin, -100vmin -25vmin;
@@ -1110,17 +1120,16 @@ table .date {
   font-size: 10vmin;
 }
 
-
 @media (min-width: 991px) {
   .navbar-toggler {
     display: none;
   }
 }
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+}
 
 @media (max-width: 768px) {
-
   .section_wrap_type_ds .head h2 {
     font-size: 25px;
   }
