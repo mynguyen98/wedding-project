@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import ImageUploading from "react-images-uploading";
 import CloseIcon from "../icons/CloseIcon";
 export const ImageUpload = ({ icon, maxW, height, desc }) => {
-  const [iconShow, setIconShow] = useState(true);
   const [images, setImages] = React.useState([]);
   const maxNumber = 1;
   const onChange = (imageList, addUpdateIndex) => {
-    // data for submit
-    console.log(imageList, addUpdateIndex);
     setImages(imageList);
   };
 
@@ -59,16 +56,10 @@ export const ImageUpload = ({ icon, maxW, height, desc }) => {
                   <img
                     src={image.data_url}
                     alt=""
-                    // width="200"
-                    // height="200"
                     style={{ maxHeight: "100%" }}
                     onClick={() => onImageUpdate(index)}
                   />
                 </div>
-                {/* <div className="image-item__btn-wrapper">
-                  <button onClick={() => onImageUpdate(index)}>Update</button>
-                  <button onClick={() => onImageRemove(index)}>Remove</button>
-                </div> */}
               </div>
             ))}
             {!images.length > 0 && (
