@@ -6,6 +6,8 @@ import { ImageUpload } from "../imageUpload";
 import uploadImageIcon from "@/assets/svg/uploadImgIcon.svg";
 import ImgUploadIcon from "../icons/ImgUploadIcon";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { Button } from "../button";
+import { BUTTON_STYLES } from "@/commons/Constant.ts";
 const Response = () => {
   const [numPeopleAttend, setNumberPeopleAttend] = useState(0);
   const increaseNumberPeople = () => {
@@ -96,6 +98,14 @@ const Response = () => {
         >
           <AiOutlinePlus />
         </span>
+      </div>
+      <div className="max-w-sm margin-auto pt-6">
+        <Button
+          buttonStyle={BUTTON_STYLES.LIGHT_BLUE}
+          label="Gửi chúc phúc"
+          rounded={true}
+          width="100"
+        />
       </div>
     </div>
   );
