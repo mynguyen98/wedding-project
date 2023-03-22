@@ -205,7 +205,9 @@ p {
 .border-section-main {
   border-bottom: var(--border-section-main);
 }
-
+.border-section {
+  border-top: var(--border-section-main);
+}
 .margin-auto {
   margin: auto;
 }
