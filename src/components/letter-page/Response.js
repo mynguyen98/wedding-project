@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import background from "../../assets/home-image/time-schedule-bg.png";
 import manResponse from "@/assets/svg/man-response.svg";
 import womanResponse from "@/assets/svg/woman-response.svg";
 import { ImageUpload } from "../imageUpload";
 import uploadImageIcon from "@/assets/svg/uploadImgIcon.svg";
 import ImgUploadIcon from "../icons/ImgUploadIcon";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 const Response = () => {
+  const [numPeopleAttend, setNumberPeopleAttend] = useState(0);
+  const increaseNumberPeople = () => {
+    setNumberPeopleAttend((prev) => prev + 1);
+  };
+  const decreaseNumberPeople = () => {
+    if (numPeopleAttend === 0) return;
+    setNumberPeopleAttend((prev) => prev - 1);
+  };
   return (
     <div
       className="layout-mw py-10 text-center"
@@ -16,8 +25,8 @@ const Response = () => {
         Để thuận tiện cho việc sắp xếp chỗ ngồi, vui lòng phản hồi giúp vợ chồng
         mình nhé!
       </p>
-      <div className="flex justify-center gap-10 pb-10">
-        <div className="text-center bg-main rounded-lg border-gray-item-color">
+      <div className="flex justify-between gap-10 pb-10 max-w-sm margin-auto">
+        <div className="text-center bg-main rounded-lg border-gray-item-color side-choose">
           <div className="py-4 px-6">
             <img
               src={manResponse}
@@ -29,25 +38,75 @@ const Response = () => {
             </p>
           </div>
         </div>
-        <div className="text-center bg-white rounded-lg border-gray-item-color">
-          <div className="py-4 px-6">
+        <div className="text-center bg-white rounded-lg border-gray-item-color side-choose">
+          <div className="py-4 px-6 ">
             <img
               src={womanResponse}
               alt="man response"
-              className="margin-auto pb-2"
+              className="margin-auto pb-2 "
             />
             <p className="text-white m-0">Khách nhà gái</p>
           </div>
         </div>
       </div>
-      <ImageUpload
-        icon={<ImgUploadIcon />}
-        maxW="300px"
-        height="200px"
-        desc="thêm ảnh ở đây"
-      />
+      <p>Tên khách mời</p>
+      <form className="max-w-sm margin-auto">
+        <input
+          type="text"
+          className="input-letter text-center border-gray-item-color rounded-lg mb-4 w-full"
+        />
+        <div className="flex items-center justify-between max-w-sm margin-auto">
+          <div className="flex items-center">
+            <input type="radio" name="able-attend" id="response-attend" />
+            <label className="ml-2" htmlFor="response-attend">
+              Tham dự
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input type="radio" name="able-attend" id="response-maybe" />
+            <label className="ml-2" htmlFor="response-maybe">
+              Có thể
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input type="radio" name="able-attend" id="response-cannot" />
+            <label className="ml-2" htmlFor="response-cannot">
+              Rất tiếc
+            </label>
+          </div>
+        </div>
+      </form>
+      <p className="pt-6">Số người tham dự</p>
+      <div className="flex items-center justify-center">
+        <span
+          className="text-4xl  cursor-pointer"
+          onClick={decreaseNumberPeople}
+        >
+          <AiOutlineMinus />
+        </span>
+        <input
+          type="number"
+          className="input-count-num mx-2 text-text border-gray-item-color rounded-lg input-letter"
+          value={numPeopleAttend}
+          style={{ width: "56px" }}
+        />
+        <span
+          className="text-4xl  pointer cursor-pointer"
+          onClick={increaseNumberPeople}
+        >
+          <AiOutlinePlus />
+        </span>
+      </div>
     </div>
   );
 };
 
 export default Response;
+{
+  /* <ImageUpload
+icon={<ImgUploadIcon />}
+maxW="300px"
+height="200px"
+desc="thêm ảnh ở đây"
+/> */
+}

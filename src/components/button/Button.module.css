@@ -1,13 +1,11 @@
 .container {
-
-    border-radius: 5px;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.defaultButton{
+.defaultButton {
   background-color: var(--white-color);
 }
 .pinkButton {
@@ -65,15 +63,13 @@
 }
 
 .buttonHover:hover {
-
-    box-shadow: 0 0 10px 0 var(--pink-color-1);
-    background: var(--white-color);
-    color: var(--black-color);
+  box-shadow: 0 0 10px 0 var(--pink-color-1);
+  background: var(--white-color);
+  color: var(--black-color);
 }
 
-.buttonHover:hover svg{
-    color: var(--red-color-1) !important;
-
+.buttonHover:hover svg {
+  color: var(--red-color-1) !important;
 }
 
 .buttonHover:hover span {
@@ -86,7 +82,11 @@
   color: var(--pink-color-1);
 }
 .orangeButton {
-  background-color: var(--orrange-color);
+  background-color: var(--orange-color);
+}
+.orangeButton span,
+.lightBlueButton span {
+  color: white;
 }
 .lightBlueButton {
   background-color: var(--letter-main-color);
@@ -100,6 +100,6 @@
 .borderFull {
   border-radius: 32px;
 }
-.autocenter{
+.autocenter {
   margin: 15px auto;
 }

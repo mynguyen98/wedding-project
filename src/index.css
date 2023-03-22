@@ -20,9 +20,10 @@ Global Styles
 
 :root {
   /* root letter page */
+  /* --letter-main-color: #91ada3; */
   --border-section-main: 1px solid rgba(145, 173, 163, 0.5);
   --border-section-1: 2px solid rgba(243, 135, 35, 0.1);
-  --orrange-color: rgba(243, 135, 35, 1);
+  --orange-color: rgba(243, 135, 35, 1);
   --letter-main-color: rgba(145, 173, 163, 1);
   --gray-item-color: 1px solid #c6c6c6;
   --border-img-dash: 2px dashed #828282;
@@ -1116,7 +1117,7 @@ table .date {
   height: 10px;
   border-radius: 50%;
   display: block;
-  margin:15px auto;
+  margin: 15px auto;
   position: relative;
   left: -200px;
   box-sizing: border-box;
@@ -1125,31 +1126,40 @@ table .date {
 
 @keyframes shadowRolling {
   0% {
-    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
   }
   12% {
-    box-shadow: 100px 0 #ea4c89, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    box-shadow: 100px 0 #ea4c89, 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
   }
   25% {
-    box-shadow: 110px 0 #ea4c89, 100px 0 #ea4c89, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    box-shadow: 110px 0 #ea4c89, 100px 0 #ea4c89, 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0);
   }
   36% {
-    box-shadow: 120px 0 #ea4c89, 110px 0 #ea4c89, 100px 0 #ea4c89, 0px 0 rgba(255, 255, 255, 0);
+    box-shadow: 120px 0 #ea4c89, 110px 0 #ea4c89, 100px 0 #ea4c89,
+      0px 0 rgba(255, 255, 255, 0);
   }
   50% {
-    box-shadow: 130px 0 #ea4c89, 120px 0 #ea4c89, 110px 0 #ea4c89, 100px 0 #ea4c89;
+    box-shadow: 130px 0 #ea4c89, 120px 0 #ea4c89, 110px 0 #ea4c89,
+      100px 0 #ea4c89;
   }
   62% {
-    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 #ea4c89, 120px 0 #ea4c89, 110px 0 #ea4c89;
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 #ea4c89, 120px 0 #ea4c89,
+      110px 0 #ea4c89;
   }
   75% {
-    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 #ea4c89, 120px 0 #ea4c89;
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      130px 0 #ea4c89, 120px 0 #ea4c89;
   }
   87% {
-    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 #ea4c89;
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 130px 0 #ea4c89;
   }
   100% {
-    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
   }
 }
 
@@ -1214,4 +1224,35 @@ table .date {
   .bg_form {
     padding: 15px 15px;
   }
+}
+
+/* Response letter section */
+.side-choose:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+/* hide arrow input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="radio"] {
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+}
+
+.input-count-num {
+  text-align: center;
+  font-size: 2rem;
+}
+.input-letter {
+  height: 44px;
 }
