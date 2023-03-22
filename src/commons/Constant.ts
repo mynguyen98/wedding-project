@@ -34,7 +34,8 @@ export const Alias = {
   login: '/login',
   register: '/dang-ky',
   pwdRecovery: '/khoi-phuc-mat-khau',
-  mypage: '/trang-cua-toi'
+  mypage: '/trang-cua-toi',
+  services: '/dich-vu'
 }
 
 export enum BUTTON_STYLES {

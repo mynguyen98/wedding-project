@@ -6,6 +6,7 @@ import Languages from '@/commons/Languages'
 import { Button } from '@/components/button'
 import { BUTTON_STYLES } from '@/commons/Constant.ts'
 import ChooseTypeBlock from '@/components/chooseTypeBlock'
+import Loading from '@/components/Loading'
 
 const Mypage = () => {
 
@@ -27,6 +28,7 @@ const Mypage = () => {
 
     return (
         <div className='mypage'>
+            <Loading />
             <Header background={'var(--white-color)'} colorText={'var(--text-color-darkmode)'} borderColor={'var(--gray-color-2)'} />
             <div className='wrapper_box_create'>
                 <div className='container mx-auto'>

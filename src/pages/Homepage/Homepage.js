@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './HomePage.module.css';
 import Languages from '@/commons/Languages';
 import { Button } from '@/components/button';
@@ -15,14 +15,17 @@ import IcMapMarker from '@/assets/home-image/map-marker.svg'
 import Footer from '../Footer/Footer';
 import ChooseTypeBlock from '@/components/chooseTypeBlock';
 import Header from '@/components/header';
+import Loading from '@/components/Loading';
 
 
 const Homepage = () => {
 
+  
 
 
   return (
     <>
+      <Loading />
       <div className='main'>
         <div className={`${styles.homepage_box}`}>
           <Header typeLogo={BACKGROUND_STYLES.WHITE} />

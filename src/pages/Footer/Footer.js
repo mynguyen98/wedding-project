@@ -8,10 +8,9 @@ import { FaRegClock } from 'react-icons/fa'
 import Iclogo from '@/assets/home-image/IcLogo.svg'
 
 const Footer = () => {
-
     return (
         <div className='footer'>
-
+            
             <div className='container mx-auto'>
 
                 <div className='md:grid md:grid-cols-3 md:gap-4'>

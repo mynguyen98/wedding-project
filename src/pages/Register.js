@@ -10,6 +10,7 @@ import LoginSocial from '@/components/loginSocial'
 import Footer from './Footer/Footer'
 import FormValidate from '@/utils/FormValidate';
 import { Alias } from '@/commons/Constant.ts'
+import Loading from '@/components/Loading'
 
 const Register = () => {
 
@@ -63,6 +64,7 @@ const Register = () => {
 
     return (
         <div className='Login'>
+            <Loading />
             <Header background={'var(--white-color)'} colorText={'var(--text-color-darkmode)'} />
             <div className='bg_form'>
                 <div className='main-form-user'>

@@ -48,7 +48,7 @@ function MenuBar({ colorText }) {
           </Link>
           <li className={styles.nav_item}>
             <NavLink
-              to="*"
+              to={Alias.services}
               className={isactive && `${styles.nav_link}`}
               style={{ color: colorText }}
             >
@@ -75,9 +75,7 @@ function MenuBar({ colorText }) {
               {Languages.menu.myPage}
             </NavLink>
           </li>
-
-
-
+          
           <li className={styles.nav_item}>
             <Button
               label={Languages.menu.login}
