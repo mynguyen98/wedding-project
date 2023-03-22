@@ -24,8 +24,6 @@ const Mypage = () => {
         )
     }, [])
 
-
-
     return (
         <div className='mypage'>
             <Loading />

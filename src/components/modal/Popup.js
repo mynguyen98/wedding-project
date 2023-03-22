@@ -1,5 +1,4 @@
 import React, { forwardRef, useImperativeHandle, useState } from 'react'
-import Languages from '../../commons/Languages'
 import Modal from './Modal'
 
 // eslint-disable-next-line react/display-name

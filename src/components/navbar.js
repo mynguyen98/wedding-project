@@ -44,7 +44,7 @@ function MenuBar({ colorText }) {
       <div className='navbar_collapse' id="navbarSupportedContent">
         <ul className={`${styles.navbar_nav} ${open ? styles.open : ''}`}>
           <Link to='/' >
-            <img className={styles.styleImageLogoMB} src={IcLogoBlack} />
+            <img className={styles.styleImageLogoMB} src={IcLogoBlack} alt={'logo'} />
           </Link>
           <li className={styles.nav_item}>
             <NavLink

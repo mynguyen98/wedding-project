@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Languages from '@/commons/Languages'
-import { BUTTON_STYLES } from '@/commons/Constant.ts'
 import { Button } from '@/components/button'
 import IcFacebook from '@/assets/home-image/IcFacebook.svg'
 import IcGoogle from '@/assets/home-image/IcGoogle.svg'
