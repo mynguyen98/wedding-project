@@ -7,10 +7,15 @@ import { Button } from '@/components/button'
 import { BUTTON_STYLES } from '@/commons/Constant.ts'
 import ChooseTypeBlock from '@/components/chooseTypeBlock'
 import Loading from '@/components/Loading'
+import { useLocation } from 'react-router-dom'
 
 const Mypage = () => {
 
     const [token, setToken] = useState(true);
+
+    const location = useLocation();
+
+    const userId = location.state?.tokenParam;
 
     const renderTable = useMemo(() => {
         return (
@@ -44,117 +49,123 @@ const Mypage = () => {
                         />
                     </div>
                 </div>
-                <ChooseTypeBlock />
+                {
+                    !userId && <ChooseTypeBlock />
+                }
 
 
-                <div className="flex items-center justify-center">
-                    <div className="container">
-                        <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5 text-center">
-                            <thead className="text-white">
 
-                                {renderTable}
+                {
+                    userId && <div className="flex items-center justify-center">
+                        <div className="container">
+                            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5 text-center">
+                                <thead className="text-white">
 
-                            </thead>
-                            <tbody className="flex-1 sm:flex-none">
-                                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-                                    <td className="border-grey-light hover:bg-gray-100 p-3">
+                                    {renderTable}
 
-
-                                        <Button
-                                            label={Languages.buttonText.seeBefore}
-                                            buttonStyle={BUTTON_STYLES.ORRANGE}
-                                            textStyle={BUTTON_STYLES.PINK}
-                                            autocenter
-                                            width={60} 
-                                            isLowerCase
-                                        />
-
-                                        <Button
-                                            label={Languages.buttonText.copylink}
-                                            buttonStyle={BUTTON_STYLES.DARKMODE}
-                                            textStyle={BUTTON_STYLES.PINK}
-                                            autocenter
-                                            width={60} 
-                                            isLowerCase
-                                        />
+                                </thead>
+                                <tbody className="flex-1 sm:flex-none">
+                                    <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                                        <td className="border-grey-light hover:bg-gray-100 p-3">
 
 
-                                    </td>
-                                    <td className="border-grey-light hover:bg-gray-100 p-3 truncate">
+                                            <Button
+                                                label={Languages.buttonText.seeBefore}
+                                                buttonStyle={BUTTON_STYLES.ORRANGE}
+                                                textStyle={BUTTON_STYLES.PINK}
+                                                autocenter
+                                                width={60}
+                                                isLowerCase
+                                            />
 
-                                        <p className='formatnotColor free'>{Languages.text.free}</p>
-                                        <p className='formatnotColor payment'>{Languages.buttonText.payment}</p>
-                                        <p className='formatnotColor complete'>{Languages.text.complete}</p>
-                                        <p className='autodelete'>{Languages.text.autoDelete}</p>
+                                            <Button
+                                                label={Languages.buttonText.copylink}
+                                                buttonStyle={BUTTON_STYLES.DARKMODE}
+                                                textStyle={BUTTON_STYLES.PINK}
+                                                autocenter
+                                                width={60}
+                                                isLowerCase
+                                            />
 
-                                    </td>
-                                    <td className="border-grey-light hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
-                                        <p className='date'>20/03/2024</p>
-                                        <p className='onlydateplus'>{Languages.text.onlyDate}</p>
-                                    </td>
-                                    <td className="border-grey-light hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
-                                        <Button
-                                            label={Languages.buttonText.edit}
-                                            buttonStyle={BUTTON_STYLES.BLUE}
-                                            textStyle={BUTTON_STYLES.PINK}
-                                            autocenter
-                                            width={60} 
-                                            isLowerCase
-                                        />
-                                    </td>
-                                    <td className="border-grey-light hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
 
-                                        <Button
-                                            label={Languages.buttonText.payment}
-                                            buttonStyle={BUTTON_STYLES.PINK}
-                                            textStyle={BUTTON_STYLES.PINK}
-                                            autocenter
-                                            width={60} 
-                                            isLowerCase
-                                        />
+                                        </td>
+                                        <td className="border-grey-light hover:bg-gray-100 p-3 truncate">
 
-                                        <Button
-                                            label={Languages.buttonText.dowloadTc}
-                                            buttonStyle={BUTTON_STYLES.PINK}
-                                            textStyle={BUTTON_STYLES.PINK}
-                                            autocenter
-                                            width={60} 
-                                            isLowerCase
-                                        />
+                                            <p className='formatnotColor free'>{Languages.text.free}</p>
+                                            <p className='formatnotColor payment'>{Languages.buttonText.payment}</p>
+                                            <p className='formatnotColor complete'>{Languages.text.complete}</p>
+                                            <p className='autodelete'>{Languages.text.autoDelete}</p>
 
-                                        <Button
-                                            label={Languages.buttonText.dowloadClient}
-                                            buttonStyle={BUTTON_STYLES.BLUE}
-                                            textStyle={BUTTON_STYLES.PINK}
-                                            autocenter
-                                            width={75} 
-                                            isLowerCase
-                                        />
+                                        </td>
+                                        <td className="border-grey-light hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
+                                            <p className='date'>20/03/2024</p>
+                                            <p className='onlydateplus'>{Languages.text.onlyDate}</p>
+                                        </td>
+                                        <td className="border-grey-light hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
+                                            <Button
+                                                label={Languages.buttonText.edit}
+                                                buttonStyle={BUTTON_STYLES.BLUE}
+                                                textStyle={BUTTON_STYLES.PINK}
+                                                autocenter
+                                                width={60}
+                                                isLowerCase
+                                            />
+                                        </td>
+                                        <td className="border-grey-light hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
 
-                                        <Button
-                                            label={Languages.buttonText.checkGuest}
-                                            buttonStyle={BUTTON_STYLES.LIGHT_BLUE}
-                                            textStyle={BUTTON_STYLES.PINK}
-                                            autocenter
-                                            width={70} 
-                                            isLowerCase
-                                        />
+                                            <Button
+                                                label={Languages.buttonText.payment}
+                                                buttonStyle={BUTTON_STYLES.PINK}
+                                                textStyle={BUTTON_STYLES.PINK}
+                                                autocenter
+                                                width={60}
+                                                isLowerCase
+                                            />
 
-                                        <Button
-                                            label={Languages.buttonText.delete}
-                                            buttonStyle={BUTTON_STYLES.DARKMODE}
-                                            textStyle={BUTTON_STYLES.PINK}
-                                            autocenter
-                                            width={60}
-                                            isLowerCase
-                                        />
+                                            <Button
+                                                label={Languages.buttonText.dowloadTc}
+                                                buttonStyle={BUTTON_STYLES.PINK}
+                                                textStyle={BUTTON_STYLES.PINK}
+                                                autocenter
+                                                width={60}
+                                                isLowerCase
+                                            />
 
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                            <Button
+                                                label={Languages.buttonText.dowloadClient}
+                                                buttonStyle={BUTTON_STYLES.BLUE}
+                                                textStyle={BUTTON_STYLES.PINK}
+                                                autocenter
+                                                width={75}
+                                                isLowerCase
+                                            />
+
+                                            <Button
+                                                label={Languages.buttonText.checkGuest}
+                                                buttonStyle={BUTTON_STYLES.LIGHT_BLUE}
+                                                textStyle={BUTTON_STYLES.PINK}
+                                                autocenter
+                                                width={70}
+                                                isLowerCase
+                                            />
+
+                                            <Button
+                                                label={Languages.buttonText.delete}
+                                                buttonStyle={BUTTON_STYLES.DARKMODE}
+                                                textStyle={BUTTON_STYLES.PINK}
+                                                autocenter
+                                                width={60}
+                                                isLowerCase
+                                            />
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
+
+                }
 
 
 

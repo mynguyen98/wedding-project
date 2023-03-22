@@ -5,7 +5,7 @@ import { MyTextInput } from '@/components/input'
 import { useRef } from 'react'
 import { BUTTON_STYLES } from '@/commons/Constant.ts'
 import { Button } from '@/components/button'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import LoginSocial from '@/components/loginSocial'
 import Footer from './Footer/Footer'
 import FormValidate from '@/utils/FormValidate';
@@ -13,6 +13,8 @@ import { Alias } from '@/commons/Constant.ts'
 import Loading from '@/components/Loading'
 
 const Login = () => {
+
+    const navigate = useNavigate();
 
     const [name, setName] = useState('');
     const [pwd, setPwd] = useState('');
@@ -33,14 +35,21 @@ const Login = () => {
 
         const errMsgPwd = FormValidate.passValidate(pwd);
 
-
-
         refName.current?.setErrorMsg(errMsgPhone);
         refPwd.current?.setErrorMsg(errMsgPwd);
 
         if (`${errMsgPhone}${errMsgPwd}`.length === 0) {
-            console.log('name:', name);
-            console.log('pass:', pwd);
+
+            setTimeout(() => {
+                navigate(
+                    Alias.mypage,{
+                        state: {
+                            tokenParam: true
+                        }
+                    }
+                    );
+            }, 1500);
+
         }
 
     }, [name, pwd]);
