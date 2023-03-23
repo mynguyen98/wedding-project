@@ -34,7 +34,7 @@ export const Button = ({
         containerStyle = styles.whiteButton;
         break;
 
-      case BUTTON_STYLES.ORANGE:
+      case BUTTON_STYLES.ORRANGE:
         containerStyle = styles.orangeButton;
         break;
 
