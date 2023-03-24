@@ -3,22 +3,23 @@ import { Button } from './button';
 import { BUTTON_STYLES } from '@/commons/Constant.ts';
 import Languages from '@/commons/Languages';
 import itemImage from '@/assets/home-image/item.png'
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 function ChooseTypeBlock() {
 
     const renderSection = useCallback((label, title) => {
         return <div className='slide-item'>
-            <div className='box-image'>
+            <AnimationOnScroll animateIn="animate__fadeInLeft" offset={10} initiallyVisible={true} animatePreScroll={false} duration={2}><div className='box-image'>
                 <img src={itemImage} title={'item'} />
             </div>
             <div className='title'>
                 <span>{label}</span>
                 <h3>{title}</h3>
-            </div>
-        </div>;
+            </div></AnimationOnScroll></div >
+        
     }, []);
 
- 
+
     return (
         <div className='section_wrap_type_ds'>
 

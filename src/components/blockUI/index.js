@@ -2,6 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import styles from './blockUI.module.css'
 import { Button } from '../button';
 import { BACKGROUND_STYLES } from '@/commons/Constant.ts';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 function BlockUI({
     containerCustormStyle,
@@ -19,6 +20,8 @@ function BlockUI({
     styleBoxText,
     isLowerCase,
     textStyleButton,
+    animateContent,
+    animateImg,
     children
 }) {
 
@@ -55,35 +58,38 @@ function BlockUI({
 
                 <div className='md:grid md:grid-cols-2 md:gap-4'>
                     {
-                        isLeft && <div className={styles.blockUIimage}>
+                        isLeft && <AnimationOnScroll animateIn={animateImg ? animateImg : 'animate__fadeInLeft'}  offset={100} initiallyVisible={false} animatePreScroll={false} duration={2}><div className={styles.blockUIimage}>
                             <img src={img} className={styleImg} alt={title} />
-                        </div>
+                        </div></AnimationOnScroll>
                     }
+
                     <div className={styles.blockUIText}>
-                        <div className={`${styles.wrapper_content} ${ styleBoxText ? styleBoxText : ''}`}>
-                            <h2 className={styles.blockUIhead}>
-                                {title}
-                            </h2>
-                            <div className={styles.blockUIContent}>
-                                {children}
+                        <AnimationOnScroll animateIn={animateContent ? animateContent : 'animate__fadeInUp'} duration={2}>
+                            <div className={`${styles.wrapper_content} ${styleBoxText ? styleBoxText : ''}`}>
+                                <h2 className={styles.blockUIhead}>
+                                    {title}
+                                </h2>
+                                <div className={styles.blockUIContent}>
+                                    {children}
+                                </div>
+                                {
+                                    isbutton && <Button
+                                        label={label}
+                                        buttonStyle={buttonStyle}
+                                        width={width}
+                                        onPress={_onPress}
+                                        isLowerCase={isLowerCase}
+                                        textStyle={textStyleButton}
+                                    />
+                                }
+                                <div />
                             </div>
-                            {
-                                isbutton && <Button
-                                    label={label}
-                                    buttonStyle={buttonStyle}
-                                    width={width}
-                                    onPress={_onPress}
-                                    isLowerCase={isLowerCase}
-                                    textStyle={textStyleButton}
-                                />
-                            }
-                            <div />
-                        </div>
+                        </AnimationOnScroll>
                     </div>
                     {
-                        isright && <div className={styles.blockUIimage}>
+                        isright && <AnimationOnScroll animateIn={animateImg ? animateImg : 'animate__fadeInRight' } duration={2}><div className={styles.blockUIimage}>
                             <img src={img} className={styleImg} alt={title} />
-                        </div>
+                        </div></AnimationOnScroll>
                     }
                 </div>
             </div>

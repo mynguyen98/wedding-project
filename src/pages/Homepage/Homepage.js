@@ -16,11 +16,11 @@ import Footer from '../Footer/Footer';
 import ChooseTypeBlock from '@/components/chooseTypeBlock';
 import Header from '@/components/header';
 import Loading from '@/components/Loading';
-
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const Homepage = () => {
 
-  
+
 
 
   return (
@@ -30,10 +30,13 @@ const Homepage = () => {
         <div className={`${styles.homepage_box}`}>
           <Header typeLogo={BACKGROUND_STYLES.WHITE} />
           <div className={`${styles.headerTextCenter}`}>
-            <h1 className={`${styles.textStyleFormat}`}>
-              {Languages.text.textBanner}
-            </h1>
-            <div className={`${styles.buttonBottom_box}`}>
+            <AnimationOnScroll animateIn="animate__flipInX" offset={10} initiallyVisible={true} animatePreScroll={false}>
+              <h1 className={`${styles.textStyleFormat}`}>
+                {Languages.text.textBanner}
+              </h1>
+            </AnimationOnScroll>
+
+            <AnimationOnScroll className={`${styles.buttonBottom_box}`} animateIn="animate__flipInX" offset={10} initiallyVisible={true} animatePreScroll={false}>
               <Button
                 label={Languages.buttonText.createTC}
                 buttonStyle={BUTTON_STYLES.PINK}
@@ -44,7 +47,8 @@ const Homepage = () => {
                 buttonStyle={BUTTON_STYLES.WHITE}
                 textStyle={BUTTON_STYLES.PINK}
               />
-            </div>
+            </AnimationOnScroll>
+
           </div>
         </div>
         <BlockUI
@@ -55,6 +59,7 @@ const Homepage = () => {
         >
           {Languages.text.creatContent}
         </BlockUI>
+
         <BlockUI
           isright
           isbutton
@@ -67,17 +72,21 @@ const Homepage = () => {
           containerCustormStyle={styles.containerCustormStyle}
           isLowerCase
           textStyleButton={BUTTON_STYLES.PINK}
+          animateImg={'animate__fadeInBottomLeft'}
+          animateContent={'animate__fadeInUpBig'}
         >
           {Languages.text.creatContent}
         </BlockUI>
-
         <BlockUI
           isLeft
           title={Languages.text.showFullIf}
           img={IcPhoneList}
           backgroundColor={BACKGROUND_STYLES.GREEN}
           styleImg={styles.styleImgCustomBox_3}
+          animateImg={'animate__fadeInBottomRight'}
+          animateContent={'animate__fadeInRightBig'}
         >
+
           <div className={styles.boxInLineY}>
             <div className={styles.lineHerizontalBox}>
               <img src={IcMapMarker} title={Languages.text.address} />
@@ -106,10 +115,14 @@ const Homepage = () => {
           containerCustormStyle={styles.containerCustormStyle}
           isLowerCase
           textStyleButton={BUTTON_STYLES.PINK}
+          animateImg={'animate__fadeInBottomLeft'}
+          animateContent={'animate__fadeInRight'}
         >
           {Languages.text.contentEffect}
         </BlockUI>
-        <ChooseTypeBlock />
+        <AnimationOnScroll animateIn="animate__fadeInUp" offset={10} initiallyVisible={true} animatePreScroll={false} duration={2}>
+          <ChooseTypeBlock />
+        </AnimationOnScroll>
       </div>
       <Footer />
     </>

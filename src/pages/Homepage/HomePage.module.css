@@ -92,8 +92,8 @@
 
 .styleImgCustomBox_4 {
     position: absolute;
-    transform: translate(0px, -5%);
-    max-width: 400px !important;
+    transform: translate(0px, 10%);
+    max-width: 350px !important;
     z-index: 9;
 }
 
