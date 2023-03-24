@@ -120,9 +120,7 @@ const Homepage = () => {
         >
           {Languages.text.contentEffect}
         </BlockUI>
-        <AnimationOnScroll animateIn="animate__fadeInUp" offset={10} initiallyVisible={true} animatePreScroll={false} duration={2}>
-          <ChooseTypeBlock />
-        </AnimationOnScroll>
+        <ChooseTypeBlock />
       </div>
       <Footer />
     </>
