@@ -1,7 +1,7 @@
 export enum Events {
-  TOAST = 'TOAST',
-  LOGOUT = 'LOGOUT',
-  SWITCH_KEYBOARD = 'SWITCH_KEYBOARD',
+  TOAST = "TOAST",
+  LOGOUT = "LOGOUT",
+  SWITCH_KEYBOARD = "SWITCH_KEYBOARD",
 }
 
 export enum ToastTypes {
@@ -30,29 +30,30 @@ export enum Convert {
 }
 
 export const Alias = {
-  letterPage: '/letterPage',
-  login: '/login',
-  register: '/dang-ky',
-  pwdRecovery: '/khoi-phuc-mat-khau',
-  mypage: '/trang-cua-toi',
-  services: '/dich-vu'
-}
+  letterPage: "/letterPage",
+  congrats: "/chuc-phuc-chi-tiet",
+  login: "/login",
+  register: "/dang-ky",
+  pwdRecovery: "/khoi-phuc-mat-khau",
+  mypage: "/trang-cua-toi",
+  services: "/dich-vu",
+};
 
 export enum BUTTON_STYLES {
-  PINK = 'PINK',
-  WHITE = 'WHITE',
-  ORRANGE = 'ORRANGE',
-  LIGHT_BLUE = 'LIGHT_BLUE',
-  BORDER_LIGHT_BLUE = 'BORDER_LIGHT_BLUE',
-  BORDER_PINK = 'BORDER_PINK',
-  DARKMODE = 'DARKMODE',
-  BLUE = 'BLUE'
+  PINK = "PINK",
+  WHITE = "WHITE",
+  ORRANGE = "ORRANGE",
+  ORANGE = "ORANGE",
+  LIGHT_BLUE = "LIGHT_BLUE",
+  BORDER_LIGHT_BLUE = "BORDER_LIGHT_BLUE",
+  BORDER_PINK = "BORDER_PINK",
+  DARKMODE = "DARKMODE",
+  BLUE = "BLUE",
 }
 
 export enum BACKGROUND_STYLES {
-  PINK = 'PINK',
-  WHITE = 'WHITE',
-  YELLOWS = 'YELLOWS',
-  GREEN = 'GREEN'
+  PINK = "PINK",
+  WHITE = "WHITE",
+  YELLOWS = "YELLOWS",
+  GREEN = "GREEN",
 }
-

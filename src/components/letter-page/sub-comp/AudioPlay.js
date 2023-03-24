@@ -1,69 +1,69 @@
-import React, { useEffect, useState } from 'react'
-import { useRef } from 'react'
-import beautifulInWhite from '../../../assets/audio/beautiful-in-white.mp3'
-import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai'
-import VolumnOpen from '../../icons/VolumnOpen'
-import VolumnMute from '../../icons/VolumeMute'
+import React, { useEffect, useState } from "react";
+import { useRef } from "react";
+import beautifulInWhite from "../../../assets/audio/beautiful-in-white.mp3";
+import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
+import VolumnOpen from "../../icons/VolumnOpen";
+import VolumnMute from "../../icons/VolumeMute";
 // import VolumnMute1 from 'src/comnponents/icons/VolumeMute'
 import {
   toggleAudioPlay,
   setIsAudioPlay,
   setAudioElement,
-} from '../../../features/letter-page/music-vid-reducer'
-import { useDispatch, useSelector } from 'react-redux'
+} from "../../../features/letter-page/music-vid-reducer";
+import { useDispatch, useSelector } from "react-redux";
 const AudioPlay = () => {
-  const dispatch = useDispatch()
-  const audioMusic = useRef()
-  const audioContainer = useRef()
-  const { isAudioPlay } = useSelector((store) => store.musicVid)
+  const dispatch = useDispatch();
+  const audioMusic = useRef();
+  const audioContainer = useRef();
+  const { isAudioPlay } = useSelector((store) => store.musicVid);
 
   const handlePlayPause = () => {
-    console.log('click')
+    console.log("click");
     if (isAudioPlay) {
-      audioMusic.current.pause()
+      audioMusic.current.pause();
     } else {
-      audioMusic.current.play()
+      audioMusic.current.play();
     }
-    dispatch(toggleAudioPlay())
-  }
+    dispatch(toggleAudioPlay());
+  };
   useEffect(() => {
-    dispatch(setAudioElement(audioMusic.current))
-    audioMusic.current.addEventListener('canplaythrough', () => {
+    dispatch(setAudioElement(audioMusic.current));
+    audioMusic.current.addEventListener("canplaythrough", () => {
       audioMusic.current.play().catch((e) => {
         window.addEventListener(
-          'click',
+          "click",
           () => {
-            audioMusic.current.play()
-            dispatch(setIsAudioPlay(true))
+            audioMusic.current.play();
+            dispatch(setIsAudioPlay(true));
           },
           { once: true }
-        )
-      })
-    })
-  }, [])
+        );
+      });
+    });
+  }, []);
 
   return (
-    <div className='float-left'>
+    <div className="float-left">
       <div
-        className='cursor-pointer w-7'
+        className="cursor-pointer w-7"
         ref={audioContainer}
         onClick={() => handlePlayPause()}
       >
         {isAudioPlay ? (
-          <VolumnOpen className='icon-music' />
+          <VolumnOpen className="icon-music" />
         ) : (
-          <VolumnMute className='icon-music' />
+          <VolumnMute className="icon-music" />
         )}
       </div>
       <audio
         ref={audioMusic}
-        src={beautifulInWhite}
+        // src={beautifulInWhite}
         autoPlay
         // controls
         loop={true}
       ></audio>
     </div>
-  )
-}
+  );
+};
 
-export default AudioPlay
+export default AudioPlay;

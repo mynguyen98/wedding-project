@@ -1132,25 +1132,32 @@ table .date {
       0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
   }
   12% {
-    box-shadow: 100px 0 var(--pink-color-1), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    box-shadow: 100px 0 var(--pink-color-1), 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
   }
   25% {
-    box-shadow: 110px 0 var(--pink-color-1), 100px 0 var(--pink-color-1), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    box-shadow: 110px 0 var(--pink-color-1), 100px 0 var(--pink-color-1),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
   }
   36% {
-    box-shadow: 120px 0 var(--pink-color-1), 110px 0 var(--pink-color-1), 100px 0 var(--pink-color-1), 0px 0 rgba(255, 255, 255, 0);
+    box-shadow: 120px 0 var(--pink-color-1), 110px 0 var(--pink-color-1),
+      100px 0 var(--pink-color-1), 0px 0 rgba(255, 255, 255, 0);
   }
   50% {
-    box-shadow: 130px 0 var(--pink-color-1), 120px 0 var(--pink-color-1), 110px 0 var(--pink-color-1), 100px 0 var(--pink-color-1);
+    box-shadow: 130px 0 var(--pink-color-1), 120px 0 var(--pink-color-1),
+      110px 0 var(--pink-color-1), 100px 0 var(--pink-color-1);
   }
   62% {
-    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--pink-color-1), 120px 0 var(--pink-color-1), 110px 0 var(--pink-color-1);
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--pink-color-1),
+      120px 0 var(--pink-color-1), 110px 0 var(--pink-color-1);
   }
   75% {
-    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--pink-color-1), 120px 0 var(--pink-color-1);
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      130px 0 var(--pink-color-1), 120px 0 var(--pink-color-1);
   }
   87% {
-    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--pink-color-1);
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 130px 0 var(--pink-color-1);
   }
   100% {
     box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
@@ -1235,7 +1242,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type="number"] {
+.input-letter {
   -moz-appearance: textfield;
 }
 input[type="radio"] {
@@ -1250,4 +1257,19 @@ input[type="radio"] {
 }
 .input-letter {
   height: 44px;
+}
+.input-letter:focus,
+.input-letter:focus-visible {
+  border: 2px solid var(--letter-main-color);
+  outline: none;
+}
+
+/* Congrats detail page */
+.congrats-wrapper {
+  color: white;
+  background-color: var(--letter-main-color);
+}
+.congrats-wrapper svg path {
+  fill: white !important;
+  color: white;
 }
