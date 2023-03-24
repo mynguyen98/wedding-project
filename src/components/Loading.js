@@ -7,9 +7,7 @@ const Loading = () => {
     useEffect(() => {
         setLoad(true);
         setTimeout(() => {
-            console.log('load:', load)
             setLoad(false);
-            console.log(load)
         }, 1500);
     }, []);
 
