@@ -40,6 +40,7 @@ const AudioPlay = () => {
         );
       });
     });
+    if (!audioMusic.current.paused) dispatch(setIsAudioPlay(true));
   }, []);
 
   return (
@@ -57,9 +58,8 @@ const AudioPlay = () => {
       </div>
       <audio
         ref={audioMusic}
-        // src={beautifulInWhite}
+        src={beautifulInWhite}
         autoPlay
-        // controls
         loop={true}
       ></audio>
     </div>
