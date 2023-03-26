@@ -49,6 +49,46 @@ export const galleryImage = [
     id: 9,
     imageUrl: img9,
   },
+  {
+    id: 10,
+    imageUrl: main,
+  },
+  {
+    id: 11,
+    imageUrl: img1,
+  },
+  {
+    id: 12,
+    imageUrl: img2,
+  },
+  {
+    id: 13,
+    imageUrl: img3,
+  },
+  {
+    id: 14,
+    imageUrl: img4,
+  },
+  {
+    id: 15,
+    imageUrl: img5,
+  },
+  {
+    id: 16,
+    imageUrl: img6,
+  },
+  {
+    id: 17,
+    imageUrl: img7,
+  },
+  {
+    id: 18,
+    imageUrl: img8,
+  },
+  {
+    id: 19,
+    imageUrl: img9,
+  },
 ]
 // export const galleryImageCarousel = [
 //   {

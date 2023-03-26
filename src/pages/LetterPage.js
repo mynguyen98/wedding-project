@@ -1,48 +1,49 @@
-import React from "react";
-import Hero from "../components/letter-page/Hero";
-import { useEffect, useState } from "react";
-import Invitation from "../components/letter-page/Invitation";
-import TimeLocation from "../components/letter-page/TimeLocation";
-import Schedule from "../components/letter-page/Schedule";
-import Congrats from "../components/letter-page/Congrats";
-import Footer from "../components/letter-page/Footer";
-import Gallery from "../components/letter-page/Gallery";
-import Modal from "../components/letter-page/sub-comp/Modal";
-import { galleryImage } from "../utils/gallery-data";
-import Sidebar from "../components/letter-page/sub-comp/Sidebar";
-import YoutubeVideo from "../components/letter-page/YoutubeVideo";
-import Snowfall from "react-snowfall";
-import snowImage from "../assets/home-image/snow.png";
-import NavButton from "../components/letter-page/sub-comp/NavButton";
-import Message from "@/components/letter-page/Message";
-import Response from "@/components/letter-page/Response";
+import React from 'react'
+import Hero from '../components/letter-page/Hero'
+import { useEffect, useState } from 'react'
+import Invitation from '../components/letter-page/Invitation'
+import TimeLocation from '../components/letter-page/TimeLocation'
+import Schedule from '../components/letter-page/Schedule'
+import Congrats from '../components/letter-page/Congrats'
+import Footer from '../components/letter-page/Footer'
+import Gallery from '../components/letter-page/Gallery'
+import Modal from '../components/letter-page/sub-comp/Modal'
+import { galleryImage } from '../utils/gallery-data'
+import Sidebar from '../components/letter-page/sub-comp/Sidebar'
+import YoutubeVideo from '../components/letter-page/YoutubeVideo'
+import Snowfall from 'react-snowfall'
+import snowImage from '../assets/home-image/snow.png'
+import NavButton from '../components/letter-page/sub-comp/NavButton'
+import Message from '@/components/letter-page/Message'
+import Response from '@/components/letter-page/Response'
+import Gallery1 from '@/components/letter-page/Gallery-1'
 const LetterPage = () => {
-  const snowImg = document.createElement("img");
-  snowImg.src = snowImage;
-  snowImg.width = 20;
-  const images = [snowImg];
-  const [isOpen, setIsOpen] = useState(false);
-  const [modalContent, setModalContent] = useState("");
-  const [index, setIndex] = useState(0);
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const numberImage = galleryImage.length;
+  const snowImg = document.createElement('img')
+  snowImg.src = snowImage
+  snowImg.width = 20
+  const images = [snowImg]
+  const [isOpen, setIsOpen] = useState(false)
+  const [modalContent, setModalContent] = useState('')
+  const [index, setIndex] = useState(0)
+  const [isNavOpen, setIsNavOpen] = useState(false)
+  const numberImage = galleryImage.length
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset'
     }
-  }, [isOpen]);
+  }, [isOpen])
   return (
-    <div className="letter-wrapper">
-      <div className=" letter-layout">
+    <div className='letter-wrapper'>
+      <div className=' letter-layout'>
         <Snowfall
-          color="#E29C67"
+          color='#E29C67'
           snowflakeCount={40}
           style={{
-            position: "fixed",
-            width: "100vw",
-            height: "100vh",
+            position: 'fixed',
+            width: '100vw',
+            height: '100vh',
             zIndex: 11,
           }}
           images={images}
@@ -59,11 +60,12 @@ const LetterPage = () => {
         />
         <Hero setIsNavOpen={setIsNavOpen} />
         <Invitation />
-        <Gallery
+        {/* <Gallery
           setModalContent={setModalContent}
           setIsOpen={setIsOpen}
           setIndex={setIndex}
-        />
+        /> */}
+        <Gallery1 />
         <YoutubeVideo />
         <TimeLocation />
         <Schedule />
@@ -73,7 +75,7 @@ const LetterPage = () => {
         <Footer />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LetterPage;
+export default LetterPage
