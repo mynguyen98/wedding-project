@@ -36,9 +36,9 @@ Global Styles
   --gray-color-3: #94a3b8;
   --text-color-head: #0f172a;
   --text-color-darkmode: #131825;
-  --quick-sand-font-family: 'Quicksand', sans-serif;
-  --lateef-font-family: 'Lateef', serif;
-  --wind-song-font-family: 'WindSong', cursive;
+  --quick-sand-font-family: "Quicksand", sans-serif;
+  --lateef-font-family: "Lateef", serif;
+  --wind-song-font-family: "WindSong", cursive;
   --font-size: 60px;
   --font-size-default: 16px;
   --red-color-mess-err: #ff0000;
@@ -64,12 +64,12 @@ html {
 
 body {
   margin: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: rgba(88, 88, 88, 1);
   font-size: var(--font-size-default);
 }
@@ -87,7 +87,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -100,15 +100,15 @@ code {
 }
 
 .lateef {
-  font-family: 'Lateef', serif;
+  font-family: "Lateef", serif;
 }
 
 .wind-song {
-  font-family: 'WindSong', cursive;
+  font-family: "WindSong", cursive;
 }
 
 .quick-sand {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 ul {
@@ -762,7 +762,9 @@ p {
   padding: 50px 0;
   color: var(--white-color);
 }
-
+.footer-letter {
+  background-color: var(--bg-bold-green);
+}
 .footer .component_ShowInf_Company h2 {
   font-style: normal;
   font-weight: 600;
@@ -873,7 +875,7 @@ p {
 }
 
 .otherLoginSocial .titleOrther::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -914,7 +916,7 @@ p {
       rgb(173 77 95 / 22%),
       rgb(185 130 130 / 15%)
     ),
-    url('/src/assets/home-image/Bg_Banner.png');
+    url("/src/assets/home-image/Bg_Banner.png");
   background-size: cover;
   background-position: center;
   padding: 100px 15px;
@@ -1060,7 +1062,7 @@ table .date {
 .Notfound .number {
   background: #fff;
   position: relative;
-  font: 900 30vmin 'Consolas';
+  font: 900 30vmin "Consolas";
   letter-spacing: 5vmin;
   text-shadow: 2px -1px 0 #000, 4px -2px 0 #0a0a0a, 6px -3px 0 #0f0f0f,
     8px -4px 0 #141414, 10px -5px 0 #1a1a1a, 12px -6px 0 #1f1f1f,
@@ -1085,7 +1087,7 @@ table .date {
   animation: moving 10s linear infinite both;
   display: block;
   position: absolute;
-  content: '';
+  content: "";
 }
 
 .Notfound .backlink {
@@ -1178,7 +1180,7 @@ table .date {
 }
 
 .text {
-  font: 400 5vmin 'Courgette';
+  font: 400 5vmin "Courgette";
 }
 
 .text span {
@@ -1245,7 +1247,7 @@ input::-webkit-inner-spin-button {
 .input-letter {
   -moz-appearance: textfield;
 }
-input[type='radio'] {
+input[type="radio"] {
   cursor: pointer;
   width: 22px;
   height: 22px;
