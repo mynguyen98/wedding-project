@@ -5,7 +5,9 @@ import Languages from '@/commons/Languages';
 import itemImage from '@/assets/home-image/item.png'
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
-function ChooseTypeBlock() {
+function ChooseTypeBlock({
+    backgroundColor
+}) {
 
     const renderSection = useCallback((label, title) => {
         return <div className='slide-item'>
@@ -22,7 +24,7 @@ function ChooseTypeBlock() {
 
     return (
         <AnimationOnScroll animateIn="animate__fadeInUp" offset={10} initiallyVisible={true} animatePreScroll={false} duration={2}>
-            <div className='section_wrap_type_ds'>
+            <div className='section_wrap_type_ds' style={{background: backgroundColor}}>
 
                 <div className='container mx-auto'>
                     <div className='head text-center'>

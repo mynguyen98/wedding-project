@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './HomePage.module.css';
 import Languages from '@/commons/Languages';
 import { Button } from '@/components/button';
@@ -20,7 +20,11 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const Homepage = () => {
 
-
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 5)
+    }, 1500);
+  }, [])
 
 
   return (
@@ -56,6 +60,7 @@ const Homepage = () => {
           title={Languages.text.textHeadTC}
           img={IcDoublePhone}
           styleBoxText={styles.styleBoxText}
+          offset={100} initiallyVisible={false} animatePreScroll={false} duration={2}
         >
           {Languages.text.creatContent}
         </BlockUI>
@@ -120,7 +125,6 @@ const Homepage = () => {
         >
           {Languages.text.contentEffect}
         </BlockUI>
-        <ChooseTypeBlock />
       </div>
       <Footer />
     </>
