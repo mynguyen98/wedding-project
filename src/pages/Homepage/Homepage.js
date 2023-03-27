@@ -13,7 +13,6 @@ import IcCapture from '@/assets/home-image/capture.svg'
 import IcFile from '@/assets/home-image/file.svg'
 import IcMapMarker from '@/assets/home-image/map-marker.svg'
 import Footer from '../Footer/Footer';
-import ChooseTypeBlock from '@/components/chooseTypeBlock';
 import Header from '@/components/header';
 import Loading from '@/components/Loading';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
