@@ -27,9 +27,10 @@ Global Styles
   --letter-main-color: rgba(145, 173, 163, 1);
   --gray-item-color: 1px solid #c6c6c6;
   --border-img-dash: 2px dashed #828282;
+
   /* root home page */
   --pink-color-1: #ea4c89;
-  --pink-color-2: #FBF3F1;
+  --pink-color-2: #fbf3f1;
   --black-color: #000;
   --white-color: #fff;
   --gray-color: #c1c1c1;
@@ -92,7 +93,8 @@ code {
     monospace;
 }
 
-.app {}
+.app {
+}
 
 .section-mb {
   /* max-width: 560px;
@@ -918,9 +920,11 @@ p {
 }
 
 .bg_form {
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       rgb(173 77 95 / 22%),
-      rgb(185 130 130 / 15%)),
+      rgb(185 130 130 / 15%)
+    ),
     url("/src/assets/home-image/Bg_Banner.png");
   background-size: cover;
   background-position: center;
@@ -1082,9 +1086,11 @@ table .date {
 
 .Notfound .number::before {
   background-color: #673ab7;
-  background-image: radial-gradient(closest-side at 50% 50%,
+  background-image: radial-gradient(
+      closest-side at 50% 50%,
       #ffc107 100%,
-      rgba(0, 0, 0, 0)),
+      rgba(0, 0, 0, 0)
+    ),
     radial-gradient(closest-side at 50% 50%, #e91e63 100%, rgba(0, 0, 0, 0));
   background-repeat: repeat-x;
   background-size: 40vmin 40vmin;
@@ -1376,7 +1382,8 @@ table .date {
   }
 }
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+}
 
 @media (max-width: 768px) {
   .section_wrap_type_ds .head h2 {
@@ -1487,3 +1494,7 @@ input[type="radio"] {
   fill: white !important;
   color: white;
 }
+
+/* LETTER ENVELOP */
+
+/* ----------------------- */

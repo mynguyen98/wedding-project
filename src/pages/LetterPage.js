@@ -18,12 +18,14 @@ import NavButton from "../components/letter-page/sub-comp/NavButton";
 import Message from "@/components/letter-page/Message";
 import Response from "@/components/letter-page/Response";
 import Gallery1 from "@/components/letter-page/Gallery-1";
+import LetterEnvelop from "@/components/letter-page/LetterEnvelop";
 const LetterPage = () => {
   const snowImg = document.createElement("img");
   snowImg.src = snowImage;
   snowImg.width = 20;
   const images = [snowImg];
   const [isOpen, setIsOpen] = useState(false);
+  const [isLetterOpen, setIsLetterOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
   const [index, setIndex] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -35,6 +37,16 @@ const LetterPage = () => {
       document.body.style.overflow = "unset";
     }
   }, [isOpen]);
+  if (true) {
+    return (
+      <div className="w-screen h-screen m-0 p-0 flex items-center justify-center bg-main">
+        <LetterEnvelop
+          isLetterOpen={isLetterOpen}
+          setIsLetterOpen={setIsLetterOpen}
+        />
+      </div>
+    );
+  }
   return (
     <div className="letter-wrapper">
       <div className=" letter-layout">
