@@ -22,7 +22,9 @@ function BlockUI({
     textStyleButton,
     animateContent,
     animateImg,
-    children
+    children,
+    styleBoxImg,
+    ...rest
 }) {
 
     const _onPress = useCallback(() => {
@@ -58,13 +60,13 @@ function BlockUI({
 
                 <div className='md:grid md:grid-cols-2 md:gap-4'>
                     {
-                        isLeft && <AnimationOnScroll animateIn={animateImg ? animateImg : 'animate__fadeInLeft'}  offset={100} initiallyVisible={false} animatePreScroll={false} duration={2}><div className={styles.blockUIimage}>
+                        isLeft && <AnimationOnScroll animateIn={animateImg ? animateImg : 'animate__fadeInLeft'}  {...rest}><div className={`${styles.blockUIimage} ${styleBoxImg ? styleBoxImg : ''}`}>
                             <img src={img} className={styleImg} alt={title} />
                         </div></AnimationOnScroll>
                     }
 
                     <div className={styles.blockUIText}>
-                        <AnimationOnScroll animateIn={animateContent ? animateContent : 'animate__fadeInUp'} duration={2}>
+                        <AnimationOnScroll  animateIn={animateContent ? animateContent : 'animate__fadeInUp'} {...rest}>
                             <div className={`${styles.wrapper_content} ${styleBoxText ? styleBoxText : ''}`}>
                                 <h2 className={styles.blockUIhead}>
                                     {title}
@@ -87,7 +89,7 @@ function BlockUI({
                         </AnimationOnScroll>
                     </div>
                     {
-                        isright && <AnimationOnScroll animateIn={animateImg ? animateImg : 'animate__fadeInRight' } duration={2}><div className={styles.blockUIimage}>
+                        isright && <AnimationOnScroll animateIn={animateImg ? animateImg : 'animate__fadeInRight' } {...rest}><div className={`${styles.blockUIimage} ${styleBoxImg ? styleBoxImg : ''}`}>
                             <img src={img} className={styleImg} alt={title} />
                         </div></AnimationOnScroll>
                     }

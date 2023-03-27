@@ -77,7 +77,19 @@ const Languages = {
         free: 'Miễn phí',
         autoDelete: '(Tự động xoá sau 24 ngày)',
         onlyDate: '(Còn 30 ngày)',
-        complete: 'Hoàn thành'
+        complete: 'Hoàn thành', 
+        notrushpay: 'Đừng vội thanh toán!',
+        freeDraft: 'Hãy tạo bản nháp miễn phí.',
+        beauToday: 'Vào ngày đẹp nhất trong cuộc đời bạn, Hãy tạo thiệp cưới Online với Cuoithoi',
+        hot: 'HOT',
+        packageServices: 'Các gói dịch vụ',
+        only: 'Chỉ với',
+        price: '1.000.000đ',
+        packAllDs: 'trọn gói thiết kế',
+        mUse: '3 tháng sử dụng',
+        savePen: 'Lưu bút',
+        album:'Album ảnh (20 ảnh)',
+        confirmInvite: 'Xác nhận lời mời'
     },
     errorMsg: {
         noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',
