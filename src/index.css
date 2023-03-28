@@ -93,8 +93,7 @@ code {
     monospace;
 }
 
-.app {
-}
+.app {}
 
 .section-mb {
   /* max-width: 560px;
@@ -920,11 +919,9 @@ p {
 }
 
 .bg_form {
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       rgb(173 77 95 / 22%),
-      rgb(185 130 130 / 15%)
-    ),
+      rgb(185 130 130 / 15%)),
     url("/src/assets/home-image/Bg_Banner.png");
   background-size: cover;
   background-position: center;
@@ -1086,11 +1083,9 @@ table .date {
 
 .Notfound .number::before {
   background-color: #673ab7;
-  background-image: radial-gradient(
-      closest-side at 50% 50%,
+  background-image: radial-gradient(closest-side at 50% 50%,
       #ffc107 100%,
-      rgba(0, 0, 0, 0)
-    ),
+      rgba(0, 0, 0, 0)),
     radial-gradient(closest-side at 50% 50%, #e91e63 100%, rgba(0, 0, 0, 0));
   background-repeat: repeat-x;
   background-size: 40vmin 40vmin;
@@ -1382,8 +1377,7 @@ table .date {
   }
 }
 
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 @media (max-width: 768px) {
   .section_wrap_type_ds .head h2 {
@@ -1498,3 +1492,15 @@ input[type="radio"] {
 /* LETTER ENVELOP */
 
 /* ----------------------- */
+
+.root-remove {
+  display: "flex";
+  flex-wrap: "wrap";
+  user-select: none;
+}
+.dragged {
+  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
+}
+.pointer{
+  cursor: pointer;
+}
