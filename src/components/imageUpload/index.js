@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import ImageUploading from "react-images-uploading";
 import CloseIcon from "../icons/CloseIcon";
+import SortableList, { SortableItem } from "react-easy-sort";
+import arrayMove from "array-move-e5";
+
 export const ImageUpload = ({ icon, maxW, height, desc }) => {
-  const [images, setImages] = React.useState([]);
-  const maxNumber = 1;
-  const onChange = (imageList, addUpdateIndex) => {
+
+  const [images, setImages] = useState([]);
+  const maxNumber = 10;
+
+  const onChange = (imageList) => {
     setImages(imageList);
+  };
+
+  const onSortEnd = (oldIndex, newIndex) => {
+    setImages((array) => arrayMove(array, oldIndex, newIndex));
+    console.log(images)
   };
 
   return (
@@ -24,10 +34,8 @@ export const ImageUpload = ({ icon, maxW, height, desc }) => {
         {({
           imageList,
           onImageUpload,
-          onImageRemoveAll,
           onImageUpdate,
           onImageRemove,
-          isDragging,
           dragProps,
         }) => (
           // write your building UI
@@ -37,47 +45,54 @@ export const ImageUpload = ({ icon, maxW, height, desc }) => {
                 className="flex justify-center"
                 onClick={onImageUpload}
                 styles={{ cursor: "pointer", zIndex: "5" }}
+                {...dragProps}
               >
                 {icon}
               </div>
             )}
-            {imageList.map((image, index) => (
-              <div key={index} className="image-item flex justify-center">
-                <div
-                  className="relative max-w-fit pb-2 "
-                  style={{ height: height }}
-                >
+            <SortableList
+              onSortEnd={onSortEnd}
+              className={'root-remove'}
+              draggedItemClassName={'dragged'}
+            >{imageList.map((image, index) => (
+              <SortableItem key={index}>
+                <div className="image-item flex justify-center">
                   <div
-                    className="absolute top-0 right-0"
-                    onClick={() => onImageRemove(index)}
+                    className="relative max-w-fit pb-2 "
+                    style={{ height: height }}
                   >
-                    <CloseIcon />
+                    <div
+                      className="absolute top-0 right-0 pointer"
+                      onClick={() => onImageRemove(index)}
+                    >
+                      <CloseIcon />
+                    </div>
+                    <img
+                      src={image.data_url}
+                      alt=""
+                      style={{ maxHeight: "100%" }}
+                      onClick={() => onImageUpdate(index)}
+                    />
                   </div>
-                  <img
-                    src={image.data_url}
-                    alt=""
-                    style={{ maxHeight: "100%" }}
-                    onClick={() => onImageUpdate(index)}
-                  />
                 </div>
-              </div>
-            ))}
-            {!images.length > 0 && (
-              <div>
-                <p
-                  style={{
-                    textDecoration: "underline",
-                    cursor: "pointer",
-                    color: "#1045FF",
-                  }}
-                  onClick={onImageUpload}
-                >
-                  Thêm một hình ảnh
-                </p>
+              </SortableItem>
+            ))}</SortableList>
+            <div>
+              <p
+                style={{
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                  color: "#1045FF",
+                }}
+                onClick={onImageUpload}
+                {...dragProps}
+              >
+                Thêm một hình ảnh
+              </p>
 
-                {desc && <p>({desc})</p>}
-              </div>
-            )}
+              {desc && <p>({desc})</p>}
+            </div>
+
           </div>
         )}
       </ImageUploading>
