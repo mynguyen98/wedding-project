@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import ImageUploading from "react-images-uploading";
 import CloseIcon from "../icons/CloseIcon";
 import SortableList, { SortableItem } from "react-easy-sort";
@@ -13,10 +13,10 @@ export const ImageUpload = ({ icon, maxW, height, desc }) => {
     setImages(imageList);
   };
 
-  const onSortEnd = (oldIndex, newIndex) => {
+  const onSortEnd = useCallback((oldIndex, newIndex) => {
     setImages((array) => arrayMove(array, oldIndex, newIndex));
     console.log(images)
-  };
+  },[]);
 
   return (
     <div
@@ -54,6 +54,9 @@ export const ImageUpload = ({ icon, maxW, height, desc }) => {
               onSortEnd={onSortEnd}
               className={'root-remove'}
               draggedItemClassName={'dragged'}
+              defaultChecked
+              draggable
+              hidden={true}
             >{imageList.map((image, index) => (
               <SortableItem key={index}>
                 <div className="image-item flex justify-center">
