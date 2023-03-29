@@ -91,7 +91,8 @@ const Languages = {
         album:'Album ảnh (20 ảnh)',
         confirmInvite: 'Xác nhận lời mời',
         bigsize: '(Kích thước khuyến nghị 1024x768px)',
-        smallsize: '(Kích thước khuyến nghị 1024x1024px)'
+        smallsize: '(Kích thước khuyến nghị 1024x1024px)',
+        addonepic: 'Thêm một hình ảnh'
     },
     errorMsg: {
         noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',

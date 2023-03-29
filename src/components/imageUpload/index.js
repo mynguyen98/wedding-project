@@ -3,6 +3,7 @@ import ImageUploading from "react-images-uploading";
 import CloseIcon from "../icons/CloseIcon";
 import SortableList, { SortableItem } from "react-easy-sort";
 import arrayMove from "array-move-e5";
+import Languages from "@/commons/Languages";
 
 export const ImageUpload = ({ icon, maxW, height, desc, maxnumber, allowDrag }) => {
 
@@ -44,7 +45,6 @@ export const ImageUpload = ({ icon, maxW, height, desc, maxnumber, allowDrag }) 
         }) => (
           // write your building UI
           <div className="wrap_box_upload_image_child">
-
             <SortableList
               onSortEnd={onSortEnd}
               className={'root-remove'}
@@ -71,7 +71,7 @@ export const ImageUpload = ({ icon, maxW, height, desc, maxnumber, allowDrag }) 
                         </div>
                         <img
                           src={image.data_url}
-                          alt=""
+                          alt={'thumbs' + image.file?.size}
                           style={{ maxHeight: "100%" }}
                           onClick={() => onImageUpdate(index)}
                         />
@@ -84,33 +84,23 @@ export const ImageUpload = ({ icon, maxW, height, desc, maxnumber, allowDrag }) 
                 images.length < maxNumber && <div
                   className="wrap_imageUploading border-img-dash flex items-center rounded-lg pb-2"
                   style={{ maxWidth: maxW, height: height }}
+                  onClick={onImageUpload}
+                  {...dragProps}
                 >
-                  <div
-                    className="justify-center"
-                    onClick={onImageUpload}
-                    style={{ cursor: "pointer", zIndex: "5" }}
-                    {...dragProps}
-                  >
+                  <div className="justify-center">
                     <div className='ImgUploadIcon'>
                       {icon}
                     </div>
                   </div>
                   <div className="text-center">
-                    <p
-                      className="add_image_uploading"
-                      onClick={onImageUpload}
-                      {...dragProps}
-                    >
-                      Thêm một hình ảnh
+                    <p className="add_image_uploading">
+                      {Languages.text.addonepic}
                     </p>
-
-                    {<p className="desc_image_uploading">{desc}</p>}
+                    {desc && <p className="desc_image_uploading">{desc}</p>}
                   </div>
-
                 </div>
               }
             </SortableList>
-
           </div>
         )}
       </ImageUploading>
