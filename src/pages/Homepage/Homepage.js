@@ -16,6 +16,7 @@ import Footer from '../Footer/Footer';
 import Header from '@/components/header';
 import Loading from '@/components/Loading';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+import { ImageUpload } from '@/components/imageUpload';
 
 const Homepage = () => {
 
@@ -29,6 +30,7 @@ const Homepage = () => {
   return (
     <>
       <Loading />
+      <ImageUpload maxnumber={3} allowDrag/>
       <div className='main'>
         <div className={`${styles.homepage_box}`}>
           <Header typeLogo={BACKGROUND_STYLES.WHITE} />

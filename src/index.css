@@ -1371,73 +1371,6 @@ table .date {
   font-size: 10vmin;
 }
 
-@media (min-width: 991px) {
-  .navbar-toggler {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {}
-
-@media (max-width: 768px) {
-  .section_wrap_type_ds .head h2 {
-    font-size: 25px;
-  }
-
-  .slide-track .slide-item {
-    max-width: 70%;
-  }
-
-  .section_wrap_type_ds {
-    padding: 30px 15px;
-  }
-
-  .footer {
-    padding: 20px 15px;
-  }
-
-  .divided-right {
-    border: none;
-  }
-
-  .logo_footer {
-    margin-top: 30px;
-  }
-
-  .wrapper_box_create .container {
-    padding: 0 15px;
-  }
-
-  .bg_form {
-    padding: 15px 15px;
-  }
-
-  .all_services_types .head_hot h2 {
-    font-size: 25px;
-  }
-
-  .all_services_types .head_hot span {
-    width: 70px;
-    font-size: 16px;
-  }
-
-  .wrap_ds_review {
-    padding: 40px 0;
-  }
-
-  .box_details_ds .only {
-    font-size: 28px;
-  }
-
-  .box_details_ds .price {
-    font-size: 35px;
-  }
-
-  .box_details_ds p {
-    font-size: 18px;
-  }
-}
-
 /* Response letter section */
 .side-choose:hover {
   transform: scale(1.02);
@@ -1503,4 +1436,74 @@ input[type="radio"] {
 }
 .pointer{
   cursor: pointer;
+}
+img {
+  -webkit-user-drag: none;
+}
+
+@media (min-width: 991px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {}
+
+@media (max-width: 768px) {
+  .section_wrap_type_ds .head h2 {
+    font-size: 25px;
+  }
+
+  .slide-track .slide-item {
+    max-width: 70%;
+  }
+
+  .section_wrap_type_ds {
+    padding: 30px 15px;
+  }
+
+  .footer {
+    padding: 20px 15px;
+  }
+
+  .divided-right {
+    border: none;
+  }
+
+  .logo_footer {
+    margin-top: 30px;
+  }
+
+  .wrapper_box_create .container {
+    padding: 0 15px;
+  }
+
+  .bg_form {
+    padding: 15px 15px;
+  }
+
+  .all_services_types .head_hot h2 {
+    font-size: 25px;
+  }
+
+  .all_services_types .head_hot span {
+    width: 70px;
+    font-size: 16px;
+  }
+
+  .wrap_ds_review {
+    padding: 40px 0;
+  }
+
+  .box_details_ds .only {
+    font-size: 28px;
+  }
+
+  .box_details_ds .price {
+    font-size: 35px;
+  }
+
+  .box_details_ds p {
+    font-size: 18px;
+  }
 }
