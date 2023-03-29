@@ -2,33 +2,31 @@ import React, { forwardRef, useCallback, useImperativeHandle, useMemo, useState 
 import ImageUploading from "react-images-uploading";
 import CloseIcon from "../icons/CloseIcon";
 import SortableList, { SortableItem } from "react-easy-sort";
-import arrayMove from "array-move-e5";
 import Languages from "@/commons/Languages";
 import Validate from "@/utils/Validate";
 
 export const ImageUpload = forwardRef(
-  ({ icon, maxW, height, desc, maxnumber, allowDrag }, ref) => {
+  ({ images, icon, maxW, height, desc, maxnumber, allowDrag, onChange, onSortEnd }, ref) => {
     useImperativeHandle(ref, () => ({
       setErrorMsg
     }));
 
-    const [images, setImages] = useState([]);
     const [errMsg, setErrMsg] = useState("");
 
     const maxNumber = maxnumber || 10;
 
-    const onChange = (imageList) => {
-      setImages(imageList);
-    };
+    //function sort and updatelist => call out component
+    // const onChange = (imageList) => {
+    //   setImages(imageList);
+    // };
+  
+    // const onSortEnd = useCallback((oldIndex, newIndex) => {
+    //   setImages((array) => arrayMove(array, oldIndex, newIndex));
+    // }, []);
 
     const onError = () => {
       console.log('Số lượng tối đa ' + maxnumber + ' ảnh')
     };
-
-    const onSortEnd = useCallback((oldIndex, newIndex) => {
-      setImages((array) => arrayMove(array, oldIndex, newIndex));
-      console.log(images)
-    }, [images]);
 
     const setErrorMsg = useCallback((msg) => {
       if (Validate.isEmptyValue(msg)) {
@@ -56,7 +54,7 @@ export const ImageUpload = forwardRef(
           onChange={onChange}
           maxNumber={maxNumber}
           dataURLKey="data_url"
-          acceptType={["jpg", "png", "jpeg","bmp", ".gif", "HEIC"]}
+          acceptType={["jpg", "png", "jpeg", "bmp", ".gif", "HEIC"]}
           onError={onError}
         >
           {({
