@@ -37,7 +37,7 @@ const LetterPage = () => {
       document.body.style.overflow = "unset";
     }
   }, [isOpen]);
-  if (true) {
+  if (!isLetterOpen) {
     return (
       <div className="w-screen h-screen m-0 p-0 flex items-center justify-center bg-main">
         <LetterEnvelop
