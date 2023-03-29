@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import styles from './HomePage.module.css';
 import Languages from '@/commons/Languages';
 import { Button } from '@/components/button';
@@ -18,8 +18,11 @@ import Loading from '@/components/Loading';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { ImageUpload } from '@/components/imageUpload';
 import ImgUploadIcon from '@/components/icons/ImgUploadIcon';
+import arrayMove from "array-move-e5";
 
 const Homepage = () => {
+
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,11 +30,9 @@ const Homepage = () => {
     }, 1500);
   }, [])
 
-
   return (
     <>
       <Loading />
-      <ImageUpload icon={<ImgUploadIcon />} desc={Languages.text.bigsize} maxW={500} height={300} maxnumber={6} allowDrag/>
       <div className='main'>
         <div className={`${styles.homepage_box}`}>
           <Header typeLogo={BACKGROUND_STYLES.WHITE} />
