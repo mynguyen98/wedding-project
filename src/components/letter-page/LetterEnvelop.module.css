@@ -23,7 +23,7 @@
   border-right: 150px solid transparent;
   border-left: 150px solid transparent;
   transform-origin: top;
-  transition: all 0.5s ease-in-out 0.7s;
+  transition: all 0.4s ease-in-out 0.6s;
 }
 .envelopeWrapper > .envelope::after {
   content: "";
@@ -38,13 +38,13 @@
 }
 .envelope > .letter {
   position: absolute;
-  right: 20%;
+  right: 23%;
   bottom: 0;
   width: 54%;
   height: 80%;
   background: #fff;
   text-align: center;
-  transition: all 1s ease-in-out;
+  transition: all 0.8s ease-in-out;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   padding: 20px 10px;
 }
@@ -55,7 +55,7 @@
   text-align: left;
   font-size: 10px;
 }
-.heart {
+.heartIcon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,12 +64,12 @@
   background: rgb(252, 8, 231);
   z-index: 4;
   transform: translate(-50%, -20%) rotate(45deg);
-  transition: transform 0.5s ease-in-out 1s;
+  transition: transform 0.4s ease-in-out 0.6s;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-.heart:before,
-.heart:after {
+.heartIcon:before,
+.heartIcon:after {
   content: "";
   position: absolute;
   width: 15px;
@@ -77,10 +77,10 @@
   background-color: rgb(252, 8, 231);
   border-radius: 50%;
 }
-.heart:before {
+.heartIcon:before {
   top: -7.5px;
 }
-.heart:after {
+.heartIcon:after {
   right: 7.5px;
 }
 .flap > .envelope:before {
@@ -92,7 +92,121 @@
   transform: scale(1.5);
   transition-delay: 1s;
 }
-.flap > .heart {
+.flap > .heartIcon {
   transform: rotate(90deg);
-  transition-delay: 0.4s;
+  transition-delay: 0.3s;
+}
+.hearts {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.heart {
+  position: absolute;
+  bottom: -60px;
+  right: 10%;
+}
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 33px;
+  top: 0;
+  width: 33px;
+  height: 53px;
+  background: #d00000;
+  border-radius: 33px 33px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+.close .heart {
+  opacity: 0;
+  animation: none;
+}
+.a1 {
+  left: 20%;
+  transform: scale(0.6);
+  opacity: 1;
+  animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+.a2 {
+  left: 55%;
+  transform: scale(1);
+  opacity: 1;
+  animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+.a3 {
+  left: 10%;
+  transform: scale(0.8);
+  opacity: 1;
+  animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 1.2s;
+}
+.a4 {
+  left: 33%;
+  transform: scale(0.6);
+  opacity: 1;
+  animation: slideUp 3s linear 1, sideSway 1.25s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+.a5 {
+  left: 70%;
+  transform: scale(0.4);
+  opacity: 1;
+  animation: slideUp 4s linear 1, sideSway 1.25s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.9s;
+}
+.a6 {
+  left: 40%;
+  transform: scale(0.25);
+  opacity: 1;
+  animation: slideUp 4s linear 1, sideSway 1.25s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.8s;
+}
+.a7 {
+  left: -20%;
+  transform: scale(0.5);
+  opacity: 1;
+  animation: slideUp 4s linear 1, sideSway 1.25s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+.a8 {
+  left: -10%;
+  transform: scale(0.4);
+  opacity: 1;
+  animation: slideUp 4s linear 1, sideSway 1.25s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 1.2s;
+}
+@keyframes slideUp {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -600px;
+  }
+}
+@keyframes sideSway {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
 }
