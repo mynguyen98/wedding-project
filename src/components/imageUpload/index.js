@@ -4,19 +4,23 @@ import CloseIcon from "../icons/CloseIcon";
 import SortableList, { SortableItem } from "react-easy-sort";
 import arrayMove from "array-move-e5";
 
-export const ImageUpload = ({ icon, maxW, height, desc }) => {
+export const ImageUpload = ({ icon, maxW, height, desc, maxnumber, allowDrag }) => {
 
   const [images, setImages] = useState([]);
-  const maxNumber = 10;
+  const maxNumber = maxnumber || 10;
 
   const onChange = (imageList) => {
     setImages(imageList);
   };
 
+  const onError = () => {
+    console.log('Số lượng tối đa ' + maxnumber + ' ảnh')
+  };
+
   const onSortEnd = useCallback((oldIndex, newIndex) => {
     setImages((array) => arrayMove(array, oldIndex, newIndex));
     console.log(images)
-  },[]);
+  }, [images]);
 
   return (
     <div
@@ -29,19 +33,23 @@ export const ImageUpload = ({ icon, maxW, height, desc }) => {
         onChange={onChange}
         maxNumber={maxNumber}
         dataURLKey="data_url"
-        acceptType={["jpg"]}
+        acceptType={["jpg", "png", "jpeg", "HEIC"]}
+        onError={onError}
       >
         {({
+
           imageList,
           onImageUpload,
           onImageUpdate,
           onImageRemove,
           dragProps,
+
         }) => (
           // write your building UI
           <div className=" max-w-sm margin-auto ">
-            {!images.length > 0 && (
-              <div
+
+            {
+              !images.length > 0 && <div
                 className="flex justify-center"
                 onClick={onImageUpload}
                 styles={{ cursor: "pointer", zIndex: "5" }}
@@ -49,53 +57,61 @@ export const ImageUpload = ({ icon, maxW, height, desc }) => {
               >
                 {icon}
               </div>
-            )}
+            }
+
             <SortableList
               onSortEnd={onSortEnd}
               className={'root-remove'}
               draggedItemClassName={'dragged'}
               defaultChecked
               draggable
-              hidden={true}
-            >{imageList.map((image, index) => (
-              <SortableItem key={index}>
-                <div className="image-item flex justify-center">
-                  <div
-                    className="relative max-w-fit pb-2 "
-                    style={{ height: height }}
-                  >
-                    <div
-                      className="absolute top-0 right-0 pointer"
-                      onClick={() => onImageRemove(index)}
-                    >
-                      <CloseIcon />
+              hidden
+              allowDrag={allowDrag || false}
+            >
+              {
+                imageList.map((image, index) =>
+                  <SortableItem key={index} imgProps={{ draggable: false }}>
+                    <div className="image-item flex justify-center">
+                      <div
+                        className="relative max-w-fit pb-2 "
+                        style={{ height: height }}
+                        {...dragProps}
+                      >
+                        <div
+                          className="absolute top-0 right-0 pointer"
+                          onClick={() => onImageRemove(index)}
+                        >
+                          <CloseIcon />
+                        </div>
+                        <img
+                          src={image.data_url}
+                          alt=""
+                          style={{ maxHeight: "100%" }}
+                          onClick={() => onImageUpdate(index)}
+                        />
+                      </div>
                     </div>
-                    <img
-                      src={image.data_url}
-                      alt=""
-                      style={{ maxHeight: "100%" }}
-                      onClick={() => onImageUpdate(index)}
-                    />
-                  </div>
-                </div>
-              </SortableItem>
-            ))}</SortableList>
-            <div>
-              <p
-                style={{
-                  textDecoration: "underline",
-                  cursor: "pointer",
-                  color: "#1045FF",
-                }}
-                onClick={onImageUpload}
-                {...dragProps}
-              >
-                Thêm một hình ảnh
-              </p>
+                  </SortableItem>
+                )}
 
-              {desc && <p>({desc})</p>}
-            </div>
+            </SortableList>
+            {
+              images.length < maxNumber && <div>
+                <p
+                  style={{
+                    textDecoration: "underline",
+                    cursor: "pointer",
+                    color: "#1045FF",
+                  }}
+                  onClick={onImageUpload}
+                  {...dragProps}
+                >
+                  Thêm một hình ảnh
+                </p>
 
+                {desc && <p>({desc})</p>}
+              </div>
+            }
           </div>
         )}
       </ImageUploading>
