@@ -31,7 +31,7 @@ const Homepage = () => {
   return (
     <>
       <Loading />
-      <ImageUpload icon={<ImgUploadIcon />} desc={Languages.text.bigsize} maxW={500} height={300} maxnumber={20} allowDrag/>
+      <ImageUpload icon={<ImgUploadIcon />} desc={Languages.text.bigsize} maxW={500} height={300} maxnumber={6} allowDrag/>
       <div className='main'>
         <div className={`${styles.homepage_box}`}>
           <Header typeLogo={BACKGROUND_STYLES.WHITE} />
