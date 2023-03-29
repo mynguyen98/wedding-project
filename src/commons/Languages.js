@@ -89,7 +89,9 @@ const Languages = {
         mUse: '3 tháng sử dụng',
         savePen: 'Lưu bút',
         album:'Album ảnh (20 ảnh)',
-        confirmInvite: 'Xác nhận lời mời'
+        confirmInvite: 'Xác nhận lời mời',
+        bigsize: '(Kích thước khuyến nghị 1024x768px)',
+        smallsize: '(Kích thước khuyến nghị 1024x1024px)'
     },
     errorMsg: {
         noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',

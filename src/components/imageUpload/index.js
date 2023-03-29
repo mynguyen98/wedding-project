@@ -23,10 +23,7 @@ export const ImageUpload = ({ icon, maxW, height, desc, maxnumber, allowDrag }) 
   }, [images]);
 
   return (
-    <div
-      className="border-img-dash flex items-center rounded-lg margin-auto pb-2"
-      style={{ maxWidth: { maxW }, height: { height } }}
-    >
+    <div className="wrap_box_upload_image_section">
       <ImageUploading
         multiple
         value={images}
@@ -46,18 +43,7 @@ export const ImageUpload = ({ icon, maxW, height, desc, maxnumber, allowDrag }) 
 
         }) => (
           // write your building UI
-          <div className=" max-w-sm margin-auto ">
-
-            {
-              !images.length > 0 && <div
-                className="flex justify-center"
-                onClick={onImageUpload}
-                styles={{ cursor: "pointer", zIndex: "5" }}
-                {...dragProps}
-              >
-                {icon}
-              </div>
-            }
+          <div className="wrap_box_upload_image_child">
 
             <SortableList
               onSortEnd={onSortEnd}
@@ -92,26 +78,39 @@ export const ImageUpload = ({ icon, maxW, height, desc, maxnumber, allowDrag }) 
                       </div>
                     </div>
                   </SortableItem>
-                )}
-
-            </SortableList>
-            {
-              images.length < maxNumber && <div>
-                <p
-                  style={{
-                    textDecoration: "underline",
-                    cursor: "pointer",
-                    color: "#1045FF",
-                  }}
-                  onClick={onImageUpload}
-                  {...dragProps}
+                )
+              }
+              {
+                images.length < maxNumber && <div
+                  className="wrap_imageUploading border-img-dash flex items-center rounded-lg pb-2"
+                  style={{ maxWidth: maxW, height: height }}
                 >
-                  Thêm một hình ảnh
-                </p>
+                  <div
+                    className="justify-center"
+                    onClick={onImageUpload}
+                    style={{ cursor: "pointer", zIndex: "5" }}
+                    {...dragProps}
+                  >
+                    <div className='ImgUploadIcon'>
+                      {icon}
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <p
+                      className="add_image_uploading"
+                      onClick={onImageUpload}
+                      {...dragProps}
+                    >
+                      Thêm một hình ảnh
+                    </p>
 
-                {desc && <p>({desc})</p>}
-              </div>
-            }
+                    {<p className="desc_image_uploading">{desc}</p>}
+                  </div>
+
+                </div>
+              }
+            </SortableList>
+
           </div>
         )}
       </ImageUploading>
