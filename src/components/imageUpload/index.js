@@ -59,12 +59,12 @@ export const ImageUpload = ({ icon, maxW, height, desc, maxnumber, allowDrag }) 
                   <SortableItem key={index} imgProps={{ draggable: false }}>
                     <div className="image-item flex justify-center">
                       <div
-                        className="relative max-w-fit pb-2 "
+                        className="relative max-w-fit"
                         style={{ height: height }}
                         {...dragProps}
                       >
                         <div
-                          className="absolute top-0 right-0 pointer"
+                          className="absolute pointer"
                           onClick={() => onImageRemove(index)}
                         >
                           <CloseIcon />
@@ -82,7 +82,7 @@ export const ImageUpload = ({ icon, maxW, height, desc, maxnumber, allowDrag }) 
               }
               {
                 images.length < maxNumber && <div
-                  className="wrap_imageUploading border-img-dash flex items-center rounded-lg pb-2"
+                  className="wrap_imageUploading border-img-dash flex items-center"
                   style={{ maxWidth: maxW, height: height }}
                   onClick={onImageUpload}
                   {...dragProps}

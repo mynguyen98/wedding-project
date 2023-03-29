@@ -1449,11 +1449,20 @@ img {
 .ImgUploadIcon {
   margin: 20px 0;
 }
-.ImgUploadIcon svg{
+
+.ImgUploadIcon svg {
   font-size: 1em;
-    width: calc(80%);
-    margin: auto;
+  width: calc(80%);
+  margin: auto;
 }
+.image-item .absolute{
+  top: 5px;
+  right: 5px;
+}
+.image-item img{
+  border-radius: 20px;
+}
+
 .wrap_imageUploading {
   background-color: var(--gray-color-4);
   flex-direction: column;
@@ -1463,7 +1472,8 @@ img {
   z-index: 0;
   padding-left: 15px;
   padding-right: 15px;
-  cursor: pointer
+  cursor: pointer;
+  border-radius: 20px;
 }
 
 .add_image_uploading {
