@@ -27,22 +27,22 @@ Global Styles
   --letter-main-color: rgba(145, 173, 163, 1);
   --gray-item-color: 1px solid #c6c6c6;
   --border-img-dash: 2px dashed #828282;
-  --color-hover: #8E5757;
-  --color-input: #E2E8F0;
+  --color-hover: #8e5757;
+  --color-input: #e2e8f0;
   /* root home page */
-  --pink-color-1: linear-gradient(90deg, #8E5757 0%, #B77C7C 100%);
+  --pink-color-1: linear-gradient(90deg, #8e5757 0%, #b77c7c 100%);
   --pink-color-2: #fbf3f1;
   --black-color: #000;
   --white-color: #fff;
   --gray-color: #c1c1c1;
-  --gray-color-2: #F5ECED;
+  --gray-color-2: #f5eced;
   --gray-color-3: #94a3b8;
-  --gray-color-4: #F4F4F4;
+  --gray-color-4: #f4f4f4;
   --text-color-head: #0f172a;
   --text-color-darkmode: #131825;
-  --quick-sand-font-family: "Quicksand", sans-serif;
-  --lateef-font-family: "Lateef", serif;
-  --wind-song-font-family: "WindSong", cursive;
+  --quick-sand-font-family: 'Quicksand', sans-serif;
+  --lateef-font-family: 'Lateef', serif;
+  --wind-song-font-family: 'WindSong', cursive;
   --font-size: 60px;
   --font-size-default: 16px;
   --red-color-mess-err: #ff0000;
@@ -68,12 +68,12 @@ html {
 
 body {
   margin: auto;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   color: rgba(88, 88, 88, 1);
   font-size: var(--font-size-default);
 }
@@ -91,11 +91,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.app {}
+.app {
+}
 
 .section-mb {
   /* max-width: 560px;
@@ -103,15 +104,15 @@ code {
 }
 
 .lateef {
-  font-family: "Lateef", serif;
+  font-family: 'Lateef', serif;
 }
 
 .wind-song {
-  font-family: "WindSong", cursive;
+  font-family: 'WindSong', cursive;
 }
 
 .quick-sand {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 ul {
@@ -908,7 +909,7 @@ p {
 }
 
 .otherLoginSocial .titleOrther::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 2px;
@@ -944,10 +945,12 @@ p {
 }
 
 .bg_form {
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       rgb(173 77 95 / 22%),
-      rgb(185 130 130 / 15%)),
-    url("/src/assets/home-image/Bg_Banner.png");
+      rgb(185 130 130 / 15%)
+    ),
+    url('/src/assets/home-image/Bg_Banner.png');
   background-size: cover;
   background-position: center;
   padding: 100px 15px;
@@ -1082,7 +1085,7 @@ table .date {
 .wraps_title {
   font-size: 37px;
   font-weight: normal;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .Notfound {
@@ -1099,7 +1102,7 @@ table .date {
 .Notfound .number {
   background: #fff;
   position: relative;
-  font: 900 30vmin "Consolas";
+  font: 900 30vmin 'Consolas';
   letter-spacing: 5vmin;
   text-shadow: 2px -1px 0 #000, 4px -2px 0 #0a0a0a, 6px -3px 0 #0f0f0f,
     8px -4px 0 #141414, 10px -5px 0 #1a1a1a, 12px -6px 0 #1f1f1f,
@@ -1108,9 +1111,11 @@ table .date {
 
 .Notfound .number::before {
   background-color: #673ab7;
-  background-image: radial-gradient(closest-side at 50% 50%,
+  background-image: radial-gradient(
+      closest-side at 50% 50%,
       #ffc107 100%,
-      rgba(0, 0, 0, 0)),
+      rgba(0, 0, 0, 0)
+    ),
     radial-gradient(closest-side at 50% 50%, #e91e63 100%, rgba(0, 0, 0, 0));
   background-repeat: repeat-x;
   background-size: 40vmin 40vmin;
@@ -1122,7 +1127,7 @@ table .date {
   animation: moving 10s linear infinite both;
   display: block;
   position: absolute;
-  content: "";
+  content: '';
 }
 
 .right-bar0box {
@@ -1389,7 +1394,7 @@ table .date {
 }
 
 .text {
-  font: 400 5vmin "Courgette";
+  font: 400 5vmin 'Courgette';
 }
 
 .text span {
@@ -1415,7 +1420,7 @@ input::-webkit-inner-spin-button {
   -moz-appearance: textfield;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   cursor: pointer;
   width: 22px;
   height: 22px;
@@ -1460,7 +1465,8 @@ input[type="radio"] {
 }
 
 .dragged {
-  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2),
+    0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
 }
 
 .pointer {
@@ -1628,6 +1634,11 @@ img {
   margin-bottom: 30px;
 }
 
+.input_fields_control .place_title_input {
+  position: absolute;
+  top: 0;
+  left: -90px;
+}
 .input_fields_control .place_title_input label {
   font-style: normal;
   font-weight: 700;
@@ -1657,7 +1668,9 @@ img {
 .man_inputStyle {
   max-width: 251px;
 }
-
+.input_create_half {
+  width: 100%;
+}
 .item_field_single .sellect_option {
   display: flex;
   flex-direction: column;
@@ -1739,7 +1752,8 @@ img {
   }
 }
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+}
 
 @media (max-width: 768px) {
   .section_wrap_type_ds .head h2 {
