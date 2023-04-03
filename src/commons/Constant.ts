@@ -37,6 +37,7 @@ export const Alias = {
   pwdRecovery: "/khoi-phuc-mat-khau",
   mypage: "/trang-cua-toi",
   services: "/dich-vu",
+  createPage: "/tao-thiep-cuoi"
 };
 
 export enum BUTTON_STYLES {
@@ -49,6 +50,7 @@ export enum BUTTON_STYLES {
   BORDER_PINK = "BORDER_PINK",
   DARKMODE = "DARKMODE",
   BLUE = "BLUE",
+  GRAY = "GRAY",
 }
 
 export enum BACKGROUND_STYLES {

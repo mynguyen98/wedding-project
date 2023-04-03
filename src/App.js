@@ -10,6 +10,7 @@ import Mypage from "./pages/MyPage";
 import Notfound from "./pages/Notfound";
 import Services from "./pages/Services";
 import CommentDetail from "./pages/CommentDetail";
+import CreatePage from "./pages/CreatePage";
 function App() {
   return (
     <div className="app">
@@ -18,7 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path={Alias.letterPage} element={<LetterPage />}></Route>
           <Route path={Alias.congrats} element={<CommentDetail />} />
-          {/* <Route path={Alias.letterPage} element={<LetterPage />} /> */}
+          <Route path={Alias.createPage} element={<CreatePage />} /> 
           <Route path={Alias.login} element={<Login />} />
           <Route path={Alias.register} element={<Register />} />
           <Route path={Alias.pwdRecovery} element={<RecoveryPwd />} />

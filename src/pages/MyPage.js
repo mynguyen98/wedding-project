@@ -9,19 +9,18 @@ import ChooseTypeBlock from "@/components/chooseTypeBlock";
 import Loading from "@/components/Loading";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Alias } from "@/commons/Constant.ts";
-import { useDispatch } from "react-redux";
-import { setIsAudioPlay } from "@/features/letter-page/music-vid-reducer";
+
 const Mypage = () => {
+
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [token, setToken] = useState(true);
 
   const location = useLocation();
 
   const userId = location.state?.tokenParam;
+
   const navigateLetterpage = () => {
-    navigate(Alias.letterPage);
-    dispatch(setIsAudioPlay(true));
+    navigate(Alias.createPage);
   };
   const renderTable = useMemo(() => {
     return (

@@ -16,9 +16,6 @@ import Footer from "../Footer/Footer";
 import Header from "@/components/header";
 import Loading from "@/components/Loading";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import { ImageUpload } from "@/components/imageUpload";
-import ImgUploadIcon from "@/components/icons/ImgUploadIcon";
-import arrayMove from "array-move-e5";
 
 const Homepage = () => {
   const [images, setImages] = useState([]);
@@ -33,7 +30,6 @@ const Homepage = () => {
     <>
       <Loading />
       <div className="main">
-        <ImageUpload />
         <div className={`${styles.homepage_box}`}>
           <Header typeLogo={BACKGROUND_STYLES.WHITE} />
           <div className={`${styles.headerTextCenter}`}>

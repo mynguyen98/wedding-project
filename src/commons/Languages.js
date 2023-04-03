@@ -16,7 +16,7 @@ const Languages = {
         pwd: 'Mật khẩu'
     },
     common: {
-        cancel: 'Hủy',
+        cancel: 'Hủy bỏ',
         OK: 'Chọn',
         back: 'Quay lại',
         yes: 'Có',
@@ -26,6 +26,7 @@ const Languages = {
         agree: 'Đồng ý',
         or: 'Hoặc',
         continue: 'Tiếp tục',
+        saveDraf: 'Lưu bản nháp'
     },
     buttonText:{
         createTC: 'Tạo thiệp cưới',
@@ -41,7 +42,7 @@ const Languages = {
         dowloadClient: 'Tải danh sách khách',
         checkGuest: 'Kiểm tra khách mời',
         delete: 'Xoá thiệp',
-        edit: 'Chỉnh sửa'
+        edit: 'Chỉnh sửa',
     },
     errorMsg: {
         noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',
@@ -92,7 +93,10 @@ const Languages = {
         confirmInvite: 'Xác nhận lời mời',
         bigsize: '(Kích thước khuyến nghị 1024x768px)',
         smallsize: '(Kích thước khuyến nghị 1024x1024px)',
-        addonepic: 'Thêm một hình ảnh'
+        addonepic: 'Thêm một hình ảnh',
+        chooseCoverImage: 'Chọn ảnh bìa',   
+        chooseThumbs: 'Chọn ảnh thumbnail',
+        effectImage: 'Chọn hiệu ứng cho ảnh:'
     },
     errorMsg: {
         noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',
