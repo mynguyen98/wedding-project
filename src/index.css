@@ -1455,11 +1455,13 @@ img {
   width: calc(80%);
   margin: auto;
 }
-.image-item .absolute{
+
+.image-item .absolute {
   top: 5px;
   right: 5px;
 }
-.image-item img{
+
+.image-item img {
   border-radius: 20px;
 }
 
@@ -1498,6 +1500,58 @@ img {
   flex-direction: row;
   gap: 20px;
   margin: 20px 0;
+  overflow: hidden;
+}
+
+.uploading_single_img_group h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 150%;
+  font-family: var(--quick-sand-font-family);
+  color: var(--black-color);
+  text-transform: inherit;
+}
+
+.RadioButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.RadioButton label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: var(--quick-sand-font-family);
+  color: var(--black-color);
+}
+
+.Createpage .title{
+  line-height: 20px;
+  font-family: var(--quick-sand-font-family);
+  color: var(--black-color);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.effect_image_options{
+  display: flex;
+  gap: 40px;
+}
+
+.header_editpage {
+  padding: 40px;
+}
+
+.header_edit {
+  justify-content: space-between;
+}
+
+.btn_group_r {
+  display: flex;
+  gap: 30px;
 }
 
 @media (min-width: 991px) {

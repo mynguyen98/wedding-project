@@ -76,6 +76,7 @@ export const ImageUpload = forwardRef(
                 draggable
                 hidden
                 allowDrag={allowDrag || false}
+                style={{ width: maxW}}
               >
                 {
                   imageList.map((image, index) =>
@@ -95,7 +96,6 @@ export const ImageUpload = forwardRef(
                           <img
                             src={image.data_url}
                             alt={'thumbs' + image.file?.size}
-                            style={{ maxHeight: "100%" }}
                             onClick={() => onImageUpdate(index)}
                           />
                         </div>

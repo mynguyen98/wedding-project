@@ -60,6 +60,10 @@ export const Button = ({
         containerStyle = styles.blueButton;
         break;
 
+      case BUTTON_STYLES.GRAY:
+        containerStyle = styles.grayButton;
+        break;
+
       default:
         containerStyle = styles.defaultButton;
         break;
@@ -97,9 +101,8 @@ export const Button = ({
   return (
     <button
       disabled={isLoading || disabled}
-      className={`${getContainerStyle}  ${rounded ? styles.borderFull : ""} ${
-        autocenter && styles.autocenter
-      }`}
+      className={`${getContainerStyle}  ${rounded ? styles.borderFull : ""} ${autocenter && styles.autocenter
+        }`}
       style={{ width: width + "%" }}
       onClick={_onPress}
     >
