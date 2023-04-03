@@ -18,10 +18,10 @@ const Modal = ({
 }) => {
   // const newTitle = title?.toUpperCase()
   return (
-    <div className={`modal ${visible ? "active" : "1"} margin-auto`}>
+    <div className={`modal ${visible ? "active" : "deactive"} margin-auto`}>
       <div className="modal-container" onClick={onCancel}></div>
       <div className="modal-block ">
-        <div className="modal-content overflow-hidden modal-sm modal-mw p-4 rounded-lg">
+        <div className="modal-content overflow-hidden modal-mw p-4 rounded-lg">
           {/* <div className='close-modal-icon'>
             <CloseIcon />
           </div> */}
@@ -46,6 +46,7 @@ const Modal = ({
                 onPress={onOk}
                 label={btnSubmitText}
                 buttonStyle={BUTTON_STYLES.PINK}
+                textStyle={BUTTON_STYLES.PINK}
               />
             )}
           </div>

@@ -107,9 +107,12 @@ export const Button = ({
       onClick={_onPress}
     >
       {leftIcon}
-      <span className={getTextStyle}>
-        {isLowerCase ? label : `${label} `.toUpperCase()}
-      </span>
+      {label &&
+        <span className={getTextStyle}>
+          {isLowerCase ? label : `${label} `.toUpperCase()}
+        </span>
+      }
+
       {rightIcon}
     </button>
   );

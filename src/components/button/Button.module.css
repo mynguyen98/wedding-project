@@ -6,11 +6,11 @@
   justify-content: space-between;
 }
 .defaultButton {
-  background-color: var(--white-color);
+  background: var(--white-color);
   border: 1px solid var(--gray-color-2);
 }
 .pinkButton {
-  background-color: var(--pink-color-1);
+  background: var(--pink-color-1);
 }
 
 .whiteButton {
@@ -29,7 +29,7 @@
 }
 
 .grayButton {
-  background-color: var(--gray-color-2);
+  background: var(--gray-color-2);
 }
 
 .white {
@@ -50,6 +50,7 @@
   font-size: 16px;
   display: block;
   width: 100%;
+  font-weight: 500;
 }
 
 .padding {
@@ -64,7 +65,7 @@
 }
 
 .buttonHover:hover {
-  box-shadow: 0 0 10px 0 var(--pink-color-1);
+  box-shadow: 0 0 10px 0 var(--color-hover);
   background: var(--white-color);
   color: var(--black-color);
 }
@@ -77,20 +78,20 @@
   color: var(--red-color-1);
 }
 .borderPink {
-  border: 1px solid var(--pink-color-1);
+  border: 1px solid var(--color-hover);
 }
 .textPink {
   color: var(--pink-color-1);
 }
 .orangeButton {
-  background-color: var(--orange-color);
+  background: var(--orange-color);
 }
 .orangeButton span,
 .lightBlueButton span {
   color: white;
 }
 .lightBlueButton {
-  background-color: var(--letter-main-color);
+  background: var(--letter-main-color);
 }
 .borderLightBlueButton {
   border: 1px solid var(--letter-main-color);
