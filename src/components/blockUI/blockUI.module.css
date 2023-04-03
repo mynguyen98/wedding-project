@@ -23,7 +23,7 @@
 }
 .blockUIhead{
     font-size: 45px;
-    font-weight: 400;
+    font-weight: 600;
     text-overflow: ellipsis;
     color: var(--text-color-head);
     letter-spacing: 0;

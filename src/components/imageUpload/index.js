@@ -97,6 +97,7 @@ export const ImageUpload = forwardRef(
                             src={image.data_url}
                             alt={'thumbs' + image.file?.size}
                             onClick={() => onImageUpdate(index)}
+                            style={{ height: height }}
                           />
                         </div>
                       </div>

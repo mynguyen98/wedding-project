@@ -22,7 +22,6 @@ const Popup = forwardRef(
     }
 
     const showModal = () => {
-      console.log('show modal')
       setVisible(true)
     }
 

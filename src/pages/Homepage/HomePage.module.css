@@ -34,15 +34,42 @@
 
 .nav_item {
     padding: 0 20px;
+    position: relative;
+
 }
 
 .nav_link {
     font-family: var(--quick-sand-font-family);
     color: var(--white-color);
+    font-weight: 600;
 }
 
 .nav_link:hover {
     color: var(--pink-color-1) !important;
+}
+
+.dropdownbutton {
+    background: var(--black-color);
+    padding: 20px 20px;
+    color: var(--white-color);
+    min-width: 250px;
+    position: absolute;
+    font-family: var(--quick-sand-font-family);
+}
+
+.dropdownbutton span {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.dropdownbutton p {
+    margin-bottom: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
 }
 
 .headerTextCenter {
@@ -122,26 +149,27 @@
     font-size: 19px;
 }
 
-.active{
+.active {
     color: var(--pink-color-1);
 }
 
 @media (min-width: 768px) {
-    .styleImageLogoMB{
+    .styleImageLogoMB {
         display: none;
     }
 }
 
 @media (min-width: 991px) and (max-width: 1023px) {
-    .header_top > div{
+    .header_top>div {
         max-width: 961px;
     }
+
     .textStyleFormat {
         font-size: 40px;
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1200px){
+@media (min-width: 1024px) and (max-width: 1200px) {
     .textStyleFormat {
         font-size: 40px;
     }
@@ -151,6 +179,7 @@
     .header_top {
         padding: 20px 15px;
     }
+
     .headerTextCenter {
         text-align: center;
         display: grid;
@@ -167,16 +196,19 @@
     .containerCustormStyle {
         padding: 30px 0 !important;
     }
+
     .styleImgCustomBox_2 {
         position: relative;
         transform: unset;
     }
+
     .styleImgCustomBox_4 {
         position: relative;
         transform: unset;
         max-width: 250px !important;
         margin-top: 20px;
     }
+
     .navbar_nav {
         position: fixed;
         height: 100%;
@@ -187,9 +219,9 @@
         left: 0;
         display: block;
         overflow-x: hidden;
-        -webkit-box-shadow: 0 2px 11px 1px rgba(168,168,168,0.54);
-        -moz-box-shadow: 0 2px 11px 1px rgba(168,168,168,0.54);
-        box-shadow: 0 2px 11px 1px rgba(168,168,168,0.54);
+        -webkit-box-shadow: 0 2px 11px 1px rgba(168, 168, 168, 0.54);
+        -moz-box-shadow: 0 2px 11px 1px rgba(168, 168, 168, 0.54);
+        box-shadow: 0 2px 11px 1px rgba(168, 168, 168, 0.54);
         visibility: hidden;
         -webkit-transition: all 1s ease;
         -o-transition: all 1s ease;
@@ -199,15 +231,17 @@
         -o-transform: translateX(-280px);
         transform: translateX(-280px);
     }
+
     .nav_item {
         padding: 10px 20px;
         border-bottom: 1px solid var(--gray-color-2);
     }
-    
+
     .nav_link {
         font-family: var(--quick-sand-font-family);
         color: var(--black-color);
     }
+
     .open {
         visibility: visible;
         -webkit-transform: translateX(0);
@@ -218,7 +252,8 @@
         -o-transition: all 1s ease;
         transition: all 1s ease;
     }
-    .styleImageLogoMB{
+
+    .styleImageLogoMB {
         display: block;
         margin: 20px auto;
     }

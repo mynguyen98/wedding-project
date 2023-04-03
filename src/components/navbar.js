@@ -1,17 +1,22 @@
 import Languages from '../commons/Languages';
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../pages/Homepage/HomePage.module.css'
 import { Button } from './button';
 import { BUTTON_STYLES } from '../commons/Constant.ts';
-import { FaOutdent, FaTimes, FaUserAlt } from "react-icons/fa";
+import { FaOutdent, FaSignOutAlt, FaTimes, FaUserAlt } from "react-icons/fa";
 import { useNavigate, NavLink } from "react-router-dom";
 import { Alias } from '@/commons/Constant.ts';
 import IcLogoBlack from '@/assets/home-image/IcLogoBlack.svg'
+import IcInf from '@/assets/home-image/IcInf.svg'
+import Popup from './modal/Popup';
+import { useMemo } from 'react';
 
 function MenuBar({ colorText }) {
 
   const [open, setOpen] = useState(false);
+
+  const refModal = useRef()
 
   const navigate = useNavigate();
 
@@ -25,10 +30,43 @@ function MenuBar({ colorText }) {
     setOpen(!open)
   }, [open])
 
+  const onOpenDropdown = useCallback(() => {
+    setOpen(!open)
+  }, [open])
+
+  const onOpenModal = useCallback(() => {
+    refModal.current?.showModal()
+  }, [])
+
   const isactive = useCallback(({ isPending, isActive }) => {
     return isPending ? styles.pending : isActive ? styles.active : ""
   }, [])
 
+  const onPressLogout = useCallback(() => {
+    console.log('logout')
+  }, [])
+
+  const renderContentModal = useMemo(() => {
+    return <div className='renderContentModal'>
+      <div className='head'>
+        <img src={IcInf} alt={'icinf'} />
+        <h2>{Languages.text.logout}</h2>
+      </div>
+      <div className='contentModal'>
+        <p>{Languages.text.logoutSure}</p>
+      </div>
+    </div>
+  }, [])
+
+  const renderModal = useMemo(() => {
+    return <Popup
+      ref={refModal}
+      content={renderContentModal}
+      btnCancelText={Languages.common.cancel}
+      btnSubmitText={Languages.common.agree}
+      onSuccessPress={onPressLogout}
+    />
+  }, [])
 
 
   return (
@@ -75,7 +113,7 @@ function MenuBar({ colorText }) {
               {Languages.menu.myPage}
             </NavLink>
           </li>
-          
+
           <li className={styles.nav_item}>
             <Button
               label={Languages.menu.login}
@@ -86,8 +124,27 @@ function MenuBar({ colorText }) {
               leftIcon={<FaUserAlt style={{ color: BUTTON_STYLES.WHITE }} />}
               isLowerCase
             />
+            {/* <Button
+              onPress={onOpenDropdown}
+              buttonStyle={BUTTON_STYLES.PINK}
+              width={'auto'}
+              textStyle={BUTTON_STYLES.PINK}
+              leftIcon={<FaUserAlt style={{ color: BUTTON_STYLES.WHITE }} />}
+              isLowerCase
+              autocenter
+            />
+            {
+              open && <div className={styles.dropdownbutton}>
+                <div className={styles.text}>
+                  <span>{Languages.text.hello} user</span>
+                  <p onClick={onOpenModal}>
+                    <FaSignOutAlt /> {Languages.text.logout}
+                  </p>
+                </div>
+              </div>
+            } */}
           </li>
-
+          {renderModal}
         </ul>
       </div>
     </nav>
