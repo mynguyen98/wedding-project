@@ -95,8 +95,7 @@ code {
     monospace;
 }
 
-.app {
-}
+.app {}
 
 .section-mb {
   /* max-width: 560px;
@@ -504,7 +503,6 @@ p {
   z-index: 5;
   position: relative;
   margin: auto;
-  transition: all 2s linear;
   max-width: 400px;
   text-align: center;
 }
@@ -945,11 +943,9 @@ p {
 }
 
 .bg_form {
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       rgb(173 77 95 / 22%),
-      rgb(185 130 130 / 15%)
-    ),
+      rgb(185 130 130 / 15%)),
     url('/src/assets/home-image/Bg_Banner.png');
   background-size: cover;
   background-position: center;
@@ -1111,11 +1107,9 @@ table .date {
 
 .Notfound .number::before {
   background-color: #673ab7;
-  background-image: radial-gradient(
-      closest-side at 50% 50%,
+  background-image: radial-gradient(closest-side at 50% 50%,
       #ffc107 100%,
-      rgba(0, 0, 0, 0)
-    ),
+      rgba(0, 0, 0, 0)),
     radial-gradient(closest-side at 50% 50%, #e91e63 100%, rgba(0, 0, 0, 0));
   background-repeat: repeat-x;
   background-size: 40vmin 40vmin;
@@ -1634,11 +1628,7 @@ img {
   margin-bottom: 30px;
 }
 
-.input_fields_control .place_title_input {
-  position: absolute;
-  top: 0;
-  left: -90px;
-}
+
 .input_fields_control .place_title_input label {
   font-style: normal;
   font-weight: 700;
@@ -1668,9 +1658,11 @@ img {
 .man_inputStyle {
   max-width: 251px;
 }
+
 .input_create_half {
   width: 100%;
 }
+
 .item_field_single .sellect_option {
   display: flex;
   flex-direction: column;
@@ -1746,14 +1738,38 @@ img {
   width: 21px;
 }
 
+.section_choose_template .head_template h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  font-family: var(--quick-sand-font-family);
+  color: var(--color-hover);
+}
+
+.group_textarea_control,
+.Select_invitation_template {
+  width: 100%;
+}
+
+.group_radio_choose_template .customize_radio {
+  margin-bottom: 20px;
+}
+
+.group_radio_choose_template label {
+  background: var(--color-input);
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+}
+
 @media (min-width: 991px) {
   .navbar-toggler {
     display: none;
   }
 }
 
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 @media (max-width: 768px) {
   .section_wrap_type_ds .head h2 {
