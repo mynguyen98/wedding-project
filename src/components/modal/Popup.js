@@ -1,5 +1,6 @@
 import React, { forwardRef, useImperativeHandle, useState } from 'react'
 import Modal from './Modal'
+import Loading from '../Loading'
 
 // eslint-disable-next-line react/display-name
 const Popup = forwardRef(
@@ -12,6 +13,7 @@ const Popup = forwardRef(
       btnCancelText,
       btnSubmitText,
       content,
+      maxWidth
     },
     ref
   ) => {
@@ -51,6 +53,7 @@ const Popup = forwardRef(
         btnCancelText={btnCancelText}
         btnSubmitText={btnSubmitText}
         content={content}
+        maxWidth={maxWidth}
       />
     )
   }

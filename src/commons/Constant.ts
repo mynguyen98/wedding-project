@@ -10,9 +10,12 @@ export enum ToastTypes {
   SUCCESS = 2, // green background
 }
 
-export enum PopupTypes {
-  OTP = 1,
-  POST_NEWS = 2,
+export enum CheckParams {
+  AFFTER = 1,
+  INVITE_TEMPLATES = 2,
+  TITLE_TIME_TEMPLATES = 3,
+  WARNNING_TEMPLATES = 4,
+  TITLE_SAVE_PEN_TEMPLATES = 5
 }
 
 export enum ErrorCodes {
@@ -27,6 +30,8 @@ export enum HistoryCodes {
 export enum Convert {
   SUCCESS = 1,
   FAILS = 2,
+  W_400 = 400,
+  W_800 = 800
 }
 
 export const Alias = {

@@ -15,13 +15,14 @@ const Modal = ({
   btnSubmitText,
   btnOrrangeText,
   content,
+  maxWidth
 }) => {
   // const newTitle = title?.toUpperCase()
   return (
     <div className={`modal ${visible ? "active" : "deactive"} margin-auto`}>
       <div className="modal-container" onClick={onCancel}></div>
       <div className="modal-block ">
-        <div className="modal-content overflow-hidden modal-mw p-4 rounded-lg">
+        <div className="modal-content overflow-hidden modal-mw p-4 rounded-lg" style={{maxWidth: maxWidth}}>
           {/* <div className='close-modal-icon'>
             <CloseIcon />
           </div> */}

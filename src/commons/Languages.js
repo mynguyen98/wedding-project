@@ -31,6 +31,7 @@ const Languages = {
     top1woman: 'Trưởng Nữ',
     notTop: 'Thứ',
     death: 'Đã mất',
+    contentInvite: 'Nhập nội dung lời mời'
   },
   common: {
     cancel: 'Hủy bỏ',
@@ -60,6 +61,8 @@ const Languages = {
     checkGuest: 'Kiểm tra khách mời',
     delete: 'Xoá thiệp',
     edit: 'Chỉnh sửa',
+    invitationTemplate: 'Lời mời mẫu'
+
   },
   errorMsg: {
     noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',
@@ -130,6 +133,9 @@ const Languages = {
     contentAfter:
       'Bạn muốn tạo thiệp cưới vào lúc khác? Các thiết lập hiện tại sẽ không được lưu.',
     timeAndLocation: 'Thời gian và địa điểm',
+    invite: 'Lời mời:',
+    inviteLanguage: 'Chọn mẫu lời mời',
+    displayModeDeceased: 'Chế độ hiển thị với người đã mất: '
   },
   errorMsg: {
     noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',

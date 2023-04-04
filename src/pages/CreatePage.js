@@ -1,13 +1,12 @@
-import React, { useState, useCallback, useMemo } from 'react'
+import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import { MyTextInput } from '@/components/input'
 import { useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import FormValidate from '@/utils/FormValidate'
-import { Alias } from '@/commons/Constant.ts'
+import { Alias, CheckParams, BUTTON_STYLES, Convert } from '@/commons/Constant.ts'
 import Loading from '@/components/Loading'
 import { Button } from '@/components/button'
 import Languages from '@/commons/Languages'
-import { BUTTON_STYLES } from '@/commons/Constant.ts'
 import { ImageUpload } from '@/components/imageUpload'
 import ImgUploadIcon from '@/components/icons/ImgUploadIcon'
 import arrayMove from 'array-move-e5'
@@ -15,17 +14,20 @@ import { RadioButton } from '@/components/RadioButton'
 import IcChrysanthemum from '@/assets/home-image/IcChrysanthemum.svg'
 import IcInf from '@/assets/home-image/IcInf.svg'
 import Popup from '@/components/modal/Popup'
-// component
-import TimeAndLocation from '@/components/createPage/TimeAndLocation'
-import InputCreate from '@/components/createPage/subcomp/InputCreate'
+import { MyTextArea } from '@/components/textarea'
+import { SelectInvitationTemplate, SelectSavePenTemplate, SelectTimeTemplate, SelectWarningTemplate } from '@/commons/FieldsDataObj'
+
 const CreatePage = () => {
   const navigate = useNavigate()
+
+  const [checkParams, setCheckParams] = useState(CheckParams.AFFTER)
 
   const [imagesCover, setImagesCover] = useState([])
   const [images, setImages] = useState([])
   const [selectSTT, setSelectSTT] = useState('')
 
   const [radioEffectImage, setRadioEffectImage] = useState('none')
+  const [radioInviteTemplate, setRadioInviteTemplate] = useState('none')
   const [radioDead, setRadioDead] = useState('none')
 
   const [name, setName] = useState('')
@@ -37,12 +39,29 @@ const CreatePage = () => {
   const refModal = useRef(null)
 
   const onShowModalAgree = () => {
+
+    setCheckParams(CheckParams.AFFTER)
     refModal.current?.showModal()
+
   }
 
-  const onPressNotCreat = useCallback(() => {
-    navigate('/')
-  }, [])
+  const onPressHandleModal = useCallback(() => {
+
+    switch (checkParams) {
+
+      case CheckParams.AFFTER:
+        navigate('/')
+        break
+
+      default:
+        break
+    }
+
+  }, [checkParams])
+
+  const radioChangeHandlerInviteTemplate = (e) => {
+    setRadioInviteTemplate(e.target.value)
+  }
 
   const radioChangeHandlerDeadman = (e) => {
     setRadioDead(e.target.value)
@@ -53,20 +72,20 @@ const CreatePage = () => {
   }
 
   const renderRadio = useCallback(
-    (id, label, value) => {
+    (id, label, value, onChange, isSelected) => {
       return (
         <div className='options_select'>
           <RadioButton
             id={id}
             label={label}
             value={value}
-            onChange={radioChangeHandler}
-            isSelected={radioEffectImage === value}
+            onChange={onChange}
+            isSelected={isSelected === value}
           />
         </div>
       )
     },
-    [radioEffectImage, radioChangeHandler]
+    []
   )
 
   const onChange = (imageList) => {
@@ -103,9 +122,34 @@ const CreatePage = () => {
     []
   )
 
+  const renderPopuptemplate = useCallback((title, data) => {
+
+    return <div className='section_choose_template'>
+      <div className='head_template'>
+        <h3>
+          {title}
+        </h3>
+      </div>
+      <div className='group_radio_choose_template'>
+
+        {data.map((item, index) => (
+          <div className='SelectInvitationTemplate_map' key={index}>
+            {renderRadio(item.value, item.text, item.value, radioChangeHandlerInviteTemplate, radioInviteTemplate)}
+          </div>
+        ))}
+
+      </div>
+    </div>
+
+  }, [radioInviteTemplate, radioChangeHandlerInviteTemplate])
+
   const renderContentModal = useMemo(() => {
+
     return (
-      <div className='renderContentModal'>
+
+      checkParams === CheckParams.AFFTER &&
+
+      <div className='renderContentModal' >
         <div className='head'>
           <img src={IcInf} alt={'icinf'} />
           <h2>{Languages.text.createAfter}</h2>
@@ -113,21 +157,29 @@ const CreatePage = () => {
         <div className='contentModal'>
           <p>{Languages.text.contentAfter}</p>
         </div>
-      </div>
+      </div >
+
+      || checkParams === CheckParams.INVITE_TEMPLATES && renderPopuptemplate(Languages.text.inviteLanguage, SelectInvitationTemplate) 
+      || checkParams === CheckParams.TITLE_TIME_TEMPLATES && renderPopuptemplate(Languages.text.inviteLanguage, SelectTimeTemplate) 
+      || checkParams === CheckParams.WARNNING_TEMPLATES && renderPopuptemplate(Languages.text.inviteLanguage, SelectWarningTemplate) 
+      || checkParams === CheckParams.TITLE_SAVE_PEN_TEMPLATES && renderPopuptemplate(Languages.text.inviteLanguage, SelectSavePenTemplate) 
+
     )
-  }, [])
+  }, [checkParams, renderPopuptemplate])
 
   const renderModal = useMemo(() => {
+
     return (
       <Popup
         ref={refModal}
         content={renderContentModal}
         btnCancelText={Languages.common.cancel}
         btnSubmitText={Languages.common.agree}
-        onSuccessPress={onPressNotCreat}
+        onSuccessPress={onPressHandleModal}
+        maxWidth={checkParams === CheckParams.AFFTER ? Convert.W_400 : Convert.W_800}
       />
     )
-  }, [])
+  }, [renderContentModal, checkParams])
 
   const renderTitle = (title, divided, classNameCus) => {
     return (
@@ -221,6 +273,11 @@ const CreatePage = () => {
         break
     }
   }, [])
+
+  const onChangeOpenInviteTemplate = () => {
+    setCheckParams(CheckParams.INVITE_TEMPLATES)
+    refModal.current?.showModal();
+  }
 
   const renderFamilyMan = useMemo(() => {
     return (
@@ -693,35 +750,54 @@ const CreatePage = () => {
 
             <div className='enable_show_deadman deactive'>
               <div className='label_left'>
-                <label>Chế độ hiển thị với người đã mất:</label>
+                <label>{Languages.text.displayModeDeceased}</label>
               </div>
               <div className='radio_enable'>
-                <RadioButton
-                  id={'explanatory'}
-                  label={Languages.text.explanatory}
-                  value={'explanatory'}
-                  onChange={radioChangeHandlerDeadman}
-                  isSelected={radioDead === 'explanatory'}
-                />
-                <RadioButton
-                  id={'chrysanthemumIcon'}
-                  label={
-                    <div className='chrysanthemumIcon'>
-                      {Languages.text.chrysanthemumIcon}{' '}
-                      <img src={IcChrysanthemum} />
-                    </div>
-                  }
-                  value={'chrysanthemumIcon'}
-                  onChange={radioChangeHandlerDeadman}
-                  isSelected={radioDead === 'chrysanthemumIcon'}
-                />
+
+                {renderRadio('explanatory', Languages.text.explanatory, 'explanatory', radioChangeHandlerDeadman, radioDead)}
+
+                {renderRadio('chrysanthemumIcon',
+                  <div className='chrysanthemumIcon'>{Languages.text.chrysanthemumIcon}<img src={IcChrysanthemum} /></div>,
+                  'chrysanthemumIcon', radioChangeHandlerDeadman, radioDead)}
+
+
               </div>
             </div>
+
           </div>
         </div>
+
+        <div className='input_fields_control Select_invitation_template'>
+
+          <div className='place_title_input'>
+            <label>{Languages.text.invite}</label>
+          </div>
+          <div className='group_textarea_control'>
+
+            <MyTextArea
+              value={''}
+              label={Languages.inputText.contentInvite}
+              placeHolder={Languages.inputText.contentInvite}
+              maxLength={500}
+              onChangeText={null}
+            />
+
+            <Button
+
+              label={Languages.buttonText.invitationTemplate}
+              buttonStyle={BUTTON_STYLES.PINK}
+              textStyle={BUTTON_STYLES.PINK}
+              isLowerCase
+              onPress={onChangeOpenInviteTemplate}
+
+            />
+
+          </div>
+        </div>
+
       </div>
     )
-  }, [radioDead, radioChangeHandlerDeadman, selectSTT, onChangeSelectStt])
+  }, [radioDead, radioChangeHandlerDeadman, selectSTT, onChangeSelectStt, onChangeOpenInviteTemplate])
 
   function onChangeSelectStt(event) {
     setSelectSTT(event.target.value)
@@ -779,10 +855,11 @@ const CreatePage = () => {
           <div className='effect_image_options'>
             <div className='title'>{Languages.text.effectImage}</div>
 
-            {renderRadio('none', 'none', 'none')}
-            {renderRadio('Light', 'Light', 'Light')}
-            {renderRadio('Wave', 'Wave', 'Wave')}
-            {renderRadio('Heart Frame', 'Heart Frame', 'Heart Frame')}
+            {renderRadio('none', 'none', 'none', radioChangeHandler, radioEffectImage)}
+            {renderRadio('Light', 'Light', 'Light', radioChangeHandler, radioEffectImage)}
+            {renderRadio('Wave', 'Wave', 'Wave', radioChangeHandler, radioEffectImage)}
+            {renderRadio('Heart Frame', 'Heart Frame', 'Heart Frame', radioChangeHandler, radioEffectImage)}
+
           </div>
 
           <div className='wrapper_information_wedding'>
@@ -793,7 +870,7 @@ const CreatePage = () => {
             )}
             {renderFamilyMan}
             {renderFamilyWoman}
-            <TimeAndLocation />
+
           </div>
         </div>
       </div>
