@@ -21,12 +21,11 @@ const TimeAndLocation = () => {
         </div>
       </div>
 
-      {/* <ImageUploadSingle
+      <ImageUploadSingle
         title={Languages.text.chooseCoverImage}
-        images={imagesCover}
         desc={Languages.text.bigsize}
         allowDrag={false}
-      /> */}
+      />
     </div>
   )
 }

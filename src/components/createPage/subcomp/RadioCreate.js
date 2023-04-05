@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RadioButton } from '@/components/RadioButton'
 const RadioCreate = ({ id, label, value }) => {
+  const [radioValue, setRadioValue] = useState('')
+  const radioChangeHandler = (e) => {
+    setRadioValue(e.target.value)
+  }
   return (
     <div className='options_select'>
       <RadioButton
         id={id}
         label={label}
-        value={value}
+        value={radioValue}
         onChange={radioChangeHandler}
-        isSelected={radioEffectImage === value}
+        isSelected={radioValue === value}
       />
     </div>
   )
