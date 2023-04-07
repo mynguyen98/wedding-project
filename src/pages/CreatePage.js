@@ -25,6 +25,7 @@ const CreatePage = () => {
   const [imagesCover, setImagesCover] = useState([])
   const [images, setImages] = useState([])
   const [selectSTT, setSelectSTT] = useState('')
+  const [inviteTemp, setInviteTemp] = useState('')
 
   const [radioEffectImage, setRadioEffectImage] = useState('none')
   const [radioInviteTemplate, setRadioInviteTemplate] = useState('none')
@@ -59,8 +60,9 @@ const CreatePage = () => {
 
   }, [checkParams])
 
-  const radioChangeHandlerInviteTemplate = (e) => {
-    setRadioInviteTemplate(e.target.value)
+  const radioChangeHandlerInviteTemplate = (text, value) => {
+    setRadioInviteTemplate(value)
+    setInviteTemp(text)
   }
 
   const radioChangeHandlerDeadman = (e) => {
@@ -70,23 +72,6 @@ const CreatePage = () => {
   const radioChangeHandler = (e) => {
     setRadioEffectImage(e.target.value)
   }
-
-  const renderRadio = useCallback(
-    (id, label, value, onChange, isSelected) => {
-      return (
-        <div className='options_select'>
-          <RadioButton
-            id={id}
-            label={label}
-            value={value}
-            onChange={onChange}
-            isSelected={isSelected === value}
-          />
-        </div>
-      )
-    },
-    []
-  )
 
   const onChange = (imageList) => {
     setImages(imageList)
@@ -99,6 +84,54 @@ const CreatePage = () => {
   const onSortEnd = useCallback((oldIndex, newIndex) => {
     setImages((array) => arrayMove(array, oldIndex, newIndex))
   }, [])
+
+  function handleChangeName(event) {
+    setName(event.target.value)
+  }
+
+  function handleChangePwd(event) {
+    setPwd(event.target.value)
+  }
+
+  const onChangeCreatLetter = useCallback(() => {
+    const errMsgPhone = FormValidate.passConFirmPhone(name)
+    const errMsgPwd = FormValidate.passValidate(pwd)
+
+    refName.current?.setErrorMsg(errMsgPhone)
+    refPwd.current?.setErrorMsg(errMsgPwd)
+
+    if (`${errMsgPhone}${errMsgPwd}`.length === 0) {
+      setTimeout(() => {
+        navigate(Alias.mypage, {
+          state: {
+            tokenParam: true,
+          },
+        })
+      }, 1500)
+    }
+  }, [name, pwd])
+
+  const onChangeText = useCallback((value, tag) => {
+    switch (tag) {
+      case Languages.inputText.firstName:
+        console.log(value)
+        break
+      case Languages.inputText.firstAnother:
+        console.log(value)
+        break
+      case Languages.inputText.namesingle:
+        console.log(value)
+        break
+
+      default:
+        break
+    }
+  }, [])
+
+  const onChangeOpenInviteTemplate = () => {
+    setCheckParams(CheckParams.INVITE_TEMPLATES)
+    refModal.current?.showModal();
+  }
 
   const renderImageUploadSingle = useCallback(
     (title, images, desc, allowDrag, onChange) => {
@@ -121,6 +154,24 @@ const CreatePage = () => {
     },
     []
   )
+  
+  const renderRadio = useCallback(
+    (id, label, value, onChange, isSelected) => {
+      
+      return (
+        <div className='options_select'>
+          <RadioButton
+            id={id}
+            label={label}
+            value={value}
+            onChange={onChange}
+            isSelected={isSelected === value}
+          />
+        </div>
+      )
+    },
+    []
+  )
 
   const renderPopuptemplate = useCallback((title, data) => {
 
@@ -134,7 +185,7 @@ const CreatePage = () => {
 
         {data.map((item, index) => (
           <div className='SelectInvitationTemplate_map' key={index}>
-            {renderRadio(item.value, item.text, item.value, radioChangeHandlerInviteTemplate, radioInviteTemplate)}
+            {renderRadio(item.value, item.text, item.value, () => radioChangeHandlerInviteTemplate(item.text, item.value), radioInviteTemplate)}
           </div>
         ))}
 
@@ -230,54 +281,6 @@ const CreatePage = () => {
     },
     []
   )
-
-  function handleChangeName(event) {
-    setName(event.target.value)
-  }
-
-  function handleChangePwd(event) {
-    setPwd(event.target.value)
-  }
-
-  const onChangeCreatLetter = useCallback(() => {
-    const errMsgPhone = FormValidate.passConFirmPhone(name)
-    const errMsgPwd = FormValidate.passValidate(pwd)
-
-    refName.current?.setErrorMsg(errMsgPhone)
-    refPwd.current?.setErrorMsg(errMsgPwd)
-
-    if (`${errMsgPhone}${errMsgPwd}`.length === 0) {
-      setTimeout(() => {
-        navigate(Alias.mypage, {
-          state: {
-            tokenParam: true,
-          },
-        })
-      }, 1500)
-    }
-  }, [name, pwd])
-
-  const onChangeText = useCallback((value, tag) => {
-    switch (tag) {
-      case Languages.inputText.firstName:
-        console.log(value)
-        break
-      case Languages.inputText.firstAnother:
-        console.log(value)
-        break
-      case Languages.inputText.namesingle:
-        console.log(value)
-        break
-
-      default:
-        break
-    }
-  }, [])
-
-  const onChangeOpenInviteTemplate = () => {
-    setCheckParams(CheckParams.INVITE_TEMPLATES)
-    refModal.current?.showModal();
-  }
 
   const renderFamilyMan = useMemo(() => {
     return (
@@ -775,11 +778,11 @@ const CreatePage = () => {
           <div className='group_textarea_control'>
 
             <MyTextArea
-              value={''}
+              value={inviteTemp}
               label={Languages.inputText.contentInvite}
               placeHolder={Languages.inputText.contentInvite}
               maxLength={500}
-              onChangeText={null}
+              onChangeText={onChangeInviteTemp}
             />
 
             <Button
@@ -799,8 +802,23 @@ const CreatePage = () => {
     )
   }, [radioDead, radioChangeHandlerDeadman, selectSTT, onChangeSelectStt, onChangeOpenInviteTemplate])
 
+  const renderTimeandLocation = useMemo(() => {
+
+    return <div className='sec_time_location_wed'>
+        {renderTitle(Languages.text.timeAndLocation, true)}
+        <div className=''>
+          
+        </div>
+    </div>
+    
+  },[])
+
   function onChangeSelectStt(event) {
     setSelectSTT(event.target.value)
+  }
+
+  function onChangeInviteTemp(event) {
+    setInviteTemp(event.target.value)
   }
 
   return (
@@ -870,6 +888,7 @@ const CreatePage = () => {
             )}
             {renderFamilyMan}
             {renderFamilyWoman}
+            {renderTimeandLocation}
 
           </div>
         </div>

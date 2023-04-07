@@ -135,7 +135,8 @@ const Languages = {
     timeAndLocation: 'Thời gian và địa điểm',
     invite: 'Lời mời:',
     inviteLanguage: 'Chọn mẫu lời mời',
-    displayModeDeceased: 'Chế độ hiển thị với người đã mất: '
+    displayModeDeceased: 'Chế độ hiển thị với người đã mất: ',
+    timeadnlocation: 'Thời gian và địa điểm'
   },
   errorMsg: {
     noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',
