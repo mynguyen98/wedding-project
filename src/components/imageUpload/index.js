@@ -6,7 +6,7 @@ import Languages from "@/commons/Languages";
 import Validate from "@/utils/Validate";
 
 export const ImageUpload = forwardRef(
-  ({ images, icon, maxW, height, desc, maxnumber, allowDrag, onChange, onSortEnd }, ref) => {
+  ({ images, title, icon, maxW, height, desc, maxnumber, allowDrag, onChange, onSortEnd }, ref) => {
     useImperativeHandle(ref, () => ({
       setErrorMsg
     }));
@@ -19,7 +19,7 @@ export const ImageUpload = forwardRef(
     // const onChange = (imageList) => {
     //   setImages(imageList);
     // };
-  
+
     // const onSortEnd = useCallback((oldIndex, newIndex) => {
     //   setImages((array) => arrayMove(array, oldIndex, newIndex));
     // }, []);
@@ -76,7 +76,7 @@ export const ImageUpload = forwardRef(
                 draggable
                 hidden
                 allowDrag={allowDrag || false}
-                style={{ width: maxW}}
+                style={{ width: maxW }}
               >
                 {
                   imageList.map((image, index) =>
@@ -118,7 +118,7 @@ export const ImageUpload = forwardRef(
                     </div>
                     <div className="text-center">
                       <p className="add_image_uploading">
-                        {Languages.text.addonepic}
+                        {title}
                       </p>
                       {desc && <p className="desc_image_uploading">{desc}</p>}
                     </div>

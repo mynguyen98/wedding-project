@@ -38,6 +38,7 @@ Global Styles
   --gray-color-2: #f5eced;
   --gray-color-3: #94a3b8;
   --gray-color-4: #f4f4f4;
+  --panel-color: #94A3B8;
   --text-color-head: #0f172a;
   --text-color-darkmode: #131825;
   --quick-sand-font-family: 'Quicksand', sans-serif;
@@ -791,6 +792,7 @@ p {
   background-color: var(--bg-bold-green);
   padding: 50px 0;
   color: var(--white-color);
+  clear: both;
 }
 
 .footer-letter {
@@ -1764,6 +1766,148 @@ img {
   padding: 10px;
   text-align: left;
   width: 100%;
+}
+
+.float_display {
+  float: right;
+  max-width: 833px;
+  width: 100%;
+  clear: both;
+}
+
+.double_input_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.double_input_row .half_row_hor_input {
+  width: 100%;
+}
+
+.double_input_row .half_row_hor_input .man_inputStyle {
+  max-width: 100%;
+}
+
+.fullwidth_input_colum {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.fullwidth_input_colum .man_inputStyle {
+  width: 100%;
+  max-width: 100%;
+}
+
+.checkbox_inline_colum .man_inputStyle {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.panel.multi-collapse {
+  display: block;
+  margin: 20px 0;
+}
+
+.collapse-child-title {
+  background: var(--panel-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  color: var(--white-color);
+  font-family: var(--quick-sand-font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.collapse-child.isclose {
+  visibility: hidden;
+  height: 0;
+}
+
+.collapse-child.ishow {
+  visibility: visible;
+  height: fit-content;
+}
+
+.album_list_thumb_wedding {
+  margin: 20px 0;
+  display: block;
+}
+
+.album_list_thumb_wedding .notifi {
+  list-style-type: disc;
+  font-family: var(--quick-sand-font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 20px;
+  color: var(--black-color);
+}
+
+.album_list_thumb_wedding .notifi li {
+  padding: 5px 0;
+}
+
+.list_album_uploads .root-remove {
+  justify-content: start;
+}
+
+.list_album_uploads .uploading_single_img_group img {
+  max-width: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.list_album_uploads .wrap_imageUploading {
+  width: 150px;
+  flex: unset;
+  padding: 0;
+}
+
+.list_album_uploads .wrap_imageUploading .ImgUploadIcon {
+  margin: 0;
+}
+
+.list_album_uploads .wrap_imageUploading .ImgUploadIcon svg {
+  width: calc(50%);
+}
+
+.list_album_uploads .wrap_imageUploading .add_image_uploading {
+  font-size: 13px;
+}
+
+.sec_group_panel_collape {
+  clear: both;
+}
+
+.disable {
+  pointer-events: none;
+  font-weight: 600;
+  color: var(--black-color) !important;
+}
+
+.section_banking_groom {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.section_banking_groom h2 {
+  font-family: var(--quick-sand-font-family);
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--black-color);
 }
 
 @media (min-width: 991px) {

@@ -61,7 +61,8 @@ const Languages = {
     checkGuest: 'Kiểm tra khách mời',
     delete: 'Xoá thiệp',
     edit: 'Chỉnh sửa',
-    invitationTemplate: 'Lời mời mẫu'
+    invitationTemplate: 'Lời mời mẫu',
+    titleTemplate: 'Tiêu đề mẫu'
 
   },
   errorMsg: {
@@ -83,7 +84,7 @@ const Languages = {
     chooseDs: 'Chọn thiết kế & làm thiệp mời của riêng bạn!',
     showFullIf: 'Hiển thị đầy đủ thông tin:',
     address: 'Địa điểm diễn ra lễ cưới',
-    album: 'Album ảnh cưới',
+    albumWed: 'Album ảnh cưới',
     listCustomer: 'Danh sách khách mời',
     effectOpen: 'Hiệu ứng mở thiệp đẹp & chuyên nghiệp',
     contentEffect:
@@ -135,8 +136,37 @@ const Languages = {
     timeAndLocation: 'Thời gian và địa điểm',
     invite: 'Lời mời:',
     inviteLanguage: 'Chọn mẫu lời mời',
+    inviteTitle: 'Chọn mẫu tiêu đề',
     displayModeDeceased: 'Chế độ hiển thị với người đã mất: ',
-    timeadnlocation: 'Thời gian và địa điểm'
+    timeadnlocation: 'Thời gian và địa điểm',
+    wedding: 'lễ cưới',
+    timer: 'Thời gian',
+    placeWedding: 'Địa điểm lễ cưới',
+    mapPlaceWedding:'Liên kết địa điểm lễ cưới',
+    displayDateCoundown: 'Hiển thị Thời gian đếm ngược đến ngày cưới',
+    titleCountdownTemp: 'Nhập nội dung tiêu đề đếm ngược thời gian',
+    daringAndFlirting: 'Dạm ngõ & Ăn hỏi',
+    egagement: 'Dạm ngõ',
+    interrogation: 'Ăn hỏi',
+    placeEagement: 'Địa điểm dạm ngõ',
+    placeInterrogation: 'Địa điểm ăn hỏi',
+    sortImage: 'Bạn có thể kéo ảnh và thay đổi thứ tự',
+    maximumUpload: 'Số lượng tối đa là 30 ảnh, kích thước tối đa là 20 MB.',
+    performance: 'Nếu bạn tải lên nhiều ảnh, trên một số thiết bị, tốc độ sẽ chậm.',
+    linkVideo: 'Liên kết video',
+    weddingProgram: 'Chương trình',
+    video: 'Video',
+    welcomeGuest: 'Đón khách',
+    celebrate: 'Làm lễ',
+    dinner: 'Tiệc tối',
+    music: 'Âm nhạc',
+    warnning: 'Lưu ý',
+    contentWarnning: 'Nội dung lưu ý',
+    informationBanking: 'thông tin ngân hàng',
+    accountHolder: 'Chủ tài khoản',
+    serinumber: 'Số tài khoản',
+    qrcode: 'Tải lên QR Code'
+
   },
   errorMsg: {
     noInternet: 'Kết nối bị gián đoạn, vui lòng thử lại!',
