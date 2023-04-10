@@ -15,7 +15,12 @@ import IcChrysanthemum from '@/assets/home-image/IcChrysanthemum.svg'
 import IcInf from '@/assets/home-image/IcInf.svg'
 import Popup from '@/components/modal/Popup'
 import { MyTextArea } from '@/components/textarea'
-import { SelectInvitationTemplate, SelectSavePenTemplate, SelectTimeTemplate, SelectWarningTemplate } from '@/commons/FieldsDataObj'
+import { SelectInvitationTemplate, SelectMusic, SelectSavePenTemplate, SelectTimeTemplate, SelectWarningTemplate } from '@/commons/FieldsDataObj'
+import { FaCalendar, FaLink, FaMap } from 'react-icons/fa'
+import { Panel } from '@/components/panel'
+import Footer from "./Footer/Footer";
+import Qrcode from '@/components/icons/IcQrcode'
+import MultiPlayer from '@/components/multiAudio'
 
 const CreatePage = () => {
   const navigate = useNavigate()
@@ -24,11 +29,17 @@ const CreatePage = () => {
 
   const [imagesCover, setImagesCover] = useState([])
   const [images, setImages] = useState([])
+  const [album, setAlbum] = useState([])
+
   const [selectSTT, setSelectSTT] = useState('')
   const [inviteTemp, setInviteTemp] = useState('')
+  const [countdownTemp, setCountdownTemp] = useState('')
+  const [warnTemp, setWarnTemp] = useState('')
 
   const [radioEffectImage, setRadioEffectImage] = useState('none')
   const [radioInviteTemplate, setRadioInviteTemplate] = useState('none')
+  const [radioCountdowTemplate, setRadioCountdowTemplate] = useState('none')
+  const [radioWarnTemplate, setRadioWarnTemplate] = useState('none')
   const [radioDead, setRadioDead] = useState('none')
 
   const [name, setName] = useState('')
@@ -65,6 +76,16 @@ const CreatePage = () => {
     setInviteTemp(text)
   }
 
+  const radioChangeHandlerCountdownTemplate = (text, value) => {
+    setRadioCountdowTemplate(value)
+    setCountdownTemp(text)
+  }
+
+  const radioChangeHandlerWarnTemplate = (text, value) => {
+    setRadioWarnTemplate(value)
+    setWarnTemp(text)
+  }
+
   const radioChangeHandlerDeadman = (e) => {
     setRadioDead(e.target.value)
   }
@@ -81,8 +102,12 @@ const CreatePage = () => {
     setImagesCover(imageList)
   }
 
+  const onChangeAlbum = (imageList) => {
+    setAlbum(imageList)
+  }
+
   const onSortEnd = useCallback((oldIndex, newIndex) => {
-    setImages((array) => arrayMove(array, oldIndex, newIndex))
+    setAlbum((array) => arrayMove(array, oldIndex, newIndex))
   }, [])
 
   function handleChangeName(event) {
@@ -133,31 +158,19 @@ const CreatePage = () => {
     refModal.current?.showModal();
   }
 
-  const renderImageUploadSingle = useCallback(
-    (title, images, desc, allowDrag, onChange) => {
-      return (
-        <div className='uploading_single_img_group'>
-          <h2>{title}</h2>
-          <ImageUpload
-            icon={<ImgUploadIcon />}
-            maxnumber={1}
-            images={images}
-            maxW={'100%'}
-            height={300}
-            desc={desc}
-            onChange={onChange}
-            onSortEnd={onSortEnd}
-            allowDrag={allowDrag}
-          />
-        </div>
-      )
-    },
-    []
-  )
-  
+  const onChangeOpenCountdownTemplate = () => {
+    setCheckParams(CheckParams.TITLE_TIME_TEMPLATES)
+    refModal.current?.showModal();
+  }
+
+  const onChangeOpenWarnTemplate = () => {
+    setCheckParams(CheckParams.WARNNING_TEMPLATES)
+    refModal.current?.showModal();
+  }
+
   const renderRadio = useCallback(
     (id, label, value, onChange, isSelected) => {
-      
+
       return (
         <div className='options_select'>
           <RadioButton
@@ -173,7 +186,7 @@ const CreatePage = () => {
     []
   )
 
-  const renderPopuptemplate = useCallback((title, data) => {
+  const renderPopuptemplate = useCallback((title, data, radioChangeHandlerTemplate, selected) => {
 
     return <div className='section_choose_template'>
       <div className='head_template'>
@@ -185,14 +198,14 @@ const CreatePage = () => {
 
         {data.map((item, index) => (
           <div className='SelectInvitationTemplate_map' key={index}>
-            {renderRadio(item.value, item.text, item.value, () => radioChangeHandlerInviteTemplate(item.text, item.value), radioInviteTemplate)}
+            {renderRadio(item.value, item.text, item.value, () => radioChangeHandlerTemplate(item.text, item.value), selected)}
           </div>
         ))}
 
       </div>
     </div>
 
-  }, [radioInviteTemplate, radioChangeHandlerInviteTemplate])
+  }, [])
 
   const renderContentModal = useMemo(() => {
 
@@ -210,13 +223,22 @@ const CreatePage = () => {
         </div>
       </div >
 
-      || checkParams === CheckParams.INVITE_TEMPLATES && renderPopuptemplate(Languages.text.inviteLanguage, SelectInvitationTemplate) 
-      || checkParams === CheckParams.TITLE_TIME_TEMPLATES && renderPopuptemplate(Languages.text.inviteLanguage, SelectTimeTemplate) 
-      || checkParams === CheckParams.WARNNING_TEMPLATES && renderPopuptemplate(Languages.text.inviteLanguage, SelectWarningTemplate) 
-      || checkParams === CheckParams.TITLE_SAVE_PEN_TEMPLATES && renderPopuptemplate(Languages.text.inviteLanguage, SelectSavePenTemplate) 
+      || checkParams === CheckParams.INVITE_TEMPLATES && renderPopuptemplate(Languages.text.inviteLanguage, SelectInvitationTemplate, radioChangeHandlerInviteTemplate, radioInviteTemplate)
+      || checkParams === CheckParams.TITLE_TIME_TEMPLATES && renderPopuptemplate(Languages.text.inviteTitle, SelectTimeTemplate, radioChangeHandlerCountdownTemplate, radioCountdowTemplate)
+      || checkParams === CheckParams.WARNNING_TEMPLATES && renderPopuptemplate(Languages.text.inviteTitle, SelectWarningTemplate, radioChangeHandlerWarnTemplate, radioWarnTemplate)
+      || checkParams === CheckParams.TITLE_SAVE_PEN_TEMPLATES && renderPopuptemplate(Languages.text.inviteTitle, SelectSavePenTemplate)
 
     )
-  }, [checkParams, renderPopuptemplate])
+  }, [
+    checkParams,
+    radioInviteTemplate,
+    radioCountdowTemplate,
+    radioWarnTemplate,
+    renderPopuptemplate,
+    radioChangeHandlerInviteTemplate,
+    radioChangeHandlerCountdownTemplate,
+    radioChangeHandlerWarnTemplate
+  ])
 
   const renderModal = useMemo(() => {
 
@@ -231,6 +253,29 @@ const CreatePage = () => {
       />
     )
   }, [renderContentModal, checkParams])
+
+  const renderImageUploadSingle = useCallback(
+    (title, images, desc, allowDrag, onChange, max, height, icon, titleImages) => {
+      return (
+        <div className='uploading_single_img_group'>
+          <h2>{title}</h2>
+          <ImageUpload
+            icon={icon || <ImgUploadIcon />}
+            maxnumber={max || 1}
+            images={images}
+            maxW={'100%'}
+            height={height || 300}
+            desc={desc}
+            onChange={onChange}
+            onSortEnd={onSortEnd}
+            allowDrag={allowDrag}
+            title={titleImages || Languages.text.addonepic}
+          />
+        </div>
+      )
+    },
+    [onSortEnd]
+  )
 
   const renderTitle = (title, divided, classNameCus) => {
     return (
@@ -775,6 +820,7 @@ const CreatePage = () => {
           <div className='place_title_input'>
             <label>{Languages.text.invite}</label>
           </div>
+
           <div className='group_textarea_control'>
 
             <MyTextArea
@@ -796,6 +842,7 @@ const CreatePage = () => {
             />
 
           </div>
+
         </div>
 
       </div>
@@ -804,14 +851,401 @@ const CreatePage = () => {
 
   const renderTimeandLocation = useMemo(() => {
 
-    return <div className='sec_time_location_wed'>
-        {renderTitle(Languages.text.timeAndLocation, true)}
-        <div className=''>
-          
+    return <div className='sec_time_location_wed float_display'>
+      {renderTitle(Languages.text.timeAndLocation, true)}
+      <div className='double_input_row'>
+        <div className='half_row_hor_input'>
+          {renderInput('', '', Languages.text.wedding, '', 'datetime-local', 200, false)}
         </div>
+        <div className='half_row_hor_input'>
+          {renderInput('', '', Languages.text.timer, '', 'time', 200, false)}
+        </div>
+      </div>
+      <div className='fullwidth_input_colum'>
+        <div className='single_hor_input'>
+          {renderInput('', '', Languages.text.placeWedding, Languages.text.placeWedding, 'text', 200, true, <FaMap />)}
+        </div>
+        <div className='single_hor_input'>
+          {renderInput('', '', Languages.text.mapPlaceWedding, Languages.text.mapPlaceWedding, 'text', 200, true, <FaLink />)}
+        </div>
+        <div className='single_hor_input checkbox_inline_colum'>
+          {renderInput('', '', Languages.text.displayDateCoundown, '', 'checkbox', 200, false, '', 'checkbox_input_style')}
+        </div>
+        <div className='single_hor_input'>
+          <MyTextArea
+            value={countdownTemp}
+            label={Languages.inputText.contentInvite}
+            placeHolder={Languages.inputText.contentInvite}
+            maxLength={500}
+            onChangeText={onChangeCountdownTemp}
+          />
+          <Button
+
+            label={Languages.buttonText.titleTemplate}
+            buttonStyle={BUTTON_STYLES.PINK}
+            textStyle={BUTTON_STYLES.PINK}
+            isLowerCase
+            onPress={onChangeOpenCountdownTemplate}
+
+          />
+        </div>
+      </div>
     </div>
-    
-  },[])
+
+  }, [countdownTemp, onChangeOpenCountdownTemplate, onChangeCountdownTemp])
+
+  const renderWarnning = useMemo(() => {
+    return <Panel title={Languages.text.warnning}>
+      <div className='fullwidth_input_colum'>
+        <div className='single_hor_input'>
+          <MyTextArea
+            value={warnTemp}
+            label={Languages.text.contentWarnning}
+            placeHolder={Languages.text.contentWarnning}
+            maxLength={500}
+            onChangeText={onChangeWarnTemp}
+          />
+          <Button
+
+            label={Languages.buttonText.titleTemplate}
+            buttonStyle={BUTTON_STYLES.PINK}
+            textStyle={BUTTON_STYLES.PINK}
+            isLowerCase
+            onPress={onChangeOpenWarnTemplate}
+          />
+        </div>
+      </div>
+    </Panel>
+  }, [onChangeWarnTemp, onChangeOpenWarnTemplate])
+
+  const renderDamNgoAnHoi = useMemo(() => {
+    return <Panel title={Languages.text.daringAndFlirting}>
+      <div className='double_input_row'>
+        <div className='half_row_hor_input'>
+          {renderInput('', '', Languages.text.egagement, '', 'datetime-local', 200, false)}
+        </div>
+        <div className='half_row_hor_input'>
+          {renderInput('', '', Languages.text.timer, '', 'time', 200, false)}
+        </div>
+      </div>
+
+      <div className='fullwidth_input_colum'>
+        <div className='single_hor_input'>
+          {renderInput('', '', Languages.text.placeEagement, Languages.text.placeEagement, 'text', 200, true, <FaMap />)}
+        </div>
+      </div>
+
+      <div className='double_input_row'>
+        <div className='half_row_hor_input'>
+          {renderInput('', '', Languages.text.interrogation, '', 'datetime-local', 200, false)}
+        </div>
+        <div className='half_row_hor_input'>
+          {renderInput('', '', Languages.text.timer, '', 'time', 200, false)}
+        </div>
+      </div>
+
+      <div className='fullwidth_input_colum'>
+        <div className='single_hor_input'>
+          {renderInput('', '', Languages.text.placeInterrogation, Languages.text.placeInterrogation, 'text', 200, true, <FaMap />)}
+        </div>
+      </div>
+
+    </Panel>
+  }, [])
+
+  const renderAlbum = useMemo(() => {
+    return <Panel title={Languages.text.albumWed}>
+      <div className='album_list_thumb_wedding'>
+        <div className='album_notifi'>
+          <ul className='notifi'>
+            <li>
+              {Languages.text.sortImage}
+            </li>
+            <li>
+              {Languages.text.maximumUpload}
+            </li>
+            <li>
+              {Languages.text.performance}
+            </li>
+          </ul>
+        </div>
+        <div className='list_album_uploads'>
+          {renderImageUploadSingle(
+            '',
+            album,
+            '',
+            true,
+            onChangeAlbum,
+            20,
+            150
+          )}
+        </div>
+      </div>
+    </Panel>
+  }, [album, onChangeAlbum])
+
+  const renderProgramEvent = useMemo(() => {
+    return <>
+      <Panel title={Languages.text.video}>
+        <div className='video_event_wedding'>
+          <div className='fullwidth_input_colum'>
+            <div className='single_hor_input'>
+              {renderInput('', '', Languages.text.linkVideo, Languages.text.linkVideo, 'text', 200, true, <FaLink />)}
+            </div>
+          </div>
+        </div>
+      </Panel>
+
+      <Panel title={Languages.text.weddingProgram}>
+        <div className='program_wedding'>
+
+          <div className='double_input_row'>
+            <div className='half_row_hor_input'>
+              {renderInput('', Languages.text.welcomeGuest, '', '', 'text', 200, true, <FaCalendar />, 'disable')}
+            </div>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', '', '', 'time', 200, false)}
+            </div>
+          </div>
+
+          <div className='double_input_row'>
+            <div className='half_row_hor_input'>
+              {renderInput('', Languages.text.celebrate, '', '', 'text', 200, true, <FaCalendar />, 'disable')}
+            </div>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', '', '', 'time', 200, false)}
+            </div>
+          </div>
+
+          <div className='double_input_row'>
+            <div className='half_row_hor_input'>
+              {renderInput('', Languages.text.dinner, '', '', 'text', 200, true, <FaCalendar />, 'disable')}
+            </div>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', '', '', 'time', 200, false)}
+            </div>
+          </div>
+
+          <div className='double_input_row'>
+            <div className='half_row_hor_input'>
+              {renderInput('', Languages.text.music, '', '', 'text', 200, true, <FaCalendar />, 'disable')}
+            </div>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', '', '', 'time', 200, false)}
+            </div>
+          </div>
+
+        </div>
+      </Panel>
+    </>
+  }, [])
+
+  const renderBanking = useMemo(() => {
+    return <Panel title={Languages.text.informationBanking}>
+
+      <div className='section_banking_groom'>
+        <h2>{Languages.text.man}</h2>
+
+        <div className='inforBank_one_per'>
+          <div className='fullwidth_input_colum'>
+            <div className='single_hor_input'>
+              {renderInput('', '', Languages.inputText.groom, Languages.inputText.groom, 'text', 200, true)}
+            </div>
+          </div>
+          <div className='double_input_row'>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.accountHolder, Languages.text.accountHolder, 'text', 200, false)}
+            </div>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.serinumber, Languages.text.serinumber, 'number', 14, false)}
+            </div>
+          </div>
+          <div className='list_album_uploads'>
+            {renderImageUploadSingle(
+              '',
+              album,
+              '',
+              true,
+              onChangeAlbum,
+              1,
+              150,
+              <Qrcode />,
+              Languages.text.qrcode
+            )}
+          </div>
+        </div>
+
+        <div className='inforBank_one_per'>
+          <div className='fullwidth_input_colum'>
+            <div className='single_hor_input'>
+              {renderInput('', '', Languages.inputText.father, Languages.inputText.father, 'text', 200, true)}
+            </div>
+          </div>
+          <div className='double_input_row'>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.accountHolder, Languages.text.accountHolder, 'text', 200, false)}
+            </div>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.serinumber, Languages.text.serinumber, 'number', 14, false)}
+            </div>
+          </div>
+          <div className='list_album_uploads'>
+            {renderImageUploadSingle(
+              '',
+              album,
+              '',
+              true,
+              onChangeAlbum,
+              1,
+              150,
+              <Qrcode />,
+              Languages.text.qrcode
+            )}
+          </div>
+        </div>
+
+        <div className='inforBank_one_per'>
+          <div className='fullwidth_input_colum'>
+            <div className='single_hor_input'>
+              {renderInput('', '', Languages.inputText.mother, Languages.inputText.mother, 'text', 200, true)}
+            </div>
+          </div>
+          <div className='double_input_row'>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.accountHolder, Languages.text.accountHolder, 'text', 200, false)}
+            </div>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.serinumber, Languages.text.serinumber, 'number', 14, false)}
+            </div>
+          </div>
+          <div className='list_album_uploads'>
+            {renderImageUploadSingle(
+              '',
+              album,
+              '',
+              true,
+              onChangeAlbum,
+              1,
+              150,
+              <Qrcode />,
+              Languages.text.qrcode
+            )}
+          </div>
+        </div>
+
+
+      </div>
+
+      <div className='section_banking_groom'>
+        <h2>{Languages.text.women}</h2>
+
+        <div className='inforBank_one_per'>
+          <div className='fullwidth_input_colum'>
+            <div className='single_hor_input'>
+              {renderInput('', '', Languages.inputText.bride, Languages.inputText.bride, 'text', 200, true)}
+            </div>
+          </div>
+          <div className='double_input_row'>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.accountHolder, Languages.text.accountHolder, 'text', 200, false)}
+            </div>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.serinumber, Languages.text.serinumber, 'number', 14, false)}
+            </div>
+          </div>
+          <div className='list_album_uploads'>
+            {renderImageUploadSingle(
+              '',
+              album,
+              '',
+              true,
+              onChangeAlbum,
+              1,
+              150,
+              <Qrcode />,
+              Languages.text.qrcode
+            )}
+          </div>
+        </div>
+
+        <div className='inforBank_one_per'>
+          <div className='fullwidth_input_colum'>
+            <div className='single_hor_input'>
+              {renderInput('', '', Languages.inputText.father, Languages.inputText.father, 'text', 200, true)}
+            </div>
+          </div>
+          <div className='double_input_row'>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.accountHolder, Languages.text.accountHolder, 'text', 200, false)}
+            </div>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.serinumber, Languages.text.serinumber, 'number', 14, false)}
+            </div>
+          </div>
+          <div className='list_album_uploads'>
+            {renderImageUploadSingle(
+              '',
+              album,
+              '',
+              true,
+              onChangeAlbum,
+              1,
+              150,
+              <Qrcode />,
+              Languages.text.qrcode
+            )}
+          </div>
+        </div>
+
+        <div className='inforBank_one_per'>
+          <div className='fullwidth_input_colum'>
+            <div className='single_hor_input'>
+              {renderInput('', '', Languages.inputText.mother, Languages.inputText.mother, 'text', 200, true)}
+            </div>
+          </div>
+          <div className='double_input_row'>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.accountHolder, Languages.text.accountHolder, 'text', 200, false)}
+            </div>
+            <div className='half_row_hor_input'>
+              {renderInput('', '', Languages.text.serinumber, Languages.text.serinumber, 'number', 14, false)}
+            </div>
+          </div>
+          <div className='list_album_uploads'>
+            {renderImageUploadSingle(
+              '',
+              album,
+              '',
+              true,
+              onChangeAlbum,
+              1,
+              150,
+              <Qrcode />,
+              Languages.text.qrcode
+            )}
+          </div>
+        </div>
+
+
+      </div>
+
+    </Panel>
+  }, [])
+
+  const renderMusic = useMemo(() => {
+    return <div className='sec_group_panel_collape'>
+      <Panel title={Languages.text.music}>
+        <MultiPlayer
+          urls={[
+            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+          ]}
+          obj={SelectMusic}
+        />
+      </Panel>
+    </div>
+  }, [])
 
   function onChangeSelectStt(event) {
     setSelectSTT(event.target.value)
@@ -819,6 +1253,14 @@ const CreatePage = () => {
 
   function onChangeInviteTemp(event) {
     setInviteTemp(event.target.value)
+  }
+
+  function onChangeCountdownTemp(event) {
+    setCountdownTemp(event.target.value)
+  }
+
+  function onChangeWarnTemp(event) {
+    setWarnTemp(event.target.value)
   }
 
   return (
@@ -881,19 +1323,32 @@ const CreatePage = () => {
           </div>
 
           <div className='wrapper_information_wedding'>
+
             {renderTitle(
               Languages.text.inforWed,
               false,
               'title_comp_wed_add_cus'
             )}
+
             {renderFamilyMan}
             {renderFamilyWoman}
             {renderTimeandLocation}
+
+            <div className='sec_group_panel_collape float_display'>
+              {renderDamNgoAnHoi}
+              {renderAlbum}
+              {renderProgramEvent}
+              {renderWarnning}
+              {renderBanking}
+              {renderMusic}
+
+            </div>
 
           </div>
         </div>
       </div>
       {renderModal}
+      <Footer />
     </div>
   )
 }

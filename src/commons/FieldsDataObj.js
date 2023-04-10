@@ -64,3 +64,157 @@ export const SelectSavePenTemplate = [
         text: 'Hãy cùng chúng tôi xây đắp những kỷ niệm đẹp bằng cách để lại lời chúc phúc và chữ ký của bạn trong cuốn sổ này nhé!'
     }
 ];
+
+export const SelectMusic = [
+  {
+      id: 'music_one',
+      name: 'music_one',
+      value: 'music_one',
+      url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
+  },
+  {
+      id: 'music_two',
+      name: 'music_two',
+      value: 'music_two',
+      text: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
+  },
+  {
+      id: 'music_three',
+      name: 'music_three',
+      value: 'music_three',
+      text: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3'
+  }
+];
+
+export const fiedlsCreatePage = {
+    "userId": "1",
+    "id": "",
+    "coverImage": "",
+    "thumbnailImage": "",
+    "effectImage": "",
+    "informationOfGroom": [
+      {
+        "firstName": "quan",
+        "middleName": "",
+        "name": "",
+        "isOldBrotherGroom": true,
+        "codingRegion": "",
+        "phoneNumberOfGroom": "",
+        "firstFatherNameOfGroom": "",
+        "middleFatherNameOfGroom": "",
+        "fatherNameOfGroom": "",
+        "phoneNumberOfFatherGroom": "",
+        "isGoneFather": "",
+        "firstMotherNameOfGroom": "",
+        "middleMotherNameOfGroom": "",
+        "motherNameOfGroom": "",
+        "phoneNumberOfMotherGroom": "",
+        "isGoneMother": "",
+        "nameBankOfGroom": "",
+        "ownerBankOfGroom": "",
+        "bankOfNumberGroom": "",
+        "qrCodeGroomLink": "",
+        "nameBankOfFatherGroom": "",
+        "ownerBankOfFatherGroom": "",
+        "bankOfNumberFatherGroom": "",
+        "qrCodeFatherGroomLink": "",
+        "nameBankOfMotherGroom": "",
+        "ownerBankOfMotherGroom": "",
+        "bankOfNumberMotherGroom": "",
+        "qrCodeMotherGroomLink": ""
+      }
+    ],
+    "informationOfBride": [
+      {
+        "firstName": "",
+        "middleName": "",
+        "name": "",
+        "isOldBrotherBride": true,
+        "codingRegion": "",
+        "phoneNumberOfBride": "",
+        "firstFatherNameOfBride": "",
+        "middleFatherNameOfBride": "",
+        "fatherNameOfBride": "",
+        "phoneNumberOfFatherBride": "",
+        "isGoneFatherBride": "",
+        "firstMotherNameOfBride": "",
+        "middleMotherNameOfBride": "",
+        "motherNameOfBride": "",
+        "phoneNumberOfMotherBride": "",
+        "isGoneMotherOfBride": "",
+        "nameBankOfBride": "",
+        "ownerBankOfBride": "",
+        "bankOfNumberBride": "",
+        "qrCodeBrideLink": "",
+        "nameBankOfFatherBride": "",
+        "ownerBankOfFatherBride": "",
+        "bankOfNumberFatherBride": "",
+        "qrCodeFatherBrideLink": "",
+        "nameBankOfMotherBride": "",
+        "ownerBankOfMotherBride": "",
+        "bankOfNumberMotherBride": "",
+        "qrCodeMotherBrideLink": ""
+      }
+    ],
+    "isDisplayGonePeople": "",
+    "contentOfInvitation": "",
+    "timeAndLocationOfWedding": {
+      "dateOfEventWedding": "",
+      "timeOfEventWedding": "",
+      "locationOfWedding": "",
+      "mapDirectLink": "",
+      "isDisplayCountDown": "",
+      "contentOfCountDown": ""
+    },
+    "timeAndLocationOfEgagement": {
+      "dateOfEventEgagement": "",
+      "timeOfEventEgagement": "",
+      "locationOfEgagement": ""
+    },
+    "timeAndLocationOfInterrogation": {
+      "dateOfEventInterrogation": "",
+      "timeOfEventInterrogation": "",
+      "locationOfInterrogation": ""
+    },
+    "album": [],
+    "videoLink": "",
+    "eventOfProgram": {
+      "timeToWellcome": "",
+      "timeToCelebrate": "",
+      "timeToDinner": "",
+      "timeToMusic": ""
+    },
+    "song": 1,
+    "isUseConfirm": false,
+    "isUseGuestBook": false,
+    "password": "",
+    "contentGuestBook": "",
+    "isEffectOfOpenning": "",
+    "fontStyleOfTitle": {
+      "id": 1,
+      "name": ""
+    },
+    "fontStyleOfContent": {
+      "id": 1,
+      "name": ""
+    },
+    "styleBackground": {
+      "id": 1,
+      "name": ""
+    },
+    "backgroundColor": {
+      "id": 1,
+      "name": ""
+    },
+    "effectBackgroud": {
+      "id": 1,
+      "name": ""
+    },
+    "packageType": "",
+    "anotherProduct": [],
+    "codeInvite": "",
+    "isPaid": false,
+    "createTime": "",
+    "updatedTime": "",
+    "expiredTime": ""
+  }
