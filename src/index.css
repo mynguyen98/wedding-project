@@ -35,7 +35,7 @@ Global Styles
   --black-color: #000;
   --white-color: #fff;
   --gray-color: #c1c1c1;
-  --gray-color-2: #f5eced;
+  --gray-color-2: #F1F5F9;
   --gray-color-3: #94a3b8;
   --gray-color-4: #f4f4f4;
   --panel-color: #94A3B8;
@@ -1588,7 +1588,7 @@ img {
 .RadioButton label {
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   font-family: var(--quick-sand-font-family);
   color: var(--black-color);
@@ -1834,11 +1834,13 @@ img {
 .collapse-child.isclose {
   visibility: hidden;
   height: 0;
+  display: none;
 }
 
 .collapse-child.ishow {
   visibility: visible;
   height: fit-content;
+  display: block;
 }
 
 .album_list_thumb_wedding {
@@ -1908,6 +1910,199 @@ img {
   font-size: 25px;
   font-weight: 600;
   color: var(--black-color);
+}
+
+.custom_display_sec_radio_music {
+  display: flex;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.custom_display_sec_radio_music .group_radio_choose_template .customize_radio {
+  margin-bottom: 0;
+  padding-top: 15px;
+}
+
+.custom_display_sec_radio_music .group_radio_choose_template .SelectInvitationTemplate_map:first-child .customize_radio {
+  padding-top: 0;
+}
+
+.custom_display_sec_radio_music .group_radio_choose_template label {
+  background: none;
+  padding: 0;
+}
+
+.custom_display_sec_radio_music .multimusic_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 14px;
+}
+
+.custom_display_sec_radio_music .head_template {
+  display: none;
+}
+
+.button_span_music {
+  display: flex;
+  gap: 20px;
+  font-family: var(--quick-sand-font-family);
+}
+
+.sec_panel_use_feature_attend .details_attend {
+  background: var(--gray-color-2);
+  padding: 30px;
+  margin-bottom: 15px;
+  color: var(--black-color);
+  font-family: var(--quick-sand-font-family);
+}
+
+.custom_style_radio .group_radio_choose_template {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map label {
+  display: none;
+}
+
+.custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map input:is([type="checkbox"], [type="radio"]) {
+  -webkit-appearance: none;
+  width: 133px;
+  height: 105px;
+  border: 2px solid var(--gray-color-4);
+  border-radius: 0.3em;
+  transition: background-color 300ms, border-color 300ms;
+  background-repeat: no-repeat;
+}
+
+.option_title .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:first-child input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcPacifico.png');
+}
+
+.option_title .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(2) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcViber.png');
+}
+
+.option_title .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(3) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcYeseva.png');
+}
+
+.option_title .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(4) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcLoster.png');
+}
+
+.option_title .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:last-child input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcPlayfair.png');
+}
+
+.option_content .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:first-child input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcInter.png');
+}
+
+.option_content .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(2) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcRoboto.png');
+}
+
+.option_content .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(3) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcOpensans.png');
+}
+
+.option_content .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(4) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcMonterrat.png');
+}
+
+.option_content .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:last-child input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcNatosans.png');
+}
+
+.option_type_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:first-child input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcNone.png');
+}
+
+.option_type_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(2) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcHoa.png');
+}
+
+.option_type_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(3) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcLa.png');
+}
+
+.option_type_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(4) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcTuyet.png');
+}
+
+.option_type_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:last-child input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/Ichoavan.png');
+}
+
+.option_color_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:first-child input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcTrang.png');
+}
+
+.option_color_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(2) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcXam.png');
+}
+
+.option_color_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(3) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcHong.png');
+}
+
+.option_color_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(4) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcXanh.png');
+}
+
+.option_color_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:last-child input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/Icvang.png');
+}
+
+.option_effect_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:first-child input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcNone.png');
+}
+
+.option_effect_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(2) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcHoadao.png');
+}
+
+.option_effect_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(3) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcLavang.png');
+}
+
+.option_effect_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:nth-child(4) input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcBongtuyet.png');
+}
+
+.option_effect_bg .custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map:last-child input:is([type="checkbox"], [type="radio"]) {
+  background: url('../src/assets/home-image/IcKimtuyen.png');
+}
+
+
+.custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map input:is([type="checkbox"], [type="radio"]):hover {
+  border: 2px solid var(--primary-Blue-color-400);
+}
+
+.custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map input:is([type="checkbox"], [type="radio"]):focus {
+  outline: 2px solid var(--primary-Blue-color-400);
+  outline-offset: 2px;
+}
+
+.custom_style_radio .group_radio_choose_template .SelectInvitationTemplate_map input:is([type="checkbox"], [type="radio"]):checked {
+  border: 2px solid var(--primary-Blue-color-400);
+  filter: brightness(1.2);
+}
+
+.option_type_container .option_title_head h5 {
+  font-family: var(--quick-sand-font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--black-color);
+}
+
+.wrap_package_product .form_sellect_control {
+  max-width: 100%;
 }
 
 @media (min-width: 991px) {

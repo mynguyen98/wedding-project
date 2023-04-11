@@ -15,7 +15,7 @@ import IcChrysanthemum from '@/assets/home-image/IcChrysanthemum.svg'
 import IcInf from '@/assets/home-image/IcInf.svg'
 import Popup from '@/components/modal/Popup'
 import { MyTextArea } from '@/components/textarea'
-import { SelectInvitationTemplate, SelectMusic, SelectSavePenTemplate, SelectTimeTemplate, SelectWarningTemplate } from '@/commons/FieldsDataObj'
+import { SelectColorBg, SelectEffectBg, SelectInvitationTemplate, SelectMusic, SelectSavePenTemplate, SelectStyleTContent, SelectStyleTitle, SelectTimeTemplate, SelectTypeBg, SelectWarningTemplate } from '@/commons/FieldsDataObj'
 import { FaCalendar, FaLink, FaMap } from 'react-icons/fa'
 import { Panel } from '@/components/panel'
 import Footer from "./Footer/Footer";
@@ -23,6 +23,7 @@ import Qrcode from '@/components/icons/IcQrcode'
 import MultiPlayer from '@/components/multiAudio'
 
 const CreatePage = () => {
+
   const navigate = useNavigate()
 
   const [checkParams, setCheckParams] = useState(CheckParams.AFFTER)
@@ -35,11 +36,20 @@ const CreatePage = () => {
   const [inviteTemp, setInviteTemp] = useState('')
   const [countdownTemp, setCountdownTemp] = useState('')
   const [warnTemp, setWarnTemp] = useState('')
+  const [guestbookTemp, setGuestbookTemp] = useState('')
 
   const [radioEffectImage, setRadioEffectImage] = useState('none')
+
   const [radioInviteTemplate, setRadioInviteTemplate] = useState('none')
   const [radioCountdowTemplate, setRadioCountdowTemplate] = useState('none')
   const [radioWarnTemplate, setRadioWarnTemplate] = useState('none')
+  const [radioGuestbookTemplate, setRadioGuestbookTemplate] = useState('none')
+  const [radioStyleTitle, setRadioStyleTitle] = useState('pacifico')
+  const [radioStyleContent, setRadioStyleContent] = useState('inter')
+  const [radioTypeBg, setRadioTypeBg] = useState('none')
+  const [radioColorBg, setRadioColorBg] = useState('none')
+  const [radioEffectBg, setRadioEffectBg] = useState('none')
+  const [radioMusic, setRadioMusic] = useState('none')
   const [radioDead, setRadioDead] = useState('none')
 
   const [name, setName] = useState('')
@@ -86,12 +96,41 @@ const CreatePage = () => {
     setWarnTemp(text)
   }
 
+  const radioChangeHandlerGuestbookTemplate = (text, value) => {
+    setRadioGuestbookTemplate(value)
+    setGuestbookTemp(text)
+  }
+
+  const radioChangeHandlerStyleTitle = (text, value) => {
+    setRadioStyleTitle(value)
+  }
+
+  const radioChangeHandlerStyleContent = (text, value) => {
+    setRadioStyleContent(value)
+  }
+
+  const radioChangeHandlerTypebg = (text, value) => {
+    setRadioTypeBg(value)
+  }
+
+  const radioChangeHandlerColorBg = (text, value) => {
+    setRadioColorBg(value)
+  }
+
+  const radioChangeHandlerEffectBg = (text, value) => {
+    setRadioEffectBg(value)
+  }
+
   const radioChangeHandlerDeadman = (e) => {
     setRadioDead(e.target.value)
   }
 
   const radioChangeHandler = (e) => {
     setRadioEffectImage(e.target.value)
+  }
+
+  const radioChangeHandlerMusic = (text, value) => {
+    setRadioMusic(value)
   }
 
   const onChange = (imageList) => {
@@ -168,6 +207,11 @@ const CreatePage = () => {
     refModal.current?.showModal();
   }
 
+  const onChangeOpenGuestbookTemplate = () => {
+    setCheckParams(CheckParams.TITLE_SAVE_PEN_TEMPLATES)
+    refModal.current?.showModal();
+  }
+
   const renderRadio = useCallback(
     (id, label, value, onChange, isSelected) => {
 
@@ -186,7 +230,7 @@ const CreatePage = () => {
     []
   )
 
-  const renderPopuptemplate = useCallback((title, data, radioChangeHandlerTemplate, selected) => {
+  const renderMapRadio = useCallback((title, data, radioChangeHandlerTemplate, selected) => {
 
     return <div className='section_choose_template'>
       <div className='head_template'>
@@ -223,10 +267,10 @@ const CreatePage = () => {
         </div>
       </div >
 
-      || checkParams === CheckParams.INVITE_TEMPLATES && renderPopuptemplate(Languages.text.inviteLanguage, SelectInvitationTemplate, radioChangeHandlerInviteTemplate, radioInviteTemplate)
-      || checkParams === CheckParams.TITLE_TIME_TEMPLATES && renderPopuptemplate(Languages.text.inviteTitle, SelectTimeTemplate, radioChangeHandlerCountdownTemplate, radioCountdowTemplate)
-      || checkParams === CheckParams.WARNNING_TEMPLATES && renderPopuptemplate(Languages.text.inviteTitle, SelectWarningTemplate, radioChangeHandlerWarnTemplate, radioWarnTemplate)
-      || checkParams === CheckParams.TITLE_SAVE_PEN_TEMPLATES && renderPopuptemplate(Languages.text.inviteTitle, SelectSavePenTemplate)
+      || checkParams === CheckParams.INVITE_TEMPLATES && renderMapRadio(Languages.text.inviteLanguage, SelectInvitationTemplate, radioChangeHandlerInviteTemplate, radioInviteTemplate)
+      || checkParams === CheckParams.TITLE_TIME_TEMPLATES && renderMapRadio(Languages.text.inviteTitle, SelectTimeTemplate, radioChangeHandlerCountdownTemplate, radioCountdowTemplate)
+      || checkParams === CheckParams.WARNNING_TEMPLATES && renderMapRadio(Languages.text.inviteTitle, SelectWarningTemplate, radioChangeHandlerWarnTemplate, radioWarnTemplate)
+      || checkParams === CheckParams.TITLE_SAVE_PEN_TEMPLATES && renderMapRadio(Languages.text.inviteTitle, SelectSavePenTemplate, radioChangeHandlerGuestbookTemplate, radioGuestbookTemplate)
 
     )
   }, [
@@ -234,10 +278,12 @@ const CreatePage = () => {
     radioInviteTemplate,
     radioCountdowTemplate,
     radioWarnTemplate,
-    renderPopuptemplate,
+    radioGuestbookTemplate,
+    renderMapRadio,
     radioChangeHandlerInviteTemplate,
     radioChangeHandlerCountdownTemplate,
-    radioChangeHandlerWarnTemplate
+    radioChangeHandlerWarnTemplate,
+    radioChangeHandlerGuestbookTemplate
   ])
 
   const renderModal = useMemo(() => {
@@ -850,9 +896,9 @@ const CreatePage = () => {
   }, [radioDead, radioChangeHandlerDeadman, selectSTT, onChangeSelectStt, onChangeOpenInviteTemplate])
 
   const renderTimeandLocation = useMemo(() => {
-
     return <div className='sec_time_location_wed float_display'>
       {renderTitle(Languages.text.timeAndLocation, true)}
+
       <div className='double_input_row'>
         <div className='half_row_hor_input'>
           {renderInput('', '', Languages.text.wedding, '', 'datetime-local', 200, false)}
@@ -861,10 +907,12 @@ const CreatePage = () => {
           {renderInput('', '', Languages.text.timer, '', 'time', 200, false)}
         </div>
       </div>
+
       <div className='fullwidth_input_colum'>
         <div className='single_hor_input'>
           {renderInput('', '', Languages.text.placeWedding, Languages.text.placeWedding, 'text', 200, true, <FaMap />)}
         </div>
+
         <div className='single_hor_input'>
           {renderInput('', '', Languages.text.mapPlaceWedding, Languages.text.mapPlaceWedding, 'text', 200, true, <FaLink />)}
         </div>
@@ -872,6 +920,7 @@ const CreatePage = () => {
           {renderInput('', '', Languages.text.displayDateCoundown, '', 'checkbox', 200, false, '', 'checkbox_input_style')}
         </div>
         <div className='single_hor_input'>
+
           <MyTextArea
             value={countdownTemp}
             label={Languages.inputText.contentInvite}
@@ -886,8 +935,8 @@ const CreatePage = () => {
             textStyle={BUTTON_STYLES.PINK}
             isLowerCase
             onPress={onChangeOpenCountdownTemplate}
-
           />
+
         </div>
       </div>
     </div>
@@ -1230,21 +1279,192 @@ const CreatePage = () => {
       </div>
 
     </Panel>
-  }, [])
+  }, [album, onChangeAlbum])
 
   const renderMusic = useMemo(() => {
+
     return <div className='sec_group_panel_collape'>
       <Panel title={Languages.text.music}>
-        <MultiPlayer
-          urls={[
-            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-          ]}
-          obj={SelectMusic}
-        />
+        <div className='custom_display_sec_radio_music'>
+          {renderMapRadio('', SelectMusic, radioChangeHandlerMusic, radioMusic)}
+          <MultiPlayer
+            urls={[
+              'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+              'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+              'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+            ]}
+          />
+        </div>
       </Panel>
     </div>
+
+  }, [radioMusic, radioChangeHandlerMusic])
+
+  const renderConfirmAttend = useMemo(() => {
+    return <Panel title={Languages.text.confirmAttend}>
+
+      <div className='sec_panel_use_feature_attend fullwidth_input_colum'>
+        <div className='title'>
+          {Languages.text.useFeatureAttend}
+        </div>
+        <div className='single_hor_input checkbox_inline_colum'>
+          {renderInput('', '', Languages.text.use, '', 'checkbox', '', false, '', 'checkbox_input_style')}
+        </div>
+        <div className='details_attend'>
+          <p>
+            {Languages.text.attend} <b>{Languages.text.confirmAttend}</b>{Languages.text.enableAttend}
+          </p>
+          <p>{Languages.text.readChart}</p>
+        </div>
+      </div>
+
+    </Panel>
+  }, [])
+
+  const renderGuestbook = useMemo(() => {
+
+    return <Panel title={Languages.text.guestbook}>
+
+      <div className='sec_panel_use_feature_attend fullwidth_input_colum'>
+        <div className='title'>
+          {Languages.text.useGuestbook}
+        </div>
+        <div className='single_hor_input checkbox_inline_colum'>
+          {renderInput('', '', Languages.text.use, '', 'checkbox', '', false, '', 'checkbox_input_style')}
+        </div>
+        <div className='double_input_row'>
+          <div className='half_row_hor_input'>
+            {renderInput('', '', Languages.text.settingPwd, Languages.text.settingPwd, 'password', 200, false)}
+          </div>
+          <div className='half_row_hor_input'>
+            <span>
+              {Languages.text.minPwd}
+            </span>
+          </div>
+        </div>
+        <div className='details_attend'>
+          <span>{Languages.text.obligatory}</span>
+        </div>
+        <div className='single_hor_input'>
+          <MyTextArea
+            value={guestbookTemp}
+            label={Languages.inputText.contentInvite}
+            placeHolder={Languages.inputText.contentInvite}
+            maxLength={500}
+            onChangeText={onChangeGuestbookTemp}
+          />
+          <Button
+
+            label={Languages.buttonText.titleTemplate}
+            buttonStyle={BUTTON_STYLES.PINK}
+            textStyle={BUTTON_STYLES.PINK}
+            isLowerCase
+            onPress={onChangeOpenGuestbookTemplate}
+
+          />
+        </div>
+      </div>
+
+    </Panel>
+
+  }, [guestbookTemp, onChangeOpenGuestbookTemplate, onChangeGuestbookTemp])
+
+  const renderOpenStartEffect = useMemo(() => {
+
+    return <Panel title={Languages.text.startEffect}>
+
+      <div className='sec_panel_use_feature_attend fullwidth_input_colum'>
+        <div className='title'>
+          {Languages.text.checkedUseStartEffect}
+        </div>
+        <div className='single_hor_input checkbox_inline_colum'>
+          {renderInput('', '', Languages.text.use, '', 'checkbox', '', false, '', 'checkbox_input_style')}
+        </div>
+      </div>
+
+    </Panel>
+
+  }, [])
+
+  const renderComponentStyle = useCallback((classstyle, title, data, onChangeRadio, state) => {
+    return <div className={`${'option_type_container'}  ${classstyle}`} >
+      <div className='option_title_head'>
+        <h5>
+          {title}
+        </h5>
+      </div>
+      <div className='option_select custom_style_radio'>
+        {renderMapRadio('', data, onChangeRadio, state)}
+      </div>
+    </div>
+  }, [])
+
+  const renderTextStyle = useMemo(() => {
+
+    return <Panel title={Languages.text.textStyleFont}>
+
+      <div className='sec_options_select_type'>
+
+        {renderComponentStyle('option_title', Languages.text.chooseFontTitle, SelectStyleTitle, radioChangeHandlerStyleTitle, radioStyleTitle)}
+        {renderComponentStyle('option_content', Languages.text.chooseFontContent, SelectStyleTContent, radioChangeHandlerStyleContent, radioStyleContent)}
+
+      </div>
+
+    </Panel>
+
+  }, [radioStyleTitle, radioStyleContent, radioChangeHandlerStyleContent, radioChangeHandlerStyleTitle])
+
+  const renderEffectBgStyle = useMemo(() => {
+
+    return <Panel title={Languages.text.effectBg}>
+
+      <div className='sec_options_select_type'>
+
+        {renderComponentStyle('option_type_bg', Languages.text.typeBg, SelectTypeBg, radioChangeHandlerTypebg, radioTypeBg)}
+        {renderComponentStyle('option_color_bg', Languages.text.colorBg, SelectColorBg, radioChangeHandlerColorBg, radioColorBg)}
+        {renderComponentStyle('option_effect_bg', Languages.text.effectBg, SelectEffectBg, radioChangeHandlerEffectBg, radioEffectBg)}
+
+      </div>
+
+    </Panel>
+
+  }, [radioEffectBg, radioColorBg, radioTypeBg, radioChangeHandlerTypebg, radioChangeHandlerColorBg, radioChangeHandlerEffectBg])
+
+  const renderBuyPackageProduct = useMemo(() => {
+
+    return <div className='sec_group_panel_collape'>
+      <Panel title={Languages.text.packageProduct}>
+        <div className='wrap_package_product'>
+          <div className='item_field_single'>
+            <div className='sellect_option'>
+              <label className='Input_label__90o4b'>
+                {Languages.text.packagePro}
+              </label>
+              <select
+                className='form_sellect_control'
+                name='form_sellect_stt'
+              >
+                <option value='1'>{Languages.inputText.top1}</option>
+                <option value='2'>{Languages.inputText.notTop}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </Panel>
+    </div>
+
+  }, [])
+
+  const renderProductAnother = useMemo(() => {
+
+    return <div className='sec_group_panel_collape'>
+      <Panel title={Languages.text.anotherPro}>
+        <div className='wrap_package_product_another'>
+          
+        </div>
+      </Panel>
+    </div>
+
   }, [])
 
   function onChangeSelectStt(event) {
@@ -1261,6 +1481,10 @@ const CreatePage = () => {
 
   function onChangeWarnTemp(event) {
     setWarnTemp(event.target.value)
+  }
+
+  function onChangeGuestbookTemp(event) {
+    setGuestbookTemp(event.target.value)
   }
 
   return (
@@ -1341,7 +1565,13 @@ const CreatePage = () => {
               {renderWarnning}
               {renderBanking}
               {renderMusic}
-
+              {renderConfirmAttend}
+              {renderGuestbook}
+              {renderOpenStartEffect}
+              {renderTextStyle}
+              {renderEffectBgStyle}
+              {renderBuyPackageProduct}
+              {renderProductAnother}
             </div>
 
           </div>
