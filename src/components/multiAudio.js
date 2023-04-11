@@ -69,7 +69,7 @@ const useMultiAudio = (urls) => {
 }
 
 const Player = ({ player, toggle }) => (
-    <button onClick={toggle}>{player.playing ? <IcPause /> : <IcPlay />}</button>
+    <button style={{ width: '100% ' }} onClick={toggle}>{player.playing ? <span className='button_span_music'><IcPause />Đang phát</span> : <span className='button_span_music'><IcPlay />Nghe thử</span>}</button>
 )
 
 const MultiPlayer = ({ urls }) => {
