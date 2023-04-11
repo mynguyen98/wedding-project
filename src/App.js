@@ -12,6 +12,8 @@ import Services from './pages/Services'
 import CommentDetail from './pages/CommentDetail'
 import CreatePage from './pages/CreatePage'
 import CreatePageStructure from './pages/CreatePageStructure'
+// trial
+import RegisterRefactor from './pages/RegisterRefactor'
 function App() {
   return (
     <div className='app'>
@@ -26,7 +28,7 @@ function App() {
             element={<CreatePageStructure />}
           />
           <Route path={Alias.login} element={<Login />} />
-          <Route path={Alias.register} element={<Register />} />
+          <Route path={Alias.register} element={<RegisterRefactor />} />
           <Route path={Alias.pwdRecovery} element={<RecoveryPwd />} />
           <Route path={Alias.mypage} element={<Mypage />} />
           <Route path={Alias.services} element={<Services />} />
