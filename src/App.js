@@ -11,7 +11,7 @@ import Notfound from './pages/Notfound'
 import Services from './pages/Services'
 import CommentDetail from './pages/CommentDetail'
 import CreatePage from './pages/CreatePage'
-// import CreatePageStructure from './pages/CreatePageStructure'
+import CreatePageStructure from './pages/CreatePageStructure'
 // trial
 import RegisterRefactor from './pages/RegisterRefactor'
 function App() {
