@@ -51,6 +51,7 @@ Global Styles
   --green-opacity-bg: #f1ede1;
   --bg-bold-green: #09102a;
   --gray-input-color: #7c7c7c;
+  --bg-pink-color: #FEE2E2;
   --gray-Dark-Dark-Mode-50: #5f626b;
   --primary-Blue-color-400: #3460dc;
 }
@@ -2103,6 +2104,36 @@ img {
 
 .wrap_package_product .form_sellect_control {
   max-width: 100%;
+}
+
+.savesetting_btn {
+  clear: both;
+  padding: 20px 0;
+
+}
+
+.wrap_flop_note_using {
+  padding-bottom: 40px;
+  padding-top: 10px;
+}
+
+.wrap_flop_note_using .box_note_using {
+  padding: 40px 0;
+  background: var(--bg-pink-color);
+  color: var(--black-color);
+  max-width: 100%;
+  font-family: var(--quick-sand-font-family);
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.wrap_flop_note_using .box_note_using ul {
+  list-style-type: disc;
+  margin-left: 50px;
+}
+
+.wrap_flop_note_using .box_note_using ul li {
+  padding: 10px 0;
 }
 
 @media (min-width: 991px) {

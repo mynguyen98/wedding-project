@@ -62,7 +62,8 @@ const Languages = {
     delete: 'Xoá thiệp',
     edit: 'Chỉnh sửa',
     invitationTemplate: 'Lời mời mẫu',
-    titleTemplate: 'Tiêu đề mẫu'
+    titleTemplate: 'Tiêu đề mẫu',
+    saveSettings: 'LƯU CÀI ĐẶT'
 
   },
   errorMsg: {
@@ -188,7 +189,12 @@ const Languages = {
     effectBg: 'Chọn hiệu ứng:',
     packageProduct: 'BẠN MUỐN MUA GÓI SẢN PHẨM NÀO?',
     packagePro: 'Chọn gói sản phẩm muốn mua',
-    anotherPro: 'Sản phẩm khác'
+    anotherPro: 'Sản phẩm khác',
+    referralCode: 'Mã giới thiệu',
+    changePlan: 'Có thể thay đổi plan theo ý muốn',
+    useMax7day: 'Người dùng miễn phí được sử dụng dịch vụ tối đa 7 ngày',
+    useActive90day: 'Người dùng trả phí được sử dụng dịch vụ tối đa 90 ngày',
+    contactSupport: 'Liên hệ chăm sóc khách hàng để được phục vụ tốt hơn'
 
   },
   errorMsg: {

@@ -183,7 +183,7 @@ const CreatePage = () => {
       case Languages.inputText.firstAnother:
         console.log(value)
         break
-      case Languages.inputText.namesingle:
+      case Languages.inputText.nameGroom:
         console.log(value)
         break
 
@@ -348,8 +348,8 @@ const CreatePage = () => {
       icon,
       inputStyle
     ) => {
-      const onChange = (text, placehodel) => {
-        onChangeText(text, placehodel)
+      const onChange = (value, placehodel) => {
+        onChangeText(value, placehodel)
       }
 
       return (
@@ -1460,7 +1460,23 @@ const CreatePage = () => {
     return <div className='sec_group_panel_collape'>
       <Panel title={Languages.text.anotherPro}>
         <div className='wrap_package_product_another'>
-          
+
+        </div>
+      </Panel>
+    </div>
+
+  }, [])
+
+  const renderReferralCode = useMemo(() => {
+
+    return <div className='sec_group_panel_collape'>
+      <Panel title={Languages.text.referralCode}>
+        <div className='wrap_package_referralcode'>
+          <div className='fullwidth_input_colum'>
+            <div className='single_hor_input'>
+              {renderInput('', '', Languages.text.referralCode, Languages.text.referralCode, 'text', 200, false)}
+            </div>
+          </div>
         </div>
       </Panel>
     </div>
@@ -1486,6 +1502,10 @@ const CreatePage = () => {
   function onChangeGuestbookTemp(event) {
     setGuestbookTemp(event.target.value)
   }
+
+  const onChangeSaveSetting = useCallback(() => {
+    console.log('save settings')
+  }, [])
 
   return (
     <div className='Createpage'>
@@ -1559,6 +1579,7 @@ const CreatePage = () => {
             {renderTimeandLocation}
 
             <div className='sec_group_panel_collape float_display'>
+
               {renderDamNgoAnHoi}
               {renderAlbum}
               {renderProgramEvent}
@@ -1572,11 +1593,41 @@ const CreatePage = () => {
               {renderEffectBgStyle}
               {renderBuyPackageProduct}
               {renderProductAnother}
-            </div>
+              {renderReferralCode}
 
+              <div className='savesetting_btn'>
+                <Button
+                  label={Languages.buttonText.saveSettings}
+                  buttonStyle={BUTTON_STYLES.PINK}
+                  textStyle={BUTTON_STYLES.PINK}
+                  autocenter
+                  onPress={onChangeSaveSetting}
+                />
+              </div>
+              <div className='wrap_flop_note_using float_display'>
+                <div className='box_note_using'>
+                  <ul>
+                    <li>
+                      {Languages.text.changePlan}
+                    </li>
+                    <li>
+                      {Languages.text.useMax7day}
+                    </li>
+                    <li>
+                      {Languages.text.useActive90day}
+                    </li>
+                    <li>
+                      {Languages.text.contactSupport}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
+
       {renderModal}
       <Footer />
     </div>
