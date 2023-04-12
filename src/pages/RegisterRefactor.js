@@ -1,4 +1,7 @@
 import React, { useState, useCallback } from 'react'
+
+import { useDispatch } from 'react-redux'
+
 import { yupResolver } from '@hookform/resolvers/yup'
 import yup from '@/utils/yupGlobal'
 import { useForm } from 'react-hook-form'
@@ -13,6 +16,7 @@ import Footer from './Footer/Footer'
 import { Alias } from '@/commons/Constant.ts'
 import Loading from '@/components/Loading'
 import { signupUser } from '@/features/auth/authSlice'
+
 // initial state
 const schema = yup.object().shape({
   username: yup.string().required('Required'),
@@ -21,6 +25,17 @@ const schema = yup.object().shape({
     .min(6, 'Password must be at least 6 characters')
     .required('Yêu cầu nhập mật khẩu'),
   fullName: yup.string().required('Yêu cầu nhập tên đầy đủ'),
+
+import { Input } from '@/components/input/Input'
+// initial state
+const schema = yup.object().shape({
+  username: yup.string().required('Yêu cầu nhập trường này'),
+  password: yup
+    .string()
+    .min(6, 'Mật khẩu tối thiểu 6 ký tự')
+    .required('Yêu cầu nhập mật khẩu'),
+  fullName: yup.string().required('Yêu cầu nhập trường này'),
+
   email: yup
     .string()
     .email('Email không hợp lệ')
@@ -32,16 +47,29 @@ const schema = yup.object().shape({
 })
 
 const RegisterRefactor = () => {
+
+=======
+  const dispatch = useDispatch()
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
+
+    mode: 'onchange',
+
     resolver: yupResolver(schema),
   })
   const onSubmit = (data) => {
     console.log(data)
+
   }
+
+    dispatch(signupUser(data))
+  }
+  // console.log(register('username'))
+
   return (
     <div className='Login'>
       <Loading />
@@ -60,6 +88,7 @@ const RegisterRefactor = () => {
                 className='fieldscli_data'
                 onSubmit={handleSubmit(onSubmit)}
               >
+
                 <input
                   className='form-control'
                   type='text'
@@ -106,6 +135,50 @@ const RegisterRefactor = () => {
                 /> */}
 
                 <Button
+
+                <Input
+                  register={register}
+                  errors={errors}
+                  name='fullName'
+                  type='text'
+                  placeHolder={Languages.inputText.name}
+                  inputStyle={'form-control'}
+                />
+                <Input
+                  register={register}
+                  errors={errors}
+                  name='username'
+                  type='text'
+                  placeHolder={'User name'}
+                  inputStyle={'form-control'}
+                />
+                <Input
+                  register={register}
+                  errors={errors}
+                  name='phoneNumber'
+                  type='text'
+                  placeHolder={Languages.inputText.phone}
+                  inputStyle={'form-control'}
+                />
+                <Input
+                  register={register}
+                  errors={errors}
+                  name='email'
+                  type='email'
+                  placeHolder='email'
+                  inputStyle={'form-control'}
+                />
+                <Input
+                  register={register}
+                  errors={errors}
+                  name='password'
+                  type='password'
+                  placeHolder={Languages.inputText.password}
+                  inputStyle={'form-control'}
+                />
+                <Button
+                  type='submit'
+
                   label={Languages.menu.register}
                   // onPress={registerToken}
                   buttonStyle={BUTTON_STYLES.PINK}

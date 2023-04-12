@@ -183,6 +183,7 @@ const CreatePage = () => {
       case Languages.inputText.firstAnother:
         console.log(value)
         break
+
       case Languages.inputText.nameGroom:
         console.log(value)
         break
@@ -348,8 +349,10 @@ const CreatePage = () => {
       icon,
       inputStyle
     ) => {
+
       const onChange = (value, placehodel) => {
         onChangeText(value, placehodel)
+
       }
 
       return (
@@ -1477,6 +1480,7 @@ const CreatePage = () => {
               {renderInput('', '', Languages.text.referralCode, Languages.text.referralCode, 'text', 200, false)}
             </div>
           </div>
+
         </div>
       </Panel>
     </div>
@@ -1503,9 +1507,11 @@ const CreatePage = () => {
     setGuestbookTemp(event.target.value)
   }
 
+
   const onChangeSaveSetting = useCallback(() => {
     console.log('save settings')
   }, [])
+
 
   return (
     <div className='Createpage'>
@@ -1593,6 +1599,7 @@ const CreatePage = () => {
               {renderEffectBgStyle}
               {renderBuyPackageProduct}
               {renderProductAnother}
+
               {renderReferralCode}
 
               <div className='savesetting_btn'>
