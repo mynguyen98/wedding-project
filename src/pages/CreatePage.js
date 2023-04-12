@@ -1609,7 +1609,7 @@ const CreatePage = () => {
                   <ul>
                     <li>
                       {Languages.text.changePlan}
-                    </li>
+                    </li>1
                     <li>
                       {Languages.text.useMax7day}
                     </li>
